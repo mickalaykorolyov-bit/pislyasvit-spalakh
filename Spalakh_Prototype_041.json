@@ -1,0 +1,4312 @@
+{
+  "firstLayout": "UnderwaterHarbor",
+  "gdVersion": {
+    "build": 279,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": true,
+    "folderProject": false,
+    "orientation": "landscape",
+    "packageName": "io.afterlight.spalakh",
+    "pixelsRounding": false,
+    "projectUuid": "1c0443e0-59f9-410d-88b8-16c9b72dd09a",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "",
+    "templateSlug": "",
+    "version": "0.4.1",
+    "name": "ПІСЛЯСВІТ — Спалах Prototype 0.4.1 (Visual Polish)",
+    "description": "Visual polish patch: приховано технічні колізійні прямокутники, підправлено HUD, читабельність Спалаха та foreground-сітку. Геймплей 0.3.1/0.4 без змін.",
+    "author": "Prototype",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": true,
+    "platformSpecificAssets": {},
+    "loadingScreen": {
+      "backgroundColor": 790256,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 0.2,
+      "progressBarColor": 15748955,
+      "progressBarHeight": 15,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 45,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": false,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": false
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_idle.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_slow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_slow.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_run.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_run.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_jump.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_jump.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_fall.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_fall.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_dash.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_dash.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_crouch.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_crouch.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_land.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_land.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/watercolor_harbor_bg.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/watercolor_harbor_bg.jpg",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/underwater_fog.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/underwater_fog.jpg",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/platform_reef.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/platform_reef.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/crab.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/crab.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/glow_red.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/glow_red.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/sensor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sensor.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/gate.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gate.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/buoy.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/buoy.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_idle_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_idle_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_idle_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_idle_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_idle_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_idle_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_idle_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_idle_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_idle_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_idle_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_idle_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_idle_05.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_slow_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_slow_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_slow_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_slow_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_slow_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_slow_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_slow_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_slow_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_slow_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_slow_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_slow_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_slow_05.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_run_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_run_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_run_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_run_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_run_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_run_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_run_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_run_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_run_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_run_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_run_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_run_05.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_run_06.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_run_06.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_run_07.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_run_07.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_jump_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_jump_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_jump_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_jump_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_jump_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_jump_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_fall_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_fall_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_fall_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_fall_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_fall_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_fall_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_dash_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_dash_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_dash_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_dash_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_dash_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_dash_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_dash_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_dash_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_dash_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_dash_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_crouch_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_crouch_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_crouch_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_crouch_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_crouch_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_crouch_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_crouch_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_crouch_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_crouch_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_crouch_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_land_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_land_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_land_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_land_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_land_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_land_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spalakh_land_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spalakh_land_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/world_light.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/world_light.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/floor_light.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/floor_light.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/spark_trail.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/spark_trail.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/platform_light.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/platform_light.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/crab_light.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/crab_light.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v02/underwater_fog_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v02/underwater_fog_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_idle_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_idle_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_idle_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_idle_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_idle_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_idle_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_idle_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_idle_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_idle_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_idle_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_idle_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_idle_05.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_slow_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_slow_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_slow_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_slow_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_slow_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_slow_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_slow_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_slow_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_slow_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_slow_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_slow_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_slow_05.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_run_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_run_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_run_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_run_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_run_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_run_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_run_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_run_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_run_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_run_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_run_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_run_05.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_run_06.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_run_06.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_run_07.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_run_07.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_jump_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_jump_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_jump_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_jump_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_jump_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_jump_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_fall_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_fall_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_fall_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_fall_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_fall_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_fall_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_dash_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_dash_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_dash_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_dash_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_dash_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_dash_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_dash_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_dash_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_dash_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_dash_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_crouch_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_crouch_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_crouch_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_crouch_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_crouch_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_crouch_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_crouch_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_crouch_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_crouch_04.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_crouch_04.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_land_00.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_land_00.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_land_01.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_land_01.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_land_02.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_land_02.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v03/spalakh_land_03.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v03/spalakh_land_03.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/pier_large.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/pier_large.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/pier_ruins.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/pier_ruins.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/stone_platform_a.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/stone_platform_a.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/stone_platform_b.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/stone_platform_b.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/ship_piece.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/ship_piece.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/kelp_cluster_a.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/kelp_cluster_a.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/kelp_cluster_b.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/kelp_cluster_b.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/foreground_net.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/foreground_net.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/buoy_line.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/buoy_line.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/crab_pot.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/crab_pot.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/trash_a.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/trash_a.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/trash_b.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/trash_b.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v04/bottle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v04/bottle.png",
+        "smoothed": true,
+        "userAdded": true
+      }
+    ]
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "b": 21,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "UnderwaterHarbor",
+      "name": "UnderwaterHarbor",
+      "r": 7,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "ПІСЛЯСВІТ · Підводний порт",
+      "v": 32,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.7,
+        "snap": false,
+        "zoomFactor": 0.7,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 720,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Background",
+          "persistentUuid": "7f90aebc-0258-4073-92cb-1152e4f01dd2",
+          "width": 2560,
+          "x": 0,
+          "y": 0,
+          "zOrder": -20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 720,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Fog",
+          "persistentUuid": "8c51525b-5027-4967-ac7d-201f21b87aaf",
+          "width": 2560,
+          "x": 0,
+          "y": 0,
+          "zOrder": -9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 600,
+          "keepRatio": false,
+          "layer": "",
+          "name": "WorldLight",
+          "persistentUuid": "7ec2cde8-ae7d-4c18-bbd6-8008914cf059",
+          "width": 760,
+          "x": 0,
+          "y": 0,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 260,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorBuoyLine",
+          "numberProperties": [],
+          "persistentUuid": "1387213e-54f4-4ec9-8f3f-775aa6fd4a95",
+          "stringProperties": [],
+          "width": 240,
+          "x": 1680,
+          "y": 80,
+          "zOrder": 2
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 220,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorShipPiece",
+          "numberProperties": [],
+          "persistentUuid": "6a4f4b0d-c4d0-41c1-9f89-d13d635f51a6",
+          "stringProperties": [],
+          "width": 430,
+          "x": 120,
+          "y": 430,
+          "zOrder": 2
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 174,
+          "keepRatio": false,
+          "layer": "",
+          "name": "FloorLight",
+          "persistentUuid": "b58cf74d-643e-4594-97ae-969b5b2b8e25",
+          "width": 650,
+          "x": 0,
+          "y": 0,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 250,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorKelpB",
+          "numberProperties": [],
+          "persistentUuid": "a39be1c9-d423-48bd-95df-c226aaa79f63",
+          "stringProperties": [],
+          "width": 220,
+          "x": 1350,
+          "y": 390,
+          "zOrder": 3
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 280,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorKelpA",
+          "numberProperties": [],
+          "persistentUuid": "ed8308ab-a677-429e-bc09-8ee86d7b5c43",
+          "stringProperties": [],
+          "width": 220,
+          "x": 80,
+          "y": 400,
+          "zOrder": 3
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 170,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorCrabPot",
+          "numberProperties": [],
+          "persistentUuid": "b8b36262-e5fd-4d02-85a0-bb8c5abfaad7",
+          "stringProperties": [],
+          "width": 190,
+          "x": 650,
+          "y": 470,
+          "zOrder": 3
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 46,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "9bf87d12-5604-46ad-a4d4-61c34c6104c6",
+          "width": 225,
+          "x": 2130,
+          "y": 446,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "b824fe5f-b425-4b5d-b7f2-c2f15d5e9607",
+          "width": 320,
+          "x": 1655,
+          "y": 476,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 46,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "d9783eba-0316-4563-9633-98e0b5899dfd",
+          "width": 250,
+          "x": 1010,
+          "y": 490,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "ad4eb559-08c6-4326-9aa6-4b1e23a1e426",
+          "width": 250,
+          "x": 412,
+          "y": 498,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "30f3c746-3b81-4bfd-97b6-d82e32400df2",
+          "width": 730,
+          "x": 0,
+          "y": 616,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "30e6028a-3e27-4dfc-baeb-a686c4fa74dc",
+          "width": 528,
+          "x": 817,
+          "y": 616,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "a3c43880-ffd0-4b4c-a701-3992b78b113a",
+          "width": 558,
+          "x": 1455,
+          "y": 616,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "fd97765e-0f8a-451b-970b-5d4b3980b97d",
+          "width": 450,
+          "x": 2110,
+          "y": 616,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 488,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Glow",
+          "persistentUuid": "125e3d71-8beb-4497-ac1f-6bddf4d7a9ff",
+          "width": 488,
+          "x": -50,
+          "y": 250,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 100,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorPierLarge",
+          "numberProperties": [],
+          "persistentUuid": "c057f94c-2fb3-4056-881d-7871ecf333d3",
+          "stringProperties": [],
+          "width": 250,
+          "x": 2120,
+          "y": 395,
+          "zOrder": 5
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 110,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorStoneB",
+          "numberProperties": [],
+          "persistentUuid": "fc443d75-e16d-4bc4-8f24-aebfee3e44e3",
+          "stringProperties": [],
+          "width": 360,
+          "x": 1645,
+          "y": 425,
+          "zOrder": 5
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 105,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorStoneA",
+          "numberProperties": [],
+          "persistentUuid": "88cea4e2-99c9-4509-b224-91cd55eda7d4",
+          "stringProperties": [],
+          "width": 280,
+          "x": 990,
+          "y": 438,
+          "zOrder": 5
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 110,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorPierRuins",
+          "numberProperties": [],
+          "persistentUuid": "e35f7691-58fd-4d5c-9206-b6911ac37c34",
+          "stringProperties": [],
+          "width": 280,
+          "x": 400,
+          "y": 450,
+          "zOrder": 5
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 190,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorStoneB",
+          "numberProperties": [],
+          "persistentUuid": "b82181c1-f67a-4f8d-8a95-4574c5a785a3",
+          "stringProperties": [],
+          "width": 620,
+          "x": 1450,
+          "y": 495,
+          "zOrder": 5
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 200,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorPierLarge",
+          "numberProperties": [],
+          "persistentUuid": "70e7227d-ac83-4440-a714-e61b96d8d5d4",
+          "stringProperties": [],
+          "width": 800,
+          "x": -30,
+          "y": 500,
+          "zOrder": 5
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 180,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorStoneA",
+          "numberProperties": [],
+          "persistentUuid": "6f227af9-72ea-40ba-b0ca-b4f2530e3c7f",
+          "stringProperties": [],
+          "width": 580,
+          "x": 800,
+          "y": 500,
+          "zOrder": 5
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 180,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorPierRuins",
+          "numberProperties": [],
+          "persistentUuid": "dc802ba8-60f7-4ef4-9049-d35f5bd6a01b",
+          "stringProperties": [],
+          "width": 490,
+          "x": 2110,
+          "y": 505,
+          "zOrder": 5
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 46,
+          "keepRatio": false,
+          "layer": "",
+          "name": "PlatformLight",
+          "persistentUuid": "b7d61ec9-967b-4a9b-a6a4-190fead54085",
+          "width": 225,
+          "x": 2130,
+          "y": 446,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "keepRatio": false,
+          "layer": "",
+          "name": "PlatformLight",
+          "persistentUuid": "f2bd3386-64f5-491e-a907-138b67a229b3",
+          "width": 320,
+          "x": 1655,
+          "y": 476,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 46,
+          "keepRatio": false,
+          "layer": "",
+          "name": "PlatformLight",
+          "persistentUuid": "474951a2-0b87-44a5-9b61-cddadb1be761",
+          "width": 250,
+          "x": 1010,
+          "y": 490,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "keepRatio": false,
+          "layer": "",
+          "name": "PlatformLight",
+          "persistentUuid": "82cb900c-b723-49bb-a716-741ae5313d7e",
+          "width": 250,
+          "x": 412,
+          "y": 498,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": false,
+          "layer": "",
+          "name": "PlatformLight",
+          "persistentUuid": "9bad9cf1-9b81-4573-80ca-86bfae59317a",
+          "width": 730,
+          "x": 0,
+          "y": 616,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": false,
+          "layer": "",
+          "name": "PlatformLight",
+          "persistentUuid": "28f1e264-18a9-4cbb-bb0f-886e38da8f2d",
+          "width": 528,
+          "x": 817,
+          "y": 616,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": false,
+          "layer": "",
+          "name": "PlatformLight",
+          "persistentUuid": "3e9fc28d-f6a0-490b-b00b-c755bf513c19",
+          "width": 558,
+          "x": 1455,
+          "y": 616,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": false,
+          "layer": "",
+          "name": "PlatformLight",
+          "persistentUuid": "7d2adb80-0e93-4002-9372-a54fff14eac5",
+          "width": 450,
+          "x": 2110,
+          "y": 616,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "d217d6d2-63bb-4750-9c9d-829ef8fdae3f",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "a041937b-67dd-494e-97b5-4e2018a9c18e",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "a5427d2d-d067-4a68-9b29-8726740a3817",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "3926b3db-6b71-41f0-932f-2573aa6af597",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "5e291173-c69c-4b2f-ac4b-9a1059961eb0",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "467abab5-d4e0-47c2-bdf0-f79fc7d9d145",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "ccb649a0-6fb7-416d-9b42-40eb8481950a",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "9e6a5c0b-094f-4698-8a9c-63f9b5b7c568",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "b8f2f04c-0acb-4728-9261-ff95338c2a92",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "788c1a9a-f91a-4fae-83e9-de85f34e7e8f",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "b528ae7f-24d3-4b68-b52b-d8222b202ce5",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 58,
+          "keepRatio": false,
+          "layer": "",
+          "name": "Trail",
+          "persistentUuid": "8a6a1100-d3a8-4b21-ba6e-5eaf2cadbae4",
+          "width": 76,
+          "x": 0,
+          "y": 0,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 120,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorTrashA",
+          "numberProperties": [],
+          "persistentUuid": "ce1d6a4c-1636-4cfb-aba1-cacb367ec982",
+          "stringProperties": [],
+          "width": 170,
+          "x": 880,
+          "y": 560,
+          "zOrder": 7
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 120,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorTrashB",
+          "numberProperties": [],
+          "persistentUuid": "e96d147f-5477-4f1e-bba3-fb31e75f9edb",
+          "stringProperties": [],
+          "width": 180,
+          "x": 1950,
+          "y": 565,
+          "zOrder": 7
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 70,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorBottle",
+          "numberProperties": [],
+          "persistentUuid": "a8bb2227-9362-40fa-9c07-afaa420353b2",
+          "stringProperties": [],
+          "width": 70,
+          "x": 1540,
+          "y": 570,
+          "zOrder": 7
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Sensor",
+          "persistentUuid": "67064d5b-dc87-41cb-b1c5-b85b7c345e6b",
+          "width": 110,
+          "x": 1820,
+          "y": 374,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 190,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Buoy",
+          "persistentUuid": "6517b173-b420-408c-8356-b75cad4a647b",
+          "width": 136,
+          "x": 2400,
+          "y": 397,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 260,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Gate",
+          "persistentUuid": "ce877d81-5699-409c-96d6-3dde75821b8e",
+          "width": 70,
+          "x": 2250,
+          "y": 358,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 99,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Crab",
+          "persistentUuid": "29f5b05c-6623-4922-8941-76277ead7887",
+          "width": 170,
+          "x": 489,
+          "y": 524,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 256,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Player",
+          "persistentUuid": "c763a6b2-7b59-4312-9e05-259d3c88a3d2",
+          "width": 384,
+          "x": -168,
+          "y": 394,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 99,
+          "keepRatio": false,
+          "layer": "",
+          "name": "CrabLight",
+          "persistentUuid": "b4f190da-56ea-48f5-8556-d2767ae2c1cb",
+          "width": 170,
+          "x": 489,
+          "y": 524,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 820,
+          "initialVariables": [],
+          "keepRatio": true,
+          "layer": "",
+          "name": "DecorForegroundNet",
+          "numberProperties": [],
+          "persistentUuid": "9e4b6a33-f01a-492e-8f5c-a81dc9424bc9",
+          "stringProperties": [],
+          "width": 980,
+          "x": -135,
+          "y": -18,
+          "zOrder": 14
+        },
+        {
+          "name": "HUDSense",
+          "persistentUuid": "02c9ac8b-558a-4358-944d-9d83b19a88ac",
+          "x": 1040,
+          "y": 20,
+          "zOrder": 100,
+          "angle": 0,
+          "layer": "HUD",
+          "customSize": false,
+          "width": 0,
+          "height": 0
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "HUD",
+          "name": "HUDStatus",
+          "persistentUuid": "dd4bc528-e211-4038-abd6-471fc700466d",
+          "width": 0,
+          "x": 26,
+          "y": 18,
+          "zOrder": 100,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "HUD",
+          "name": "HUDHint",
+          "persistentUuid": "db184b35-418e-4677-86a6-f853c239c478",
+          "width": 0,
+          "x": 34,
+          "y": 684,
+          "zOrder": 100,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Player",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.19,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_idle_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_idle_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_idle_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_idle_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_idle_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_idle_05.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Slow",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.12,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_slow_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_slow_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_slow_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_slow_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_slow_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_slow_05.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Run",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.079,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_run_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_run_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_run_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_run_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_run_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_run_05.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_run_06.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_run_07.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Jump",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.12,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_jump_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_jump_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_jump_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Fall",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.14,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_fall_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_fall_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_fall_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dash",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.045,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_dash_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_dash_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_dash_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_dash_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_dash_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Crouch",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.19,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_crouch_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_crouch_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_crouch_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_crouch_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_crouch_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Land",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.052,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_land_00.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_land_01.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_land_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v03/spalakh_land_03.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Background",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/watercolor_harbor_bg.jpg",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Platform",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/platform_reef.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Crab",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/crab.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Glow",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/glow_red.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Sensor",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/sensor.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Gate",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/gate.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Buoy",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/buoy.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "HUDHint",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "smoothed": true,
+          "string": "Оптичний сенсор відкривається лише від сильного світіння.",
+          "font": "",
+          "characterSize": 16,
+          "color": {
+            "r": 233,
+            "g": 241,
+            "b": 234
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "HUDStatus",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "smoothed": true,
+          "string": "ПІСЛЯСВІТ 0.4.1 · VISUAL POLISH",
+          "font": "",
+          "characterSize": 17,
+          "color": {
+            "r": 250,
+            "g": 163,
+            "b": 113
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "WorldLight",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v02/world_light.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "FloorLight",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v02/floor_light.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Trail",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v02/spark_trail.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "PlatformLight",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v02/platform_light.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "CrabLight",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v02/crab_light.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Fog",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v02/underwater_fog_02.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "HUDSense",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "smoothed": true,
+          "string": "СВІТЛО: ТИША  7%   |   КРАБ: СПОКІЙ",
+          "font": "",
+          "characterSize": 14,
+          "color": {
+            "r": 255,
+            "g": 226,
+            "b": 168
+          }
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/pier_large.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorPierLarge",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/pier_ruins.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorPierRuins",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/stone_platform_a.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorStoneA",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/stone_platform_b.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorStoneB",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/ship_piece.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorShipPiece",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/kelp_cluster_a.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorKelpA",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/kelp_cluster_b.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorKelpB",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/foreground_net.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorForegroundNet",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/buoy_line.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorBuoyLine",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/crab_pot.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorCrabPot",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/trash_a.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorTrashA",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/trash_b.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorTrashB",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "animations": [
+            {
+              "directions": [
+                {
+                  "looping": true,
+                  "sprites": [
+                    {
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [],
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v04/bottle.png",
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "points": []
+                    }
+                  ],
+                  "timeBetweenFrames": 0.1
+                }
+              ],
+              "name": "Default",
+              "useMultipleDirections": false
+            }
+          ],
+          "assetStoreId": "",
+          "behaviors": [],
+          "effects": [],
+          "name": "DecorBottle",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": []
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 76,
+            "g": 209,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "0.3.1 PATCH: стабільна поза й масштаб тіла, локальна анімація полум’я, спрайти центровані для розворотів; стелс і фізика 0.3 збережені."
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "// ПІСЛЯСВІТ 0.4.1 — VISUAL POLISH: gameplay unchanged, visuals refined",
+            "// Uses the integrated watercolor level art from v0.4; only visual presentation is refined.",
+            "if (!runtimeScene.__spalakhPrototype) {",
+            "/* ПІСЛЯСВІТ 0.4.1 — VISUAL POLISH",
+            "   Pure physics/light/stealth simulation: frame-rate-independent, no engine calls.",
+            "   Player position is feet-center; x/y values use original prototype world units.",
+            "*/",
+            "var SpalakhSim = (function () {",
+            "  'use strict';",
+            "  const WORLD_W = 2560;",
+            "  const PLATFORMS = [",
+            "    {x:0,y:616,w:730,h:104},{x:817,y:616,w:528,h:104},",
+            "    {x:1455,y:616,w:558,h:104},{x:2110,y:616,w:450,h:104},",
+            "    {x:412,y:498,w:250,h:45},{x:1010,y:490,w:250,h:46},",
+            "    {x:1655,y:476,w:320,h:45},{x:2130,y:446,w:225,h:46}",
+            "  ];",
+            "  const CONFIG = Object.freeze({",
+            "    slowSpeed:68, walkSpeed:188, runSpeed:312,",
+            "    groundAccel:1420, airAccel:880, groundBrake:1900, airBrake:700,",
+            "    jumpVelocity:-500, gravityHold:740, gravityRelease:1360, gravityFall:1250,",
+            "    maxFall:750, jumpHoldMax:.18, coyoteTime:.105, jumpBufferTime:.13,",
+            "    dashSpeed:618, dashDuration:.145, dashCooldown:1.04,",
+            "    lightIdle:.065, lightRise:7.2, lightFade:2.5,",
+            "    sensorThreshold:.73",
+            "  });",
+            "  const clamp=(n,lo,hi)=>Math.max(lo,Math.min(hi,n));",
+            "  const approach=(n,target,rate)=>n+clamp(target-n,-rate,rate);",
+            "  const near=(a,b)=>Math.abs(a-b);",
+            "  function createState(){return {",
+            "    x:154,y:616,vx:0,vy:0,grounded:true,facing:1,dashFacing:1,",
+            "    brightness:CONFIG.lightIdle,lightState:'STEALTH',glowRadius:78,",
+            "    time:0,jumpHeld:false,jumpHoldTime:0,jumpBuffer:0,coyote:CONFIG.coyoteTime,",
+            "    dashHeld:false,dashTimer:0,dashCooldown:0,",
+            "    sensorOn:false,won:false,flash:0,deaths:0,",
+            "    crabX:570,crabY:616,crabV:45,crabPatrolDirection:1,crabState:'patrol',",
+            "    crabAlert:0,crabSearchTimer:0,crabLostTimer:0,crabLastSeenX:570,",
+            "    crabDetectNoise:false,crabDetectLight:false,crabDetected:false,",
+            "    hint:'Обережний рух гасить світло. Швидкий рух привертає увагу.',",
+            "    paused:false",
+            "  };}",
+            "  function resetPosition(s){",
+            "    s.x=154;s.y=616;s.vx=0;s.vy=0;s.grounded=true;s.facing=1;s.dashFacing=1;",
+            "    s.coyote=CONFIG.coyoteTime;s.jumpBuffer=0;s.jumpHoldTime=0;",
+            "    s.dashTimer=0;s.dashCooldown=.35;",
+            "    s.brightness=CONFIG.lightIdle;s.lightState='STEALTH';s.glowRadius=78;",
+            "    s.flash=.34;s.deaths++;",
+            "    s.crabX=570;s.crabV=45;s.crabState='patrol';s.crabAlert=0;",
+            "    s.crabSearchTimer=0;s.crabLostTimer=0;",
+            "    s.crabDetectNoise=false;s.crabDetectLight=false;s.crabDetected=false;",
+            "    s.hint='Спалах згас. Спробуй тихіше пройти повз краба.';",
+            "  }",
+            "  function beginJump(s){",
+            "    s.vy=CONFIG.jumpVelocity;",
+            "    s.grounded=false;s.coyote=0;s.jumpBuffer=0;s.jumpHoldTime=0;",
+            "    s.flash=Math.max(s.flash,.20);",
+            "  }",
+            "  function step(s,input,dt,platforms){",
+            "    dt=clamp(Number.isFinite(dt)?dt:.016,0,.04);",
+            "    if(s.won || s.paused || dt<=0) return s;",
+            "    const P=platforms||PLATFORMS;",
+            "    s.time+=dt;",
+            "    s.flash=Math.max(0,s.flash-dt*1.65);",
+            "    s.dashTimer=Math.max(0,s.dashTimer-dt);",
+            "    s.dashCooldown=Math.max(0,s.dashCooldown-dt);",
+            "    const dir=(input.right?1:0)-(input.left?1:0);",
+            "    const sneak=!!input.down;",
+            "    if(dir!==0&&s.dashTimer<=0)s.facing=dir;",
+            "",
+            "    // Buffer jump press so pressing before landing is forgiving.",
+            "    if(input.jump&&!s.jumpHeld)s.jumpBuffer=CONFIG.jumpBufferTime;",
+            "    else s.jumpBuffer=Math.max(0,s.jumpBuffer-dt);",
+            "    if(s.grounded)s.coyote=CONFIG.coyoteTime;",
+            "    else s.coyote=Math.max(0,s.coyote-dt);",
+            "    const jumpAvailable=s.grounded||s.coyote>0;",
+            "    if(s.jumpBuffer>0&&jumpAvailable&&s.dashTimer<=0)beginJump(s);",
+            "    // A released jump shortens the rise, without changing the initial impulse.",
+            "    if(s.jumpHeld&&!input.jump&&s.vy< -135)s.vy*=.53;",
+            "    s.jumpHeld=!!input.jump;",
+            "",
+            "    // Dash is an edge-triggered burst with a definite duration/cooldown.",
+            "    if(input.dash&&!s.dashHeld&&s.dashCooldown<=0){",
+            "      s.dashFacing=s.facing;",
+            "      s.dashTimer=CONFIG.dashDuration;",
+            "      s.dashCooldown=CONFIG.dashCooldown;",
+            "      s.flash=Math.max(s.flash,.39);",
+            "      s.vx=s.dashFacing*CONFIG.dashSpeed;",
+            "    }",
+            "    s.dashHeld=!!input.dash;",
+            "    if(s.dashTimer>0){",
+            "      s.vx=s.dashFacing*CONFIG.dashSpeed;",
+            "    }else{",
+            "      const target=dir*(sneak?CONFIG.slowSpeed:(input.boost?CONFIG.runSpeed:CONFIG.walkSpeed));",
+            "      const rate=(dir===0 ? (s.grounded?CONFIG.groundBrake:CONFIG.airBrake):",
+            "        (s.grounded?CONFIG.groundAccel:CONFIG.airAccel));",
+            "      s.vx=approach(s.vx,target,rate*dt);",
+            "    }",
+            "",
+            "    if(!s.grounded || s.vy!==0){",
+            "      if(s.vy<0){",
+            "        if(input.jump && s.jumpHoldTime<CONFIG.jumpHoldMax){",
+            "          s.jumpHoldTime+=dt;",
+            "          s.vy+=CONFIG.gravityHold*dt;",
+            "        }else s.vy+=CONFIG.gravityRelease*dt;",
+            "      }else s.vy+=CONFIG.gravityFall*dt;",
+            "      s.vy=clamp(s.vy,-650,CONFIG.maxFall);",
+            "    }",
+            "    const oldFeetY=s.y;",
+            "    s.x=clamp(s.x+s.vx*dt,22,WORLD_W-22);",
+            "    s.y+=s.vy*dt;",
+            "    let landed=false;",
+            "    for(const p of P){",
+            "      if(s.vy>=0 && oldFeetY<=p.y+6 && s.y>=p.y && s.x+15>p.x && s.x-15<p.x+p.w){",
+            "        s.y=p.y;s.vy=0;landed=true;break;",
+            "      }",
+            "    }",
+            "    s.grounded=landed;",
+            "    if(landed){",
+            "      s.coyote=CONFIG.coyoteTime;",
+            "      if(s.jumpBuffer>0 && s.dashTimer<=0)beginJump(s);",
+            "    }",
+            "    if(s.y>810)resetPosition(s);",
+            "",
+            "    // Light is continuous, not a boolean; sneaking has a lower target because",
+            "    // movement is slower. Dash and jumping briefly produce an optical pulse.",
+            "    const physicalSpeed=near(s.vx,0);",
+            "    let target=CONFIG.lightIdle+Math.pow(clamp(physicalSpeed/CONFIG.runSpeed,0,1),1.42)*.76;",
+            "    if(sneak)target=Math.min(.19,target);",
+            "    if(s.dashTimer>0)target=1;",
+            "    if(s.flash>0)target=Math.max(target,.32+s.flash*.82);",
+            "    target=clamp(target,CONFIG.lightIdle,1);",
+            "    const response=target>s.brightness?CONFIG.lightRise:CONFIG.lightFade;",
+            "    s.brightness=clamp(s.brightness+(target-s.brightness)*(1-Math.exp(-response*dt)),CONFIG.lightIdle,1);",
+            "    s.lightState=s.brightness<.22?'STEALTH':s.brightness<.72?'VISIBLE':'FLARE';",
+            "    s.glowRadius=78+350*s.brightness;",
+            "",
+            "    // The crab is a first test creature: footsteps trigger vibrations, while",
+            "    // strong light can betray the player even if nearly motionless.",
+            "    const dx=s.x-s.crabX, vertical=near(s.y,s.crabY);",
+            "    const audibleRange=(s.dashTimer>0?305:(sneak?0:(physicalSpeed>245?250:172)));",
+            "    const noise=audibleRange>0 && near(dx,0)<audibleRange && vertical<100 && physicalSpeed>92;",
+            "    const lightRadius=45+s.brightness*360;",
+            "    const seen=s.brightness>.26 && Math.hypot(dx,(s.y-110)-(s.crabY-64))<lightRadius;",
+            "    s.crabDetectNoise=noise;",
+            "    s.crabDetectLight=seen;",
+            "    s.crabDetected=noise||seen;",
+            "    if(s.crabDetected){",
+            "      const gain=Math.max(noise?(1.05+physicalSpeed/460):0,seen?(1.05+s.brightness*1.05):0);",
+            "      s.crabAlert=clamp(s.crabAlert+gain*dt,0,1.3);",
+            "      s.crabLastSeenX=s.x;",
+            "      s.crabLostTimer=0;",
+            "    }else{",
+            "      s.crabLostTimer+=dt;",
+            "      s.crabAlert=clamp(s.crabAlert-(s.crabState==='chase'?.25:.43)*dt,0,1.3);",
+            "    }",
+            "    if(s.crabAlert>=.77 && s.crabDetected){",
+            "      s.crabState='chase';s.crabSearchTimer=1.15;",
+            "    }else if(s.crabState==='chase' && s.crabLostTimer>.75){",
+            "      s.crabState='search';s.crabSearchTimer=1.4;",
+            "    }else if(s.crabState==='search'){",
+            "      s.crabSearchTimer=Math.max(0,s.crabSearchTimer-dt);",
+            "      if(s.crabDetected && s.crabAlert>.45)s.crabState='alert';",
+            "      else if(s.crabSearchTimer<=0 && s.crabAlert<.25)s.crabState='patrol';",
+            "    }else if(s.crabState!=='chase'){",
+            "      s.crabState=s.crabAlert>=.25?'alert':'patrol';",
+            "    }",
+            "    if(s.crabState==='chase'){",
+            "      s.crabV=Math.sign(s.crabLastSeenX-s.crabX||s.crabPatrolDirection)*142;",
+            "    }else if(s.crabState==='search'){",
+            "      s.crabV=Math.sign(s.crabLastSeenX-s.crabX||s.crabPatrolDirection)*60;",
+            "    }else if(s.crabState==='alert'){",
+            "      s.crabV=Math.sign(s.crabLastSeenX-s.crabX||s.crabPatrolDirection)*58;",
+            "    }else{",
+            "      if(s.crabX<=486)s.crabPatrolDirection=1;",
+            "      if(s.crabX>=652)s.crabPatrolDirection=-1;",
+            "      s.crabV=43*s.crabPatrolDirection;",
+            "    }",
+            "    s.crabX=clamp(s.crabX+s.crabV*dt,425,702);",
+            "    if(s.crabX===425||s.crabX===702)s.crabPatrolDirection=s.crabX===425?1:-1;",
+            "    if(near(s.x,s.crabX)<41&&near(s.y,s.crabY)<64)resetPosition(s);",
+            "",
+            "    // Sensor responds to radiated light rather than raw speed. A well-timed",
+            "    // dash or sustained fast movement can activate it.",
+            "    if(!s.sensorOn && near(s.x,1875)<105 && near(s.y,476)<152 && s.brightness>=CONFIG.sensorThreshold){",
+            "      s.sensorOn=true;s.flash=.6;",
+            "      s.hint='Сенсор зловив яскравий імпульс! Прохід далі відкрито.';",
+            "    }",
+            "    if(s.sensorOn&&s.x>2430&&s.y>365){",
+            "      s.won=true;s.hint='Сигнал повертається. Далі — шлях до поверхні.';",
+            "    }",
+            "    if(s.x<360&&s.time>3)s.hint='S або ↓ — рух без шуму. Shift — біг, X — яскравий ривок.';",
+            "    else if(s.x>1500&&!s.sensorOn)s.hint='Оптичний сенсор відкривається лише від сильного світіння.';",
+            "    else if(s.x>2050&&s.sensorOn)s.hint='Шлюз відкрито! Шукай аварійний буй.';",
+            "    else if(s.crabState==='chase' && s.x<950)s.hint='КРАБ ПОМІТИВ СПАЛАХ! Зупинись або тікай.';",
+            "    return s;",
+            "  }",
+            "  return {WORLD_W,PLATFORMS,CONFIG,createState,resetPosition,step};",
+            "})();",
+            "",
+            "",
+            "  runtimeScene.__spalakhPrototype = {",
+            "    sim:SpalakhSim, state:SpalakhSim.createState(), cameraX:640,",
+            "    landingTimer:0, priorGrounded:true, lightSmooth:.08,",
+            "    trailHistory:[], trailAcc:0, animName:'Idle', lastDeaths:0",
+            "  };",
+            "}",
+            "const run = runtimeScene.__spalakhPrototype;",
+            "const pressed = key => gdjs.evtTools.input.isKeyPressed(runtimeScene,key);",
+            "const input = {",
+            "  left:pressed('Left')||pressed('a'), right:pressed('Right')||pressed('d'),",
+            "  down:pressed('Down')||pressed('s'), jump:pressed('Space')||pressed('Up')||pressed('w'),",
+            "  boost:pressed('LShift')||pressed('Shift'), dash:pressed('x')||pressed('k')",
+            "};",
+            "if(pressed('r')) {",
+            "  run.state=run.sim.createState();run.landingTimer=0;run.trailHistory=[];",
+            "  run.trailAcc=0;run.priorGrounded=true;run.lightSmooth=.08;run.lastDeaths=0;",
+            "}",
+            "const a=run.state;",
+            "const delta=Math.max(0,Math.min(.04,gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));",
+            "const platforms=runtimeScene.getObjects('Platform');",
+            "const rects=platforms.map(p=>({x:p.getX(),y:p.getY(),w:p.getWidth(),h:p.getHeight()}));",
+            "// Visual polish: collision platforms stay for physics, but become invisible in the scene.",
+            "for(const p of platforms){ if(p.setOpacity)p.setOpacity(0); }",
+            "const fgNet=runtimeScene.getObjects('DecorForegroundNet')[0];",
+            "if(fgNet){ if(fgNet.setOpacity)fgNet.setOpacity(84); }",
+            "const previousGrounded=a.grounded;",
+            "run.sim.step(a,input,delta,rects.length ? rects : undefined);",
+            "if(a.deaths!==run.lastDeaths){run.trailHistory=[];run.trailAcc=0;run.lastDeaths=a.deaths;}",
+            "if(!previousGrounded && a.grounded && a.vy===0)run.landingTimer=.19;",
+            "run.landingTimer=Math.max(0,run.landingTimer-delta);",
+            "// 0.2 light motion: independent inertia, slower dimming than ignition.",
+            "const heatTarget=Math.max(.05,Math.min(1,a.brightness));",
+            "const smoothing=heatTarget>run.lightSmooth?7.0:2.5;",
+            "run.lightSmooth+=(heatTarget-run.lightSmooth)*(1-Math.exp(-smoothing*delta));",
+            "const heat=Math.min(1,Math.max(.05,run.lightSmooth));",
+            "const rhythm=Math.sin(a.time*8.2);",
+            "// No body-size oscillation. Only flame-tendril pixels change across frames.",
+            "const speed=Math.abs(a.vx);",
+            "// Animation priority: dash / aerial / land / sneak / run / walk / idle.",
+            "let anim=a.dashTimer>0?'Dash':(!a.grounded?(a.vy<0?'Jump':'Fall'):",
+            "  (input.down?'Crouch':(run.landingTimer>0?'Land':(speed>215?'Run':(speed>30?'Slow':'Idle')))));",
+            "const pl=runtimeScene.getObjects('Player')[0];",
+            "if(pl){",
+            "  if(pl.setAnimationName)pl.setAnimationName(anim);",
+            "  if(pl.setAnimationSpeedScale)pl.setAnimationSpeedScale(anim==='Run'?Math.max(.6,Math.min(1.45,speed/310)):(anim==='Slow'?Math.max(.7,Math.min(1.2,speed/150)):1));",
+            "  // The 384x256 sprite has been re-centered around a fixed feet/core pivot.",
+            "  // Flipping right/left now reflects artwork around the same gameplay x coordinate.",
+            "  const coreXByAnimation = {Idle:210,Slow:207,Run:188,Jump:207,Fall:197,Dash:197,Crouch:212,Land:212};",
+            "  const coreX=coreXByAnimation[anim]||210;",
+            "  // Facing changes the sprite's art, not the player's physics position.",
+            "  // Compensate for the mirrored core anchor on the 384px canvas.",
+            "  pl.setPosition(a.x-(a.facing<0?384-coreX:coreX),a.y-222);",
+            "  if(pl.flipX)pl.flipX(a.facing<0);",
+            "  if(pl.setOpacity)pl.setOpacity(Math.min(255,195+60*heat));",
+            "  // Body width fixed: no pulsating scale.",
+            "  // Body height fixed: no bobbing or squash/stretch of the entire creature.",
+            "}",
+            "// Player halo: centered near the yellow glowing head rather than at the feet.",
+            "const halo=runtimeScene.getObjects('Glow')[0];",
+            "if(halo){",
+            "  halo.setPosition(a.x-244,a.y-383);",
+            "  if(halo.setOpacity)halo.setOpacity(10+150*heat);",
+            "  if(halo.setScale)halo.setScale(.58+heat*.48+rhythm*.010);",
+            "}",
+            "// Worldlight and pool are soft, painterly light-projections. They illuminate",
+            "// watercolor visually without requiring fragile shader/lighting extensions.",
+            "const wl=runtimeScene.getObjects('WorldLight')[0];",
+            "if(wl){",
+            "  if(wl.setPosition)wl.setPosition(a.x-380,a.y-385);",
+            "  if(wl.setOpacity)wl.setOpacity(8+160*heat);",
+            "  if(wl.setScale)wl.setScale(.70+heat*.48);",
+            "}",
+            "const pool=runtimeScene.getObjects('FloorLight')[0];",
+            "if(pool){",
+            "  pool.setPosition(a.x-325,a.y-56);",
+            "  if(pool.setOpacity)pool.setOpacity(a.grounded?(16+165*heat):(10+96*heat));",
+            "  if(pool.setScaleX)pool.setScaleX(.72+heat*.55);",
+            "}",
+            "// Highlights on platforms: falloff with distance to the light being.",
+            "const lit=runtimeScene.getObjects('PlatformLight');",
+            "for(let i=0;i<lit.length;i++){",
+            "  const light=lit[i],base=platforms[i];if(!base)continue;",
+            "  const mx=Math.max(base.getX(),Math.min(a.x,base.getX()+base.getWidth()));",
+            "  const my=Math.max(base.getY(),Math.min(a.y-75,base.getY()+base.getHeight()));",
+            "  const radius=170+heat*310;",
+            "  const dist=Math.hypot(mx-a.x,my-(a.y-75));",
+            "  light.setPosition(base.getX(),base.getY());",
+            "  const falloff=Math.max(0,1-dist/radius);",
+            "  if(light.setOpacity)light.setOpacity(132*heat*falloff*falloff);",
+            "}",
+            "const crab=runtimeScene.getObjects('Crab')[0];",
+            "const crabLit=runtimeScene.getObjects('CrabLight')[0];",
+            "if(crab){",
+            "  crab.setPosition(a.crabX-81,524);",
+            "  if(crab.flipX)crab.flipX(a.crabV<0);",
+            "  if(crab.setOpacity)crab.setOpacity(a.crabState==='chase'?255:245);",
+            "}",
+            "if(crabLit){",
+            "  crabLit.setPosition(a.crabX-81,524);",
+            "  if(crabLit.flipX)crabLit.flipX(a.crabV<0);",
+            "  const d=Math.hypot(a.crabX-a.x, a.y-616);",
+            "  if(crabLit.setOpacity)crabLit.setOpacity(200*heat*Math.pow(Math.max(0,1-d/(180+heat*285)),2));",
+            "}",
+            "// Time-sampled trail: builds while moving and fades away after stopping.",
+            "run.trailAcc+=delta;",
+            "while(run.trailAcc>=.035){",
+            "  run.trailAcc-=.035;",
+            "  run.trailHistory.unshift({x:a.x-24*a.facing,y:a.y-124,heat:heat,speed:speed,t:a.time});",
+            "  if(run.trailHistory.length>32)run.trailHistory.pop();",
+            "}",
+            "const trails=runtimeScene.getObjects('Trail');",
+            "for(let i=0;i<trails.length;i++){",
+            "  const t=trails[i];const h=run.trailHistory[i+1];",
+            "  if(!h||h.speed<60){if(t.setOpacity)t.setOpacity(0);continue;}",
+            "  const age=Math.max(0,a.time-h.t);",
+            "  const energy=Math.max(0,1-age/.55)*Math.min(1,h.speed/350)*h.heat;",
+            "  if(t.setPosition)t.setPosition(h.x-64,h.y-50+Math.sin(a.time*12+i)*2);",
+            "  if(t.setOpacity)t.setOpacity(Math.min(170,energy*170));",
+            "  if(t.setScale)t.setScale(.4+energy*.65);",
+            "}",
+            "const fog=runtimeScene.getObjects('Fog')[0];",
+            "if(fog){",
+            "  fog.setPosition(Math.sin(a.time*.15)*7,Math.cos(a.time*.21)*5);",
+            "  if(fog.setOpacity)fog.setOpacity(14);",
+            "}",
+            "const sensor=runtimeScene.getObjects('Sensor')[0];",
+            "if(sensor){ if(sensor.setOpacity)sensor.setOpacity(a.sensorOn?42:78); if(sensor.setScale)sensor.setScale(0.92); }",
+            "const gate=runtimeScene.getObjects('Gate')[0];",
+            "if(gate){ if(gate.setOpacity)gate.setOpacity(a.sensorOn?0:82); }",
+            "const hint=runtimeScene.getObjects('HUDHint')[0];",
+            "if(hint && hint.setString)hint.setString(a.hint);",
+            "const sense=runtimeScene.getObjects('HUDSense')[0];",
+            "const lightUA=a.lightState==='STEALTH'?'ТИША':a.lightState==='VISIBLE'?'ПОМІТНО':'СПАЛАХ';",
+            "const crabUA=a.crabState==='patrol'?'СПОКІЙ':a.crabState==='alert'?'НАСТОРОЖІ':a.crabState==='chase'?'ПЕРЕСЛІДУЄ':'ШУКАЄ';",
+            "if(sense && sense.setString)sense.setString('СВІТЛО: '+lightUA+'  '+Math.round(a.brightness*100)+'%   |   КРАБ: '+crabUA);",
+            "const status=runtimeScene.getObjects('HUDStatus')[0];",
+            "if(status && status.setString)status.setString(a.won?'ПРОТОТИП ПРОЙДЕНО':a.sensorOn?'СЕНСОР АКТИВОВАНО':'ПІСЛЯСВІТ 0.4.1 · VISUAL POLISH');",
+            "const cameraTarget=Math.max(640,Math.min(1920,a.x+200));",
+            "run.cameraX+=(cameraTarget-run.cameraX)*Math.min(1,delta*3.4);",
+            "if(gdjs.evtTools.camera.setCameraX)gdjs.evtTools.camera.setCameraX(runtimeScene,run.cameraX,'',0);"
+          ],
+          "parameterObjects": "",
+          "useStrict": false,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "HUD",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": []
+    }
+  ],
+  "externalEvents": [],
+  "tests": [],
+  "externalLayouts": [],
+  "externalSourceFiles": []
+}
