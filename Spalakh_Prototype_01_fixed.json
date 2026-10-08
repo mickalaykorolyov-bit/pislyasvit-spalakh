@@ -1,0 +1,1277 @@
+{
+  "firstLayout": "UnderwaterHarbor",
+  "gdVersion": {
+    "build": 279,
+    "major": 5,
+    "minor": 6,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "antialiasingMode": "MSAA",
+    "antialisingEnabledOnMobile": true,
+    "folderProject": false,
+    "orientation": "landscape",
+    "packageName": "io.afterlight.spalakh",
+    "pixelsRounding": false,
+    "projectUuid": "1c0443e0-59f9-410d-88b8-16c9b72dd09a",
+    "scaleMode": "linear",
+    "sizeOnStartupMode": "",
+    "templateSlug": "",
+    "version": "0.1.0",
+    "name": "ПІСЛЯСВІТ — Спалах Prototype 0.1",
+    "description": "Акварельний стелс-платформер про живий відблиск аварійного LED-маячка.",
+    "author": "Prototype",
+    "windowWidth": 1280,
+    "windowHeight": 720,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": true,
+    "platformSpecificAssets": {},
+    "loadingScreen": {
+      "backgroundColor": 790256,
+      "backgroundFadeInDuration": 0.2,
+      "backgroundImageResourceName": "",
+      "gdevelopLogoStyle": "light",
+      "logoAndProgressFadeInDuration": 0.2,
+      "logoAndProgressLogoFadeInDelay": 0,
+      "minDuration": 0.2,
+      "progressBarColor": 15748955,
+      "progressBarHeight": 15,
+      "progressBarMaxWidth": 200,
+      "progressBarMinWidth": 45,
+      "progressBarWidthPercent": 30,
+      "showGDevelopSplash": false,
+      "showProgressBar": true
+    },
+    "watermark": {
+      "placement": "bottom-left",
+      "showWatermark": false
+    },
+    "authorIds": [],
+    "authorUsernames": [],
+    "categories": [],
+    "playableDevices": [],
+    "extensionProperties": [],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_idle.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_idle.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_slow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_slow.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_run.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_run.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_jump.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_jump.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_fall.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_fall.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_dash.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_dash.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_crouch.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_crouch.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/spalakh_land.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/spalakh_land.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/watercolor_harbor_bg.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/watercolor_harbor_bg.jpg",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/underwater_fog.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/underwater_fog.jpg",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/platform_reef.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/platform_reef.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/crab.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/crab.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/glow_red.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/glow_red.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/sensor.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/sensor.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/gate.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/gate.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/buoy.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/buoy.png",
+        "smoothed": true,
+        "userAdded": true
+      }
+    ]
+  },
+  "objects": [],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT"
+  },
+  "objectsGroups": [],
+  "variables": [],
+  "layouts": [
+    {
+      "b": 21,
+      "disableInputWhenNotFocused": true,
+      "mangledName": "UnderwaterHarbor",
+      "name": "UnderwaterHarbor",
+      "r": 7,
+      "standardSortMethod": true,
+      "stopSoundsOnStartup": true,
+      "title": "ПІСЛЯСВІТ · Підводний порт",
+      "v": 32,
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridDepth": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridOffsetZ": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.7,
+        "snap": false,
+        "zoomFactor": 0.7,
+        "windowMask": false,
+        "selectedLayer": "",
+        "gameEditorMode": "instances-editor"
+      },
+      "objectsGroups": [],
+      "variables": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 720,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Background",
+          "persistentUuid": "7f90aebc-0258-4073-92cb-1152e4f01dd2",
+          "width": 2560,
+          "x": 0,
+          "y": 0,
+          "zOrder": -20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 488,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Glow",
+          "persistentUuid": "125e3d71-8beb-4497-ac1f-6bddf4d7a9ff",
+          "width": 488,
+          "x": -50,
+          "y": 250,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 256,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Player",
+          "persistentUuid": "c763a6b2-7b59-4312-9e05-259d3c88a3d2",
+          "width": 384,
+          "x": -168,
+          "y": 394,
+          "zOrder": 10,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 99,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Crab",
+          "persistentUuid": "29f5b05c-6623-4922-8941-76277ead7887",
+          "width": 170,
+          "x": 489,
+          "y": 524,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 140,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Sensor",
+          "persistentUuid": "67064d5b-dc87-41cb-b1c5-b85b7c345e6b",
+          "width": 110,
+          "x": 1820,
+          "y": 374,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 260,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Gate",
+          "persistentUuid": "ce877d81-5699-409c-96d6-3dde75821b8e",
+          "width": 70,
+          "x": 2250,
+          "y": 358,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 190,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Buoy",
+          "persistentUuid": "6517b173-b420-408c-8356-b75cad4a647b",
+          "width": 136,
+          "x": 2400,
+          "y": 397,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "30f3c746-3b81-4bfd-97b6-d82e32400df2",
+          "width": 730,
+          "x": 0,
+          "y": 616,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "30e6028a-3e27-4dfc-baeb-a686c4fa74dc",
+          "width": 528,
+          "x": 817,
+          "y": 616,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "a3c43880-ffd0-4b4c-a701-3992b78b113a",
+          "width": 558,
+          "x": 1455,
+          "y": 616,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 104,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "fd97765e-0f8a-451b-970b-5d4b3980b97d",
+          "width": 450,
+          "x": 2110,
+          "y": 616,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "ad4eb559-08c6-4326-9aa6-4b1e23a1e426",
+          "width": 250,
+          "x": 412,
+          "y": 498,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 46,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "d9783eba-0316-4563-9633-98e0b5899dfd",
+          "width": 250,
+          "x": 1010,
+          "y": 490,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "b824fe5f-b425-4b5d-b7f2-c2f15d5e9607",
+          "width": 320,
+          "x": 1655,
+          "y": 476,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 46,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Platform",
+          "persistentUuid": "9bf87d12-5604-46ad-a4d4-61c34c6104c6",
+          "width": 225,
+          "x": 2130,
+          "y": 446,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "HUD",
+          "name": "HUDHint",
+          "persistentUuid": "db184b35-418e-4677-86a6-f853c239c478",
+          "width": 0,
+          "x": 32,
+          "y": 647,
+          "zOrder": 100,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "HUD",
+          "name": "HUDStatus",
+          "persistentUuid": "dd4bc528-e211-4038-abd6-471fc700466d",
+          "width": 0,
+          "x": 32,
+          "y": 28,
+          "zOrder": 100,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Player",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Idle",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/spalakh_idle.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Slow",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/spalakh_slow.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Run",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/spalakh_run.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Jump",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/spalakh_jump.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Fall",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/spalakh_fall.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Dash",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/spalakh_dash.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Crouch",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/spalakh_crouch.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Land",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/spalakh_land.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Background",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/watercolor_harbor_bg.jpg",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Platform",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/platform_reef.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Crab",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/crab.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Glow",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/glow_red.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Sensor",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/sensor.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Gate",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/gate.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "Buoy",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "Default",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": true,
+                  "timeBetweenFrames": 0.1,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/buoy.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "HUDHint",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "smoothed": true,
+          "string": "Рухайся обережно. Швидкість запалює Спалаха.",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "r": 235,
+            "g": 240,
+            "b": 227
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "HUDStatus",
+          "type": "TextObject::Text",
+          "variables": [],
+          "behaviors": [],
+          "effects": [],
+          "bold": true,
+          "italic": false,
+          "underlined": false,
+          "smoothed": true,
+          "string": "СПАЛАХ · ПІДВОДНИЙ ПОРТ",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "r": 250,
+            "g": 163,
+            "b": 113
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 76,
+            "g": 209,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Основна механіка: Спалах світиться сильніше, коли швидше рухається. Код у наступній JavaScript-події можна редагувати."
+        },
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": [
+            "// ПІСЛЯСВІТ — Prototype 0.1. Editable GDevelop JavaScript event.",
+            "// All visual objects (Player, Crab, platforms, sensor, background) are native sprites.",
+            "// Move the Platform objects in the Scene editor to change the collision geometry.",
+            "if (!runtimeScene.__spalakhPrototype) {",
+            "/* ПІСЛЯСВІТ — Prototype 0.1: shared deterministic movement and stealth simulation */",
+            "var SpalakhSim = (function () {",
+            "  const WORLD_W = 2560;",
+            "  const PLATFORMS = [",
+            "    {x:0,y:616,w:730,h:104},{x:817,y:616,w:528,h:104},",
+            "    {x:1455,y:616,w:558,h:104},{x:2110,y:616,w:450,h:104},",
+            "    {x:412,y:498,w:250,h:45},{x:1010,y:490,w:250,h:46},",
+            "    {x:1655,y:476,w:320,h:45},{x:2130,y:446,w:225,h:46}",
+            "  ];",
+            "  function createState(){return {",
+            "    x:154,y:616,vx:0,vy:0,grounded:true,facing:1,brightness:.08,",
+            "    time:0,jumpHeld:false,dashHeld:false,dashTimer:0,dashCooldown:0,",
+            "    sensorOn:false,won:false,crabX:570,crabV:47,crabAlert:0,",
+            "    crabY:616,deaths:0,flash:0,hint:'Рухайся обережно. Швидкість запалює Спалаха.',",
+            "    paused:false",
+            "  };}",
+            "  function resetPosition(s){s.x=154;s.y=616;s.vx=0;s.vy=0;s.grounded=true;s.dashTimer=0;s.brightness=.08;s.flash=.55;s.deaths++;s.crabAlert=0;}",
+            "  function step(s,input,dt,platforms){",
+            "    dt=Math.max(0,Math.min(.04,dt||.016));",
+            "    if(s.won || s.paused) return s;",
+            "    const P=platforms||PLATFORMS;",
+            "    s.time+=dt;s.flash=Math.max(0,s.flash-dt*1.25);",
+            "    s.dashCooldown=Math.max(0,s.dashCooldown-dt);s.dashTimer=Math.max(0,s.dashTimer-dt);",
+            "    const direction=(input.right?1:0)-(input.left?1:0);",
+            "    const speedTarget=direction*(input.down?66:(input.boost?310:185));",
+            "    if(direction) s.facing=direction;",
+            "    const accelerating=direction?1080:(s.grounded?1490:860);",
+            "    const maxDelta=accelerating*dt;",
+            "    s.vx+=Math.max(-maxDelta,Math.min(maxDelta,speedTarget-s.vx));",
+            "    if(input.dash&&!s.dashHeld&&s.dashCooldown<=0){",
+            "      s.vx=s.facing*645;s.dashTimer=.15;s.dashCooldown=1.25;s.flash=.34;",
+            "    }",
+            "    s.dashHeld=!!input.dash;",
+            "    if(input.jump&&!s.jumpHeld && s.grounded){s.vy=-510;s.grounded=false;s.flash=.24;}",
+            "    s.jumpHeld=!!input.jump;",
+            "    if(s.dashTimer>0)s.vx=s.facing*645;",
+            "    s.vy=Math.min(670,s.vy+925*dt);",
+            "    const prevY=s.y;const nextY=s.y+s.vy*dt;",
+            "    s.x=Math.min(WORLD_W-22,Math.max(22,s.x+s.vx*dt));",
+            "    s.y=nextY;",
+            "    s.grounded=false;",
+            "    for(const p of P){",
+            "      if(s.vy>=0 && prevY<=p.y+5 && s.y>=p.y && s.x+16>p.x && s.x-16<p.x+p.w){",
+            "        s.y=p.y;s.vy=0;s.grounded=true;break;",
+            "      }",
+            "    }",
+            "    if(s.y>815)resetPosition(s);",
+            "    let desired=Math.min(1,Math.abs(s.vx)/350);",
+            "    if(s.dashTimer>0)desired=1;",
+            "    if(input.down)desired=Math.min(desired,.24);",
+            "    if(s.flash>0)desired=Math.max(desired,.5);",
+            "    s.brightness+=(Math.max(.06,desired)-s.brightness)*Math.min(1,dt*(desired>s.brightness?8:3.5));",
+            "    // Crab reacts to vibrations and its small underwater territory; no combat.",
+            "    const close=Math.abs(s.x-s.crabX);",
+            "    const disturbance=(Math.abs(s.vx)>95 || s.dashTimer>0) && close<240 && Math.abs(s.y-s.crabY)<110;",
+            "    if(disturbance)s.crabAlert=Math.min(2,s.crabAlert+dt*2.5);",
+            "    else s.crabAlert=Math.max(0,s.crabAlert-dt*.56);",
+            "    if(s.crabAlert>.27&&close<280){s.crabV=Math.sign(s.x-s.crabX||1)*(52+65*s.crabAlert);}",
+            "    else if(s.crabX<495){s.crabV=48;}else if(s.crabX>645){s.crabV=-48;}",
+            "    s.crabX+=s.crabV*dt;",
+            "    if(close<39&&Math.abs(s.y-s.crabY)<55) resetPosition(s);",
+            "    if(!s.sensorOn && Math.abs(s.x-1875)<86 && Math.abs(s.y-476)<150 && Math.abs(s.vx)>220){",
+            "      s.sensorOn=true;s.flash=.6;s.hint='Оптичний сенсор активований! Шлюз попереду відкрито.';",
+            "    }",
+            "    if(s.sensorOn&&s.x>2430&&s.y>370){s.won=true;s.hint='Сигнал прокинувся. Далі — шлях до поверхні.';}",
+            "    if(s.x<365 &&s.time>5)s.hint='Присідай (S або ↓), щоб зменшити світіння. Краб відчуває коливання.';",
+            "    if(s.x>1520&&!s.sensorOn)s.hint='Знайди сенсор серед уламків. Йому потрібен яскравий швидкий спалах.';",
+            "    if(s.x>2050&&s.sensorOn)s.hint='Портовий буй попереду. Завершіть рівень.';",
+            "    return s;",
+            "  }",
+            "  return {WORLD_W,PLATFORMS,createState,resetPosition,step};",
+            "})();",
+            "",
+            "  runtimeScene.__spalakhPrototype = {sim:SpalakhSim, state:SpalakhSim.createState(), cameraX:640};",
+            "}",
+            "const run = runtimeScene.__spalakhPrototype;",
+            "const sim = run.sim;",
+            "const s = run.state;",
+            "const pressed = key => gdjs.evtTools.input.isKeyPressed(runtimeScene,key);",
+            "const input = {",
+            "  left:pressed('Left')||pressed('a'),",
+            "  right:pressed('Right')||pressed('d'),",
+            "  down:pressed('Down')||pressed('s'),",
+            "  jump:pressed('Space')||pressed('Up')||pressed('w'),",
+            "  boost:pressed('LShift')||pressed('Shift'),",
+            "  dash:pressed('x')||pressed('k')",
+            "};",
+            "if(pressed('r')) { run.state=sim.createState(); }",
+            "const a = run.state;",
+            "const platformRects = runtimeScene.getObjects('Platform').map(p => ({x:p.getX(),y:p.getY(),w:p.getWidth(),h:p.getHeight()}));",
+            "const delta = Math.min(.04,runtimeScene.getElapsedTimeInSeconds());",
+            "sim.step(a,input,delta,platformRects.length ? platformRects : undefined);",
+            "const pl = runtimeScene.getObjects('Player')[0];",
+            "if (pl) {",
+            "  const anim = a.dashTimer>0?'Dash':(!a.grounded?(a.vy<0?'Jump':'Fall'):(input.down?'Crouch':(Math.abs(a.vx)>215?'Run':(Math.abs(a.vx)>30?'Slow':'Idle'))));",
+            "  if (pl.setAnimationName)pl.setAnimationName(anim);",
+            "  pl.setPosition(a.x-322,a.y-222);",
+            "  if(pl.flipX)pl.flipX(a.facing<0);",
+            "  if(pl.setOpacity)pl.setOpacity(38+62*a.brightness);",
+            "}",
+            "const halo = runtimeScene.getObjects('Glow')[0];",
+            "if (halo){halo.setPosition(a.x-244,a.y-317);if(halo.setOpacity)halo.setOpacity(12+84*a.brightness);}",
+            "const crab = runtimeScene.getObjects('Crab')[0];",
+            "if(crab){crab.setPosition(a.crabX-81,524);if(crab.flipX)crab.flipX(a.crabV<0);}",
+            "const sensor = runtimeScene.getObjects('Sensor')[0];",
+            "if(sensor && sensor.setOpacity)sensor.setOpacity(a.sensorOn ? 48:100);",
+            "const gate = runtimeScene.getObjects('Gate')[0];",
+            "if(gate && gate.setOpacity)gate.setOpacity(a.sensorOn?0:100);",
+            "const hint=runtimeScene.getObjects('HUDHint')[0];",
+            "if(hint && hint.setString)hint.setString(a.hint);",
+            "const status=runtimeScene.getObjects('HUDStatus')[0];",
+            "if(status && status.setString)status.setString(a.won?'ПРОТОТИП ПРОЙДЕНО':a.sensorOn?'СЕНСОР АКТИВОВАНО':'СПАЛАХ · ПІДВОДНИЙ ПОРТ');",
+            "// Camera centered around player but constrained to watercolor background boundaries.",
+            "const cameraTarget=Math.max(640,Math.min(1920,a.x+200));",
+            "run.cameraX += (cameraTarget-run.cameraX)*Math.min(1,delta*3.4);",
+            "if (gdjs.evtTools.camera.setCameraX)gdjs.evtTools.camera.setCameraX(runtimeScene,run.cameraX,'',0);"
+          ],
+          "parameterObjects": "",
+          "useStrict": false,
+          "eventsSheetExpanded": true
+        }
+      ],
+      "layers": [
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [
+            {
+              "defaultSize": true,
+              "defaultViewport": true,
+              "height": 0,
+              "viewportBottom": 1,
+              "viewportLeft": 0,
+              "viewportRight": 1,
+              "viewportTop": 0,
+              "width": 0
+            }
+          ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera2DPlaneMaxDrawingDistance": 5000,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "HUD",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
+          "effects": []
+        }
+      ],
+      "behaviorsSharedData": []
+    }
+  ],
+  "externalEvents": [],
+  "tests": [],
+  "externalLayouts": [],
+  "externalSourceFiles": []
+}
