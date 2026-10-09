@@ -3326,14 +3326,6 @@
         "userAdded": true
       },
       {
-        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_run_07.png",
-        "kind": "image",
-        "metadata": "",
-        "name": "assets/v084e/player/spalakh_run_07.png",
-        "smoothed": true,
-        "userAdded": true
-      },
-      {
         "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_jump_00.png",
         "kind": "image",
         "metadata": "",
@@ -6292,23 +6284,6 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets/v084e/player/spalakh_run_06.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    },
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_run_07.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10175,23 +10150,6 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets/v084e/player/spalakh_run_06.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": []
-                    },
-                    {
-                      "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_run_07.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
