@@ -3358,26 +3358,26 @@
         "userAdded": true
       },
       {
-        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_fall_00.png",
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/refresh_20261010/spalakh_fall_00.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets/v084e/player/spalakh_fall_00.png",
+        "name": "assets/v084e/player/refresh_20261010/spalakh_fall_00.png",
         "smoothed": true,
         "userAdded": true
       },
       {
-        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_fall_01.png",
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/refresh_20261010/spalakh_fall_01.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets/v084e/player/spalakh_fall_01.png",
+        "name": "assets/v084e/player/refresh_20261010/spalakh_fall_01.png",
         "smoothed": true,
         "userAdded": true
       },
       {
-        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_fall_02.png",
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/refresh_20261010/spalakh_fall_02.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets/v084e/player/spalakh_fall_02.png",
+        "name": "assets/v084e/player/refresh_20261010/spalakh_fall_02.png",
         "smoothed": true,
         "userAdded": true
       },
@@ -3462,34 +3462,34 @@
         "userAdded": true
       },
       {
-        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_land_00.png",
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/refresh_20261010/spalakh_land_00.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets/v084e/player/spalakh_land_00.png",
+        "name": "assets/v084e/player/refresh_20261010/spalakh_land_00.png",
         "smoothed": true,
         "userAdded": true
       },
       {
-        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_land_01.png",
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/refresh_20261010/spalakh_land_01.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets/v084e/player/spalakh_land_01.png",
+        "name": "assets/v084e/player/refresh_20261010/spalakh_land_01.png",
         "smoothed": true,
         "userAdded": true
       },
       {
-        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_land_02.png",
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/refresh_20261010/spalakh_land_02.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets/v084e/player/spalakh_land_02.png",
+        "name": "assets/v084e/player/refresh_20261010/spalakh_land_02.png",
         "smoothed": true,
         "userAdded": true
       },
       {
-        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_land_03.png",
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/refresh_20261010/spalakh_land_03.png",
         "kind": "image",
         "metadata": "",
-        "name": "assets/v084e/player/spalakh_land_03.png",
+        "name": "assets/v084e/player/refresh_20261010/spalakh_land_03.png",
         "smoothed": true,
         "userAdded": true
       },
@@ -6400,7 +6400,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_fall_00.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_fall_00.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -6417,7 +6417,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_fall_01.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_fall_01.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -6434,7 +6434,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_fall_02.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_fall_02.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -6657,7 +6657,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_land_00.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_land_00.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -6674,7 +6674,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_land_01.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_land_01.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -6691,7 +6691,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_land_02.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_land_02.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -6708,7 +6708,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_land_03.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_land_03.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10283,7 +10283,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_fall_00.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_fall_00.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10300,7 +10300,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_fall_01.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_fall_01.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10317,7 +10317,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_fall_02.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_fall_02.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10540,7 +10540,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_land_00.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_land_00.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10557,7 +10557,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_land_01.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_land_01.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10574,7 +10574,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_land_02.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_land_02.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10591,7 +10591,7 @@
                     },
                     {
                       "hasCustomCollisionMask": false,
-                      "image": "assets/v084e/player/spalakh_land_03.png",
+                      "image": "assets/v084e/player/refresh_20261010/spalakh_land_03.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
