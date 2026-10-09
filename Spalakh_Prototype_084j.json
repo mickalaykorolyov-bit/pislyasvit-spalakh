@@ -3815,6 +3815,134 @@
         "name": "assets/v084j/sensor/sensor_halo_on.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_slow_08.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_slow_08.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_slow_09.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_slow_09.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_slow_10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_slow_10.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_slow_11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_slow_11.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_slow_12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_slow_12.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_slow_13.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_slow_13.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_06.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_06.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_07.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_07.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_08.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_08.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_09.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_09.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_10.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_10.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_11.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_11.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_12.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_12.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_13.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_13.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_14.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_14.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_idle_15.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_idle_15.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ]
   },
@@ -5673,7 +5801,7 @@
               "directions": [
                 {
                   "looping": true,
-                  "timeBetweenFrames": 0.18,
+                  "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -5776,6 +5904,176 @@
                         "y": 0
                       },
                       "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_06.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_07.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_08.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_09.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_10.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_11.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_12.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_13.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_14.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_15.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
                     }
                   ]
                 }
@@ -5787,7 +6085,7 @@
               "directions": [
                 {
                   "looping": true,
-                  "timeBetweenFrames": 0.11,
+                  "timeBetweenFrames": 0.062857,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -5911,6 +6209,108 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets/v084e/player/spalakh_slow_07.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_08.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_09.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_10.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_11.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_12.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_13.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -9386,7 +9786,7 @@
               "directions": [
                 {
                   "looping": true,
-                  "timeBetweenFrames": 0.18,
+                  "timeBetweenFrames": 0.08,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -9489,6 +9889,176 @@
                         "y": 0
                       },
                       "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_06.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_07.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_08.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_09.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_10.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_11.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_12.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_13.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_14.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_idle_15.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
                     }
                   ]
                 }
@@ -9500,7 +10070,7 @@
               "directions": [
                 {
                   "looping": true,
-                  "timeBetweenFrames": 0.11,
+                  "timeBetweenFrames": 0.062857,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -9624,6 +10194,108 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets/v084e/player/spalakh_slow_07.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_08.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_09.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_10.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_11.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_12.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_slow_13.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
