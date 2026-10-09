@@ -6370,7 +6370,7 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": true,
+                  "looping": false,
                   "timeBetweenFrames": 0.12,
                   "sprites": [
                     {
@@ -8908,7 +8908,7 @@
             "const previousGrounded=a.grounded;",
             "run.sim.step(a,input,delta,rects.length ? rects : undefined);",
             "if(a.deaths!==run.lastDeaths){run.trailHistory=[];run.trailAcc=0;run.bodyVisibility=0;run.lastBodyTint=-1;run.lastDeaths=a.deaths;}",
-            "if(!previousGrounded && a.grounded && a.vy===0)run.landingTimer=.19;",
+            "if(!previousGrounded && a.grounded && a.vy===0)run.landingTimer=.40;",
             "run.landingTimer=Math.max(0,run.landingTimer-delta);",
             "// 0.2 light motion: independent inertia, slower dimming than ignition.",
             "const heatTarget=Math.max(.05,Math.min(1,a.brightness));",
@@ -8920,7 +8920,7 @@
             "const speed=Math.abs(a.vx);",
             "// Animation priority: dash / aerial / land / sneak / run / walk / idle.",
             "let anim=a.dashTimer>0?'Dash':(!a.grounded?(a.vy<0?'Jump':'Fall'):",
-            "  (input.down?'Crouch':(run.landingTimer>0?'Land':(speed>215?'Run':(speed>30?'Slow':'Idle')))));",
+            "  (run.landingTimer>0?'Land':(input.down?'Crouch':(speed>215?'Run':(speed>30?'Slow':'Idle')))));",
             "const pl=runtimeScene.getObjects('Player')[0];",
             "if(pl){",
             "  // Only switch animation when the state changes: do not restart it on every tick.",
@@ -10236,7 +10236,7 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": true,
+                  "looping": false,
                   "timeBetweenFrames": 0.12,
                   "sprites": [
                     {
@@ -18813,7 +18813,7 @@
             "  for(const p of rects){",
             "    if(s.vy>=0 && oldY<=p.y+6 && s.y>=p.y && s.x+15>p.x && s.x-15<p.x+p.w){s.y=p.y;s.vy=0;landed=true;break;}",
             "  }",
-            "  if(!s.grounded&&landed)s.landTimer=.14;",
+            "  if(!s.grounded&&landed)s.landTimer=.40;",
             "  s.grounded=landed;",
             "  if(landed)s.coyote=C.coyote;",
             "  s.landTimer=Math.max(0,s.landTimer-dt);",
@@ -19240,7 +19240,7 @@
             "// Character: fixed feet pivot across all 8 animations; only the sprite's opacity and tint fade, not its scale or collision.",
             "const P=get('Player');const speed=Math.abs(s.vx);",
             "const anim=s.dashTimer>0?'Dash':(!s.grounded?(s.vy<0?'Jump':'Fall'):",
-            " (i.down?'Crouch':(s.landTimer>0?'Land':(speed>215?'Run':(speed>30?'Slow':'Idle')))));",
+            " (s.landTimer>0?'Land':(i.down?'Crouch':(speed>215?'Run':(speed>30?'Slow':'Idle')))));",
             "if(P){",
             "  if(s.animation!==anim){if(P.setAnimationName)P.setAnimationName(anim);s.animation=anim;}",
             "  if(P.setAnimationSpeedScale)P.setAnimationSpeedScale(anim==='Run'?clamp(speed/310,.72,1.15):anim==='Slow'?clamp(speed/150,.82,1.08):1);",
