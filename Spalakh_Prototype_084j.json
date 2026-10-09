@@ -3414,6 +3414,14 @@
         "userAdded": true
       },
       {
+        "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_dash_05.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/v084e/player/spalakh_dash_05.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
         "file": "https://mickalaykorolyov-bit.github.io/pislyasvit-spalakh/assets/v084e/player/spalakh_crouch_00.png",
         "kind": "image",
         "metadata": "",
@@ -6433,8 +6441,8 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": true,
-                  "timeBetweenFrames": 0.06,
+                  "looping": false,
+                  "timeBetweenFrames": 0.023,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -6507,6 +6515,23 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets/v084e/player/spalakh_dash_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_dash_05.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -10299,8 +10324,8 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": true,
-                  "timeBetweenFrames": 0.06,
+                  "looping": false,
+                  "timeBetweenFrames": 0.023,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -10373,6 +10398,23 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "assets/v084e/player/spalakh_dash_04.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    },
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "assets/v084e/player/spalakh_dash_05.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
