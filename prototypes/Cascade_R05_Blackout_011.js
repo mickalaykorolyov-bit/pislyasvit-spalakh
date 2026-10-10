@@ -1,7 +1,9 @@
 // R05 / ЗАБІГ У ТЕМРЯВІ: blackout, speed test, spiders, glow-catch sensors.
 const ROOM=5;
 spawn({x:112,y:635});
-if(!S.initialized){S.initialized=true;S.cellTimers=[0,0,0];S.webObtained=false;setCheckpoint(5,112,635);message('НА ДАЛЕКОМУ КРАЇ ПАВУТИННЯ Є ЛІТЕРА. ВИМКНИ ОСВІТЛЕННЯ ТА БІЖИ!',5.7);}
+if(!S.initialized){S.initialized=true;S.cellTimers=[0,0,0];S.webObtained=false;
+ if(!D.oxygenParts.chase){D.chaseBlackout=false;D.chaseClock=0;}
+ setCheckpoint(5,112,635);message('НА ДАЛЕКОМУ КРАЇ ПАВУТИННЯ Є ЛІТЕРА. ВИМКНИ ОСВІТЛЕННЯ ТА БІЖИ!',5.7);}
 const SW={x:216,y:588},WEB={x:1140,y:579},EXIT={x:73,y:588};
 const SENSOR_X=[402,727,1000],LAMPS=[424,751,1020];
 const SPIDERS=[{x:589,y:627,scale:1.1},{x:902,y:627,scale:1.12},{x:1102,y:627,scale:1.26}];
@@ -27,8 +29,8 @@ if(!S.dead&&!S.transition&&!D.gameWon){
    goTo(2,'FROM_CHASE',{x:1012,y:2460});
   }else if(dist(S.x,S.y-35,SW.x,SW.y)<100&&!D.oxygenParts.chase){
    if(!D.chaseBlackout){
-    D.chaseBlackout=true;D.chaseClock=15;S.fx=.8;S.alert={};S.cellTimers=[0,0,0];
-    message('СВІТЛО ВИМКНУЛОСЯ! 15 СЕКУНД. БІЖИ ДО ПАВУТИНИ ПРАВОРУЧ!',4.1);
+    D.chaseBlackout=true;D.chaseClock=9;S.fx=.8;S.alert={};S.cellTimers=[0,0,0];
+    message('СВІТЛО ВИМКНУЛОСЯ! 9 СЕКУНД. БІЖИ ДО ПАВУТИНИ ПРАВОРУЧ!',4.1);
    }
   }else if(dist(S.x,S.y-38,WEB.x,WEB.y)<84){
    if(!D.chaseBlackout&&!D.oxygenParts.chase)message('У ПАВУТИНІ НІЧОГО НЕ ВИДНО. СПОЧАТКУ ВИМКНИ СВІТЛО.',3.7);
@@ -86,7 +88,7 @@ if(FG.ok){
  for(let n=0;n<SPIDERS.length;n++)drawSpider(w,SPIDERS[n],n,pools);
  rect(w,47,547,70,88,0x23505b,.97);w.lineStyle(3,0xa0f8e1,.89);w.drawRoundedRect(47,547,70,88,7);
  if(D.chaseBlackout&&!D.oxygenParts.chase){
-  const factor=clamp(D.chaseClock/15,0,1);
+  const factor=clamp(D.chaseClock/9,0,1);
   rect(w,570,135,450,15,0x372738,.93);
   rect(w,573,137,444*factor,11,D.chaseClock<5?0xff596d:0xffae8d,.95);
   if(FG.front){
