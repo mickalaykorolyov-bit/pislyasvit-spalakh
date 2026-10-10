@@ -43,19 +43,19 @@ const travellingRay=()=>866+130*Math.sin(s.elapsed*.74);
 const coneSpots=()=>{
  const rays=[{x:116,y:584,r:140,name:'start'}];
  // M1: physical bridge and a hand-off safe pool at its far shore.
- if(s.modes[0]===0)rays.push({x:310,y:588,r:103});
+ if(s.modes[0]===0)rays.push({x:310,y:588,r:103,source:0});
  if(s.modes[0]===1){
-  rays.push({x:474,y:583,r:104},{x:573,y:583,r:103},{x:673,y:583,r:117},{x:732,y:583,r:95});
+  rays.push({x:474,y:583,r:104,source:0},{x:573,y:583,r:103,source:0},{x:673,y:583,r:117,source:0},{x:732,y:583,r:95,source:0});
  }
- if(s.modes[0]===2)rays.push({x:830,y:583,r:113});
+ if(s.modes[0]===2)rays.push({x:830,y:583,r:113,source:0});
  // M2: a walking spotlight, then a fixed beam that doubles as iris input.
- if(s.modes[1]===0)rays.push({x:778,y:478,r:102});
- if(s.modes[1]===1)rays.push({x:travellingRay(),y:583,r:141});
- if(s.modes[1]===2)rays.push({x:913,y:583,r:174});
+ if(s.modes[1]===0)rays.push({x:778,y:478,r:102,source:1});
+ if(s.modes[1]===1)rays.push({x:travellingRay(),y:583,r:141,source:1});
+ if(s.modes[1]===2)rays.push({x:913,y:583,r:174,source:1});
  // M3: a rehearsal arc or long final cover.
- if(s.modes[2]===0)rays.push({x:1060,y:382,r:110});
- if(s.modes[2]===1)rays.push({x:1045+78*Math.sin(s.elapsed*.68),y:552,r:103});
- if(s.modes[2]===2)rays.push({x:1151,y:583,r:180});
+ if(s.modes[2]===0)rays.push({x:1060,y:382,r:110,source:2});
+ if(s.modes[2]===1)rays.push({x:1045+78*Math.sin(s.elapsed*.68),y:552,r:103,source:2});
+ if(s.modes[2]===2)rays.push({x:1151,y:583,r:180,source:2});
  return rays;
 };
 const sheltered=(x,y)=>coneSpots().some(spot=>d(x,y,spot.x,spot.y)<spot.r);
@@ -199,7 +199,7 @@ if(fx.ok){
   // In-water optic cone, not a fake background decoration.
   bloom(bg,ray.x,ray.y,ray.r,tint,isStart?.13:.20);
   if(!isStart){
-   const source=ray.x<610?PROJECTORS[0]:ray.x<985?PROJECTORS[1]:PROJECTORS[2];
+   const source=PROJECTORS[ray.source]||PROJECTORS[0];
    bg.beginFill(0xa2e8f6,.026);bg.drawPolygon([
     source.x,source.y+25,ray.x-42,ray.y,ray.x+42,ray.y]);bg.endFill();
   }
