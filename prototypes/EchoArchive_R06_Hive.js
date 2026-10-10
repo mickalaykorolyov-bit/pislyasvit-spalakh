@@ -24,7 +24,7 @@ if(!S.dead&&!D.won){
   S.cartX=clamp(S.cartX+S.x-before,357,1033);
   S.x=S.cartX+S.cartSide*68;S.y=635;S.vy=0;S.ground=true;
   if(S.cartX>=960&&!D.hiveNest){
-   D.hiveNest=true;S.fleas=0;S.shake=.9;
+   D.hiveNest=true;S.fleas=0;S.cartGrab=false;S.shake=.9;
    say('ВІЗОК РОЗДАВИВ БЛОШИНЕ ГНІЗДО! ЗАЛИШИЛАСЯ МЕТАЛЕВА КАПСУЛА ПРАВОРУЧ.',5.2);
   }
  }
@@ -37,7 +37,7 @@ if(!S.dead&&!D.won){
   }else if(E&&!S.cartGrab&&distance(S.x,S.y-36,WASH.x,WASH.y)<94){
    S.fleas=0;S.fleaTick=0;S.shake=.35;
    say('ВОДЯНИЙ ДУШ ЗМИВ УСІХ БЛІХ. ШВИДКІСТЬ СПАЛАХА ВІДНОВЛЕНО.',4);
-  }else if(E&&D.hiveNest&&distance(S.x,S.y-36,TOKEN.x,TOKEN.y)<96){
+  }else if(E&&D.hiveNest&&!D.hiveToken&&distance(S.x,S.y-36,TOKEN.x,TOKEN.y)<96){
    D.hiveToken=true;S.shake=.85;
    say('ЗНАЙДЕНО КАПСУЛУ СВІТЛОВОГО ПИЛУ. ВОНА ПОТРІБНА ДЛЯ ЖИВЛЕННЯ ФІНАЛЬНОГО АРХІВУ.',5);
   }else if(E&&distance(S.x,S.y-35,1209,585)<90){
