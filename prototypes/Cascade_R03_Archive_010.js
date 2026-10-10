@@ -78,6 +78,7 @@ gdjs.evtTools.camera.setCameraY(runtimeScene,360,'',0);
 if(FG.ok){
  drawBase();
  const w=FG.world,b=FG.back;
+ w.clear();
  for(const p of ledges)platform(w,p);
  drawLights(pools);
  // Shelves cast long silhouettes and get relocated by player forces.
