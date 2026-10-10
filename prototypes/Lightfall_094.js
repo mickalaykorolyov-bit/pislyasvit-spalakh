@@ -17,7 +17,7 @@ const platforms=[
  {x:931,y:307,w:186,h:18},{x:1070,y:408,w:122,h:18}
 ];
 const springs=[{x:334,y:631,w:68},{x:793,y:631,w:72}];
-const hook={x:485,y:264},gate={x:588,y:560,w:197,h:75},
+const hook={x:485,y:318},gate={x:588,y:560,w:197,h:75},
 target={x:1081,y:213},ammo={x:855,y:347};
 const lampPos=[486,786,1085],bulbX=[899,1022,1145];
 const spiders=[920,1065,1179];
@@ -27,7 +27,7 @@ function fresh(){
  light:.12,flash:0,trail:[],trailAcc:0,
  lamps:lampPos.map((x,n)=>({x,y:lampStart[n],state:'ready',countdown:0,vy:0})),
  litAt:-1,slideMeters:0,slideHeld:false,sliding:false,
- bounceCd:0,lastSpring:-1,stone:false,shot:null,
+ bounceCd:0,lastSpring:-1,lastBounceT:-99,stone:false,shot:null,
  dashTimer:0,dashCooldown:0,dashHeld:false,useHeld:false,throwHeld:false,
  jumpHeld:false,jumpBuffer:0,jumpHold:0,coyote:0,
  dead:false,deathTime:0,deaths:0,shield:1.3,alert:0,landTimer:0,
@@ -149,12 +149,13 @@ if(!s.dead&&!s.won&&dt){
   const q=springs[n];
   if(s.bounceCd<=0&&Math.abs(s.x-(q.x+q.w/2))<q.w/2+8&&s.y>=625&&s.ground){
    s.vy=-865;s.ground=false;s.coyote=0;s.bounceCd=.53;s.lastSpring=n;
-   s.flash=.45;say(n===0?'БАТУТ! РИВОК X У ПОВІТРІ ЗАПУСКАЄ ПЕРШУ ЛАМПУ.':
+   s.lastBounceT=s.time;s.flash=.45;say(n===0?'БАТУТ! РИВОК X У ПОВІТРІ ЗАПУСКАЄ ПЕРШУ ЛАМПУ.':
     'БАТУТ! ЗАСТРИБНИ НА ВЕРХНЮ ПЛАТФОРМУ З КАМЕНЕМ.',3.4);
   }
  }
  // Hook can only be struck by airborne dash.
  if(s.lamps[0].state==='ready'&&!s.ground&&s.dashTimer>0&&
+   s.lastSpring===0&&s.time-s.lastBounceT<1.5&&
    distance(s.x,s.y-48,hook.x,hook.y)<97)
   trigger(0,'СТЕЛЬОВИЙ ГАК ЗБИТО РИВКОМ X');
  // Sliding below the shutter reaches the orange mechanical latch.
