@@ -348,3 +348,50 @@ if(gfx.ok){
   box(t,967,103,270*s.alert,7,0xf35a75,.75);
  }
 }
+
+// Original 52 Spalakh animation frames from our GDevelop project.
+const p=get('Player'),isSafe=shelter(s.x,s.y-40);
+if(p){
+ const anim=s.dead?'Fall':!s.ground?(s.vy<0?'Jump':'Fall'):
+ (s.landTimer>0?'Land':s.sliding?'Crouch':Math.abs(s.vx)>153?'Run':Math.abs(s.vx)>19?'Slow':'Idle');
+ if(p.getAnimationName&&p.getAnimationName()!==anim&&p.setAnimationName)p.setAnimationName(anim);
+ if(p.setAnimationSpeedScale)p.setAnimationSpeedScale(anim==='Run'?clamp(Math.abs(s.vx)/260,.80,1.55):1);
+ const scale=s.sliding?.49:.55;
+ if(p.setScale)p.setScale(scale);
+ p.setPosition(s.x-192*scale,s.y-242*scale);
+ if(p.flipX)p.flipX(s.face<0);
+ if(p.setOpacity)p.setOpacity(s.dead?0:(isSafe?54:clamp(145+s.light*105,145,255)));
+}
+gdjs.evtTools.camera.setCameraX(runtimeScene,640,'',0);
+gdjs.evtTools.camera.setCameraY(runtimeScene,360,'',0);
+hud('HUDTitle','ПІСЛЯСВІТ    /    СВІТЛОПАД');
+hud('HUDStatus','ЛАМПИ '+s.lamps.map((l,n)=>l.state==='landed'?'●':l.state==='ready'?'○':'◐').join('   ')+
+ '     '+s.lamps.filter(l=>l.state==='landed').length+'/3'+
+ '       |       '+(isSafe?'НЕПОМІТНИЙ У СВІТЛІ':'ПОМІТНИЙ У ТЕМРЯВІ')+
+ '       |       ЗАГИБЕЛЕЙ '+s.deaths);
+let task='ТРИ ШЛЯХИ ДО СВІТЛА: БАТУТ → ГАК (X), КОВЗАННЯ (S + D), КАМІНЬ → ТРОС (E, F).';
+if(complete())task='СВІТЛО ВМИКАЄТЬСЯ! ПРОЙДИ НИЖНІМ КОРИДОРОМ ПОВЗ ПАВУКІВ ДО ВИХОДУ.';
+else if(s.lamps[0].state==='ready'&&s.x<565&&s.y<457)
+ task='01 / СКОРИСТАЙСЯ ЛІВИМ БАТУТОМ, У ПОЛЬОТІ ЗБИЙ ВЕРХНІЙ ГАК РИВКОМ X.';
+else if(s.lamps[1].state==='ready'&&s.x>545&&s.x<835&&s.y>569)
+ task='02 / КОВЗАННЯ: ТРИМАЙ S + D І ПРОСКОВЗНИ ПІД НИЗЬКОЮ ПЕРЕГОРОДКОЮ.';
+else if(s.lamps[2].state==='ready'&&s.x>763&&s.x<1130&&s.y<469)
+ task=s.stone?'03 / КАМІНЬ У РУКАХ. ДИВИСЯ ПРАВОРУЧ І КИНЬ F У ВЕРХНІЙ ЧЕРВОНИЙ ГАК.':
+ '03 / БАТУТ ПРАВОРУЧ → ВЕРХНЯ ПЛАТФОРМА → ВЗЯТИ КАМІНЬ E → КИНУТИ F.';
+if(s.lamps.some(l=>l.state==='warning'||l.state==='falling'))task='УВАГА! ЛАМПА ПАДАЄ! ВІДІЙДИ ВІД ВЕРТИКАЛЬНОЇ ШАХТИ.';
+if(s.x>854&&s.y>565&&!complete())task=isSafe?
+ 'У СВІТЛІ ТЕБЕ НЕ БАЧАТЬ, АЛЕ ДАЛІ ЩЕ ТЕМНО. ПОВЕРНИСЯ ДО МЕХАНІЗМІВ.':
+ 'У ТЕМРЯВІ ПАВУКИ БАЧАТЬ ТЕБЕ. ЗАПАЛИ УСІ ТРИ ЛАМПИ.';
+if(s.won)task='КІМНАТУ ПРОЙДЕНО! СПАЛАХ ПЕРЕТВОРИВ ПАСТКИ НА СВІТЛО.';
+hud('HUDTask',task);
+hud('HUDHint','A/D — РУХ    SPACE — СТРИБОК    SHIFT — БІГ    S + D — КОВЗАННЯ    X — РИВОК    E — ВЗЯТИ КАМІНЬ    F — КИНУТИ    R — СПОЧАТКУ');
+hud('HUDMessage',s.messageTime>0?s.message:'');
+hud('W01',(active(0)?'✓':'1')+' БАТУТ + РИВОК X');
+hud('W02',(active(1)?'✓':'2')+' КОВЗАННЯ S + D');
+hud('W03',(active(2)?'✓':'3')+' КИДОК КАМЕНЯ F');
+hud('W04','УВАГА: ЛАМПИ МОЖУТЬ УБИТИ');
+hud('W05','СВІТЛО ХОВАЄ СПАЛАХА');
+hud('WLamp',complete()?'ЛАМПИ ГОРЯТЬ. ПАВУКИ НЕ БАЧАТЬ.':'ПАВУКИ ЧЕКАЮТЬ У ТЕМРЯВІ');
+hud('HUDWin',s.won?'СВІТЛОПАД ПРОЙДЕНО':'');
+const win=get('HUDWin');if(win&&win.setOpacity)win.setOpacity(s.won?255:0);
+})();
