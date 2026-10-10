@@ -3,7 +3,7 @@
 const ROOM=3;
 spawn({x:117,y:635});checkpoint(115,635);
 const P=[{x:0,y:635,w:1280,h:85},{x:273,y:522,w:195,h:18},{x:745,y:516,w:190,h:18}];
-const RECORD={x:445,y:586},PAD={x:570,y:613},FAR={x:868,y:585},GATE={x:1208,y:585};
+const RECORD={x:445,y:586},PAD={x:570,y:613},FAR={x:833,y:585},GATE={x:1208,y:585};
 let pools=[{x:132,y:581,r:188},{x:510,y:582,r:169},{x:904,y:573,r:150}];
 if(S.ghostPoint)pools.push({x:S.ghostPoint.x,y:S.ghostPoint.y,r:99,c:0xb3acff,a:.15});
 if(!S.echoInit){
@@ -23,7 +23,7 @@ if(!S.dead&&!D.won){
    visit(2,{x:1115,y:323});
   }
  }
- if(!D.echoPuzzle&&echoNear(FAR.x,FAR.y,81)&&distance(S.x,S.y-29,PAD.x,PAD.y)<91){
+ if(!D.echoPuzzle&&echoNear(FAR.x,FAR.y,105)&&distance(S.x,S.y-29,PAD.x,PAD.y)<91){
   S.padWait+=dt;
   if(S.padWait>=.18){
    D.echoPuzzle=true;S.shake=.9;
@@ -51,7 +51,7 @@ if(A.ok){
  w.lineStyle(4,D.echoPuzzle?0x8effd8:0xa59dff,.97);
  w.drawCircle(FAR.x,FAR.y,30);
  circle(w,FAR.x,FAR.y,12,D.echoPuzzle?0x8afee3:0x7965af);
- halo(b,FAR.x,FAR.y,78,echoNear(FAR.x,FAR.y,81)?0xc4b0ff:0x7881ae,.13);
+ halo(b,FAR.x,FAR.y,78,echoNear(FAR.x,FAR.y,105)?0xc4b0ff:0x7881ae,.13);
  for(let x=470;x<904;x+=74){
   line(w,x,496,x+32,496,0x8f88be,.39,2);
   circle(w,x+17,496,4,0xad93de,.56);
