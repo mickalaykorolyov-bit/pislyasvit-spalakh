@@ -15,9 +15,9 @@ const dt=clamp(gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene),
 const game=runtimeScene.getGame();
 function freshGame(){return{
  glyph:{circle:false,triangle:false,zigzag:false},
- originSensor:false,scrollScorched:0,waterShield:false,
+ originSensor:false,scrollScorched:0,waterShield:false,dampUntil:0,
  shaftSensor:false,shaftTop:false,gravityActivated:false,
- monsterBroken:false,shardTarget:false,
+ monsterBroken:false,shardTarget:false,hasShard:false,
  fleaNestBroken:false,
  finalSensor:false,finalTarget:false,won:false,
  deaths:0,time:0,
@@ -126,7 +126,7 @@ function walk(platforms,options={}){
  if(K.jump&&!S.jumpHeld)S.jumpBuf=.13;
  else S.jumpBuf=Math.max(0,S.jumpBuf-dt);
  if(S.jumpBuf>0&&(S.ground||S.coyote>0)&&!K.down){
-  S.vy=(S.gravity===1?1:-1)*-550;S.jumpBuf=0;S.coyote=0;S.ground=false;
+  S.vy=S.gravity*550;S.jumpBuf=0;S.coyote=0;S.ground=false;
  }
  if(S.jumpHeld&&!K.jump&&(S.gravity===-1?S.vy< -170:S.vy>170))S.vy*=.6;
  S.jumpHeld=K.jump;
@@ -214,13 +214,18 @@ function shards(room,pools,target=null){
   part.y+=clamp(dy/dd*sp*chase*dt,-3,3);
   if(dd<31)hurt('УЛАМОК МОНСТРА',1);
  }
+ if(D.hasShard&&!S.carryShard){
+  S.carryShard=true;
+  S.heldPart=S.shards.find(p=>!p.held)||S.shards[0];
+  S.heldPart.held=true;
+ }
  if(E&&!S.carryShard){
   const part=S.shards.find(p=>!p.held&&distance(S.x,S.y-34,p.x,p.y)<90);
-  if(part){part.held=true;S.carryShard=true;S.heldPart=part;
+  if(part){part.held=true;S.carryShard=true;D.hasShard=true;S.heldPart=part;
    say('УЛАМОК У РУКАХ. F — КИНУТИ. ПАМ’ЯТАЙ: ІНШІ УЛАМКИ ПЕРЕСЛІДУЮТЬ!',4);}
  }
  if(F&&S.carryShard){
-  const part=S.heldPart;S.carryShard=false;S.heldPart=null;
+  const part=S.heldPart;S.carryShard=false;D.hasShard=false;S.heldPart=null;
   S.projectile={x:S.x+S.face*21,y:S.y-45,vx:S.face*450,vy:-120,time:1.7,part};
  }
  if(S.projectile){
