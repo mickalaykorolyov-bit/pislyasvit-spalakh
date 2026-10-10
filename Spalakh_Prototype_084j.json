@@ -6442,7 +6442,7 @@
               "directions": [
                 {
                   "looping": false,
-                  "timeBetweenFrames": 0.025,
+                  "timeBetweenFrames": 0.028,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -8903,7 +8903,7 @@
             "};",
             "if(pressed('r')) {",
             "  run.state=run.sim.createState();run.landingTimer=0;run.trailHistory=[];",
-            "  run.trailAcc=0;run.priorGrounded=true;run.lightSmooth=.08;run.lastDeaths=0;run.bodyVisibility=0;run.lastBodyTint=-1;run.transitionSpaceArmed=false;run.transitionStarted=false;",
+            "  run.trailAcc=0;run.priorGrounded=true;run.lightSmooth=.08;run.lastDeaths=0;run.bodyVisibility=0;run.lastBodyTint=-1;run.transitionSpaceArmed=false;run.transitionStarted=false;run._dashVisualRemaining=0;run._dashVisualWasActive=false;",
             "}",
             "const a=run.state;",
             "const delta=Math.max(0,Math.min(.04,gdjs.evtTools.runtimeScene.getElapsedTimeInSeconds(runtimeScene)));",
@@ -8944,7 +8944,11 @@
             "// No body-size oscillation. Only flame-tendril pixels change across frames.",
             "const speed=Math.abs(a.vx);",
             "// Animation priority: dash / aerial / land / sneak / run / walk / idle.",
-            "let anim=a.dashTimer>0?'Dash':(!a.grounded?(a.vy<0?'Jump':'Fall'):",
+            "// Visual-only dash tail: finish the six-frame animation without changing dash physics.",
+            "if(a.dashTimer>0 && !run._dashVisualWasActive)run._dashVisualRemaining=.18;",
+            "else run._dashVisualRemaining=Math.max(0,(run._dashVisualRemaining||0)-delta);",
+            "run._dashVisualWasActive=a.dashTimer>0;",
+            "let anim=(a.dashTimer>0||run._dashVisualRemaining>0)?'Dash':(!a.grounded?(a.vy<0?'Jump':'Fall'):",
             "  (run.landingTimer>0?'Land':(input.down?'Crouch':(speed>215?'Run':(speed>30?'Slow':'Idle')))));",
             "const pl=runtimeScene.getObjects('Player')[0];",
             "if(pl){",
@@ -10325,7 +10329,7 @@
               "directions": [
                 {
                   "looping": false,
-                  "timeBetweenFrames": 0.025,
+                  "timeBetweenFrames": 0.028,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -19281,7 +19285,11 @@
             "const gate=get('DepthGate');if(gate&&gate.setOpacity)gate.setOpacity(s.gateOpen?0:255);",
             "// Character: fixed feet pivot across all 8 animations; only the sprite's opacity and tint fade, not its scale or collision.",
             "const P=get('Player');const speed=Math.abs(s.vx);",
-            "const anim=s.dashTimer>0?'Dash':(!s.grounded?(s.vy<0?'Jump':'Fall'):",
+            "// Visual-only dash tail: finish the six-frame animation without changing dash physics.",
+            "if(s.dashTimer>0 && !s._dashVisualWasActive)s._dashVisualRemaining=.18;",
+            "else s._dashVisualRemaining=Math.max(0,(s._dashVisualRemaining||0)-dt);",
+            "s._dashVisualWasActive=s.dashTimer>0;",
+            "const anim=(s.dashTimer>0||s._dashVisualRemaining>0)?'Dash':(!s.grounded?(s.vy<0?'Jump':'Fall'):",
             " (s.landTimer>0?'Land':(i.down?'Crouch':(speed>215?'Run':(speed>30?'Slow':'Idle')))));",
             "if(P){",
             "  if(s.animation!==anim){if(P.setAnimationName)P.setAnimationName(anim);s.animation=anim;}",
