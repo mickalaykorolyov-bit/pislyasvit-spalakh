@@ -6442,7 +6442,7 @@
               "directions": [
                 {
                   "looping": false,
-                  "timeBetweenFrames": 0.023,
+                  "timeBetweenFrames": 0.025,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
@@ -10325,7 +10325,7 @@
               "directions": [
                 {
                   "looping": false,
-                  "timeBetweenFrames": 0.023,
+                  "timeBetweenFrames": 0.025,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": false,
