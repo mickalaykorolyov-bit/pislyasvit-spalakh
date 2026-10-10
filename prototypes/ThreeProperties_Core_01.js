@@ -167,13 +167,13 @@ function inkUpdate(allowE=true){
   else if(!S.carryPiece){
    const p=S.pieces.find(p=>!p.used&&d2(S.x,S.y-35,p.x,p.y)<83);
    if(p){S.carryPiece=p;p.held=true;announce('СВІТЛОВИЙ УЛАМОК У РУКАХ. F — КИНУТИ.',3);}
-   else if(nearest&&nearest.d<122){
+   else if(nearest&&nearest.d<150){
     S.carryStroke=nearest.st;
     announce('ТИ ПІДНЯВ ШТРИХ. НЕСИ ЙОГО, Q ПОВЕРТАЄ, E ВІДПУСКАЄ.',3.2);
    }
   }
  }
- if(G&&nearest&&nearest.d<136&&!S.carryStroke){
+ if(G&&nearest&&nearest.d<172&&!S.carryStroke){
   const st=nearest.st;S.strokes.splice(S.strokes.indexOf(st),1);
   for(let i=0;i<3;i++)S.pieces.push({x:S.x-26+i*24,y:S.y-46-i*2,used:false,held:false,infested:0});
   D.memoryShape={cx:st.cx,cy:st.cy,angle:st.angle,len:st.len};
