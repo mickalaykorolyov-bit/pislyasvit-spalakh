@@ -96,7 +96,7 @@ if(FG.ok){
  // Spiders in the final room appear only after the key is inserted.
  if(D.keyInserted)for(let n=0;n<spidersHall.length;n++)drawSpider(w,spidersHall[n],n,pools);
  // A diver rests at the bottom; fragments reconstruct the last oxygen reading.
- glow(b,DIVER.x,DIVER.y,89,0x78abc6,.09);
+ glow(back,DIVER.x,DIVER.y,89,0x78abc6,.09);
  disk(w,DIVER.x-14,DIVER.y-21,26,0x314e64);
  w.lineStyle(4,0x7e9ead,.9);w.drawEllipse(DIVER.x-14,DIVER.y-25,25,19);
  rect(w,DIVER.x+9,DIVER.y-20,65,22,0x435f70,.94);
