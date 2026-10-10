@@ -22,7 +22,7 @@ const LIGHT_BRIDGE=[
 const PANELS=[{x:292,y:590},{x:782,y:481},{x:1059,y:365}];
 const PROJECTORS=[{x:290,y:126},{x:670,y:105},{x:1059,y:105}];
 const SPIDERS=[{x:810,y:586},{x:942,y:586},{x:1132,y:586}];
-const IRIS={x:1060,y:538,w:37,h:97};
+const IRIS={x:1060,y:136,w:37,h:499};
 function fresh(){
  return {x:101,y:635,vx:0,vy:0,ground:true,face:1,elapsed:0,
  modes:[0,0,0],turns:0,rewired:false,crossed:false,seenIris:false,
@@ -122,7 +122,7 @@ if(!s.dead&&!s.won&&dt){
  if(s.y>785)die('ПРІРВА');
  if(s.x>710)s.crossed=true;
  // The optical iris is a wall, not just a decorative goal marker.
- if(!irisOpen()&&s.y>524){
+ if(!irisOpen()&&s.y>IRIS.y){
   if(priorX<IRIS.x&&s.x+12>IRIS.x){s.x=IRIS.x-12;s.vx=0;}
   if(priorX>IRIS.x+IRIS.w&&s.x-12<IRIS.x+IRIS.w){s.x=IRIS.x+IRIS.w+12;s.vx=0;}
   if(s.x>1014&&s.x<1060)s.seenIris=true;
@@ -159,3 +159,158 @@ if(!s.dead&&!s.won&&dt){
  }
 }
 s.eHeld=input.interact;
+
+// All shapes are intentionally schematic; collision and optics share exact coordinates.
+let fx=runtimeScene.__falseLightFx;
+if(!fx){
+ fx=runtimeScene.__falseLightFx={ok:false};
+ try{
+  const renderer=runtimeScene.getLayer('').getRenderer();
+  if(typeof PIXI==='undefined'||!PIXI.Graphics||!renderer||!renderer.addRendererObject)throw Error('PIXI renderer not available');
+  for(const [k,z] of [['background',-40],['world',7],['glow',14],['hudworld',22]]){
+   fx[k]=new PIXI.Graphics();renderer.addRendererObject(fx[k],z);
+  }
+  fx.ok=true;
+ }catch(err){fx.err=String(err);}
+}
+function disk(g,x,y,r,c,a=1){g.lineStyle(0);g.beginFill(c,a);g.drawCircle(x,y,r);g.endFill();}
+function rect(g,x,y,w,h,c,a=1,r=8){g.lineStyle(0);g.beginFill(c,a);g.drawRoundedRect(x,y,w,h,Math.min(r,h/3));g.endFill();}
+function line(g,x,y,X,Y,c,a=.7,t=2){g.lineStyle(t,c,a);g.moveTo(x,y);g.lineTo(X,Y);}
+function bloom(g,x,y,r,c,a){
+ for(let k=6;k>=1;k--)disk(g,x,y,r*(.33+k*.14),c,a*(7-k)/31);
+}
+if(fx.ok){
+ const bg=fx.background,w=fx.world,light=fx.glow,over=fx.hudworld;
+ bg.clear();w.clear();light.clear();over.clear();
+ rect(bg,0,0,1280,720,0x050e1b);
+ bg.lineStyle(1,0x395c76,.18);
+ for(let xx=17;xx<1280;xx+=57){bg.moveTo(xx,0);bg.lineTo(xx,720);}
+ for(let yy=12;yy<720;yy+=58){bg.moveTo(0,yy);bg.lineTo(1280,yy);}
+ // Very large optical mechanisms dominate the high space.
+ for(const [xx,yy,ww,hh] of [[24,100,92,420],[369,41,61,290],[799,68,70,260],[1180,49,58,330]]){
+  rect(bg,xx,yy,ww,hh,0x112d3e,.43);
+  line(bg,xx+15,yy+3,xx+15,yy+hh-4,0x739eb0,.17,1);
+ }
+ // The same pools rendered here are evaluated for *real* stealth protection.
+ const spots=coneSpots();
+ for(const ray of spots){
+  const isStart=ray.name==='start';
+  const tint=isStart?0x9cecf9:0x91ffe5;
+  // In-water optic cone, not a fake background decoration.
+  bloom(bg,ray.x,ray.y,ray.r,tint,isStart?.13:.20);
+  if(!isStart){
+   const source=ray.x<610?PROJECTORS[0]:ray.x<985?PROJECTORS[1]:PROJECTORS[2];
+   bg.beginFill(0xa2e8f6,.026);bg.drawPolygon([
+    source.x,source.y+25,ray.x-42,ray.y,ray.x+42,ray.y]);bg.endFill();
+  }
+ }
+ // Permanent opening lamp establishes the single unchanging stealth rule.
+ line(w,112,522,112,552,0x96b7be,.6,2);disk(w,112,558,11,0xb1fff2);
+ bloom(bg,112,587,140,0xa4e8f8,.075);
+ for(const p of FLOOR){
+  rect(w,p.x,p.y,p.w,p.h,p.h>50?0x1c3446:0x284658,.97);
+  rect(w,p.x+2,p.y,p.w-4,4,0x7cb5c8,.78,2);
+  for(let xx=p.x+12;xx<p.x+p.w-11;xx+=36)
+   line(w,xx,p.y+8,xx-8,p.y+15,0x9fc0c8,.22,1);
+ }
+ // A 275-pixel crevasse. Only the first refractor can make its bridge solid.
+ rect(bg,426,635,273,80,0x020712,.99);
+ for(let xx=431;xx<692;xx+=27){
+  line(bg,xx,665,xx+8,678,0xe4657e,.37,2);
+ }
+ if(bridge()){
+  for(const p of LIGHT_BRIDGE){
+   bloom(light,p.x+p.w*.5,633,56,0x86fff0,.14);
+   rect(w,p.x,p.y,p.w,p.h,0x47958f,.70);
+   rect(w,p.x+3,p.y,p.w-6,5,0x9cffd7,.96,3);
+   for(let xx=p.x+14;xx<p.x+p.w-10;xx+=24)
+    line(w,xx,641,xx+9,647,0x71e7d1,.35,2);
+  }
+ }else{
+  for(const p of LIGHT_BRIDGE){
+   rect(w,p.x,p.y,p.w,p.h,0x35505c,.13);
+   line(w,p.x,p.y+2,p.x+p.w,p.y+2,0x5a9a9f,.35,1);
+  }
+ }
+ // Giant periscopes, each showing the three angle settings. Optical pipes connect machines.
+ for(let n=0;n<3;n++){
+  const o=PROJECTORS[n],col=0xb6fbe7,mode=s.modes[n];
+  line(w,o.x,0,o.x,o.y-43,0x628ca5,.61,3);
+  bloom(w,o.x,o.y,68,0x85dbe8,.12);
+  w.lineStyle(5,0x80c3d2,.70);w.drawCircle(o.x,o.y,51);
+  w.lineStyle(2,0x9ae9ef,.39);w.drawCircle(o.x,o.y,66);
+  disk(w,o.x,o.y,35,0x163747,.94);
+  const phi=(-Math.PI/2)+(mode*2*Math.PI/3);
+  line(w,o.x,o.y,o.x+38*Math.cos(phi),o.y+38*Math.sin(phi),0xd3fff0,.92,6);
+  for(let k=0;k<3;k++){
+   const theta=-Math.PI/2+k*2*Math.PI/3;
+   const x=o.x+57*Math.cos(theta),y=o.y+57*Math.sin(theta);
+   disk(w,x,y,k===mode?7:4,k===mode?0x99ffd0:0x628193,k===mode?1:.66);
+  }
+  line(w,o.x,o.y+35,o.x,o.y+86,0x658d9e,.45,2);
+ }
+ // Panel objects: large enough to be unmistakable. An E prompt is spatially anchored.
+ for(let n=0;n<3;n++){
+  const p=PANELS[n],mode=s.modes[n],c=mode===0?0xf3b992:mode===1?0x81eee7:0x9cffbc;
+  bloom(w,p.x,p.y,44,c,.11);
+  rect(w,p.x-32,p.y-23,64,45,0x244655,.96);
+  w.lineStyle(3,c,.96);w.drawRoundedRect(p.x-32,p.y-23,64,45,8);
+  disk(w,p.x,p.y-4,14,0x1a313e);
+  w.lineStyle(4,c,.9);w.drawArc?null:null;
+  line(w,p.x,p.y-4,p.x+11*Math.cos(mode*2*Math.PI/3),p.y-4+11*Math.sin(mode*2*Math.PI/3),c,.95,3);
+  for(let a=0;a<3;a++)disk(w,p.x-19+a*19,p.y+14,3,a===mode?0xa8ffcf:0x526c74);
+ }
+ // Ceiling cables and the solid-height optic iris at the far right.
+ const open=irisOpen();
+ if(open)bloom(bg,IRIS.x+17,430,92,0x8fffb7,.16);
+ else bloom(bg,IRIS.x+17,430,56,0xec6980,.10);
+ line(w,IRIS.x,133,IRIS.x,635,open?0x71f2bb:0xf38c95,.77,3);
+ line(w,IRIS.x+IRIS.w,133,IRIS.x+IRIS.w,635,open?0x71f2bb:0xf38c95,.77,3);
+ if(!open){
+  rect(w,IRIS.x,IRIS.y,IRIS.w,IRIS.h,0x60344d,.79);
+  for(let y=IRIS.y+15;y<634;y+=23){
+   line(w,IRIS.x+4,y,IRIS.x+IRIS.w-3,y+13,0xf1a1a0,.31,2);
+  }
+  disk(w,IRIS.x+IRIS.w/2,411,12,0xff7789,.86);
+ }else{
+  rect(w,IRIS.x+13,IRIS.y,11,IRIS.h,0x2d735b,.17);
+  for(let y=IRIS.y+15;y<634;y+=28)
+   disk(w,IRIS.x+19,y,3.5,0x84ffd0,.70);
+ }
+ // Spiders blink red in shadow but fold their legs in any projected lamp light.
+ for(let n=0;n<SPIDERS.length;n++){
+  const sp=SPIDERS[n],x=sp.x+Math.sin(s.elapsed*.75+sp.x*.011)*19,y=sp.y;
+  const asleep=sheltered(x,y-27);
+  const c=asleep?0x587b83:0xbd536b;
+  for(let side of [-1,1])for(let arm=0;arm<4;arm++){
+   const yy=y-17+arm*7;
+   line(w,x+side*13,yy,x+side*(30+arm*6),yy-16+arm*7,c,.85,n===2?3.7:2.6);
+  }
+  disk(w,x,y-30,n===2?25:20,0x151d2d);
+  disk(w,x-8,y-36,3,asleep?0x77979b:0xff5a76);
+  disk(w,x+8,y-36,3,asleep?0x77979b:0xff5a76);
+  if(!asleep)bloom(w,x,y-37,29,0xf65877,.12);
+ }
+ const ready=irisOpen();
+ rect(w,1220,554,48,81,ready?0x1c6651:0x4b3042,.98);
+ w.lineStyle(3,ready?0x89ffd1:0xf38399,.97);w.drawRoundedRect(1220,554,48,81,9);
+ for(let yy=568;yy<622;yy+=17)rect(w,1229,yy,30,5,ready?0x97ffd3:0xda8294,.95);
+ if(ready)bloom(w,1245,589,55,0x9ffbcf,.14);
+ // Body-attached glowing feet + living red trail.
+ for(const q of s.trail){
+  const alpha=clamp((1-q.age/.83)*q.p,0,1);
+  bloom(light,q.x,q.y,20,0xff5277,.16*alpha);
+  disk(light,q.x,q.y,4+q.p*5,0xff6b87,.63*alpha);
+ }
+ const isHidden=hidden();
+ if(!s.dead){
+  bloom(light,s.x,s.y-41,35+s.bright*32,0xff527d,isHidden?.027:.05+s.bright*.12);
+  bloom(light,s.x,s.y-17,25,0xff8da3,isHidden?.018:.08);
+ }
+ if(s.dead)bloom(over,s.x,s.y-49,74*(1-s.deadClock/.88)+18,0xf9557b,.25);
+ if(s.alert>.025){
+  over.lineStyle(4,0xfa617d,clamp(s.alert,0,1)*.79);
+  over.drawRoundedRect(7,7,1266,705,17);
+  rect(over,979,111,262*clamp(s.alert,0,1),7,0xfa5579,.85);
+ }
+}
