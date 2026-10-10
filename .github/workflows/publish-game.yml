@@ -27,9 +27,20 @@ jobs:
           for resource in p['resources']['resources']:
               name = resource.get('name','')
               if name.startswith('assets/'):
-                  if not pathlib.Path(name).is_file():
-                      raise FileNotFoundError(name)
-                  resource['file'] = str(pathlib.Path(name).resolve())
+                  path = pathlib.Path(name)
+                  if not path.is_file():
+                      replacement = name
+                      if name.startswith('assets/v084c/crab/'):
+                          replacement = name.replace('assets/v084c/crab/', 'assets/v084c/v084c/crab/')
+                      elif name.startswith('assets/v084i/sensor/'):
+                          replacement = name.replace('assets/v084i/sensor/', 'assets/v084i/')
+                      elif name == 'assets/v084h/sensor/sensor_device_ornate.png':
+                          replacement = 'assets/v084j/sensor/sensor_off.png'
+                      path = pathlib.Path(replacement)
+                      if not path.is_file():
+                          raise FileNotFoundError(name + ' -> ' + replacement)
+                      print('Repaired stale resource path:', name, '->', replacement)
+                  resource['file'] = str(path.resolve())
           pathlib.Path('_publish_input.json').write_text(json.dumps(p,ensure_ascii=False))
           print('Exporting',p['name'],'with',len(p['resources']['resources']),'resources')
           PY
