@@ -329,10 +329,29 @@ else if(D.keyCollected&&D.lightMode!=='C'&&S.y>2150)
  objective='ТИ ПРИЙШОВ ІЗ КЛЮЧЕМ. НИЖНІЙ РЕГУЛЯТОР У ЦЕНТРІ: E → РЕЖИМ C.';
 else if(D.keyCollected&&D.lightMode==='C'&&S.y>2150)
  objective='СВІТЛО НАДІСЛАНО В ЗАМКОВУ ЗАЛУ. ЛІВІ ДВЕРІ → КІМНАТА 01.';
+
+if(S.y>920&&S.y<1220){
+ if(D.uvSpider==='alive'&&D.shaftFallingLamp==='ready')
+ objective='ПРАВОРУЧ Є ВАЖІЛЬ E. ВІДПУСТИ ЛАМПУ, ЩОБ ЗНЕШКОДИТИ ПАВУКА.';
+ else if(D.uvSpider==='stunned')objective='ПАВУК СВІТИТЬСЯ! ПІДНІМИ ЙОГО E ТА ВІДНЕСИ ДО ЛІФТА ПРАВОРУЧ.';
+ else if(S.carrySpider)objective='НЕСИ ПАВУКА ДО ЛІФТА ПРАВОРУЧ. E — ПОКЛАСТИ НА ПІДЙОМНИК.';
+ else if(D.uvSpider==='lift')objective='ЛІФТ ПІДНІМАЄ ПАВУКА ДО UV. ПРОДОВЖУЙ ПІДЙОМ.';
+}
+if(S.y<400&&(D.uvSpider==='uvReady'||D.uvSpider==='uvRead'))
+ objective=D.uvSpider==='uvReady'?'НА ПАВУКОВІ ПІД UV ВИДНО «КИ». ПІДІЙДИ Й НАТИСНИ E.':
+ 'ЛІТЕРУ «КИ» ЗНАЙДЕНО. НАТИСНИ E ПІД UV ЗНОВУ, ЩОБ СКИНУТИ ТІЛО.';
+if(S.y>2210&&D.uvSpider==='dumped')
+ objective='ПІД ЛІФТОМ НА ДНІ З ПАВУКА З’ЯВИЛАСЯ «С». ЗАБЕРИ E.';
+if(S.y>2250&&!D.oxygenParts.gravity&&Math.abs(S.x-845)<130)
+ objective='ФІОЛЕТОВІ ДВЕРІ: АНТИГРАВІТАЦІЯ, КІМНАТА 04 [E].';
+if(S.y>2250&&!D.oxygenParts.chase&&Math.abs(S.x-1017)<103)
+ objective='РОЖЕВІ ДВЕРІ: ТЕМНИЙ ЗАБІГ, КІМНАТА 05 [E].';
+if(S.y>1810&&S.y<2100&&!D.shaftLightSensor)
+ objective='РОЗЖЕНИСЬ SHIFT+D КРІЗЬ СЕНСОР — ВІН ЛОВИТЬ ВЛАСНЕ СЯЙВО СПАЛАХА.';
 hudBase('02','ВЕРТИКАЛЬНА ШАХТА',objective,pools);
-setText('W01','01 ↔ ЗАЛА');setText('W02','03 ↔ АРХІВ');
+setText('W01','01 ↔ ЗАЛА');setText('W02',D.uvSpider==='dumped'?'«С» ПІД ЛІФТОМ · E':'03 ↔ АРХІВ');
 setText('W03','РЕГУЛЯТОР '+D.lightMode);
 setText('W04',D.ballastDropped?'БАЛАСТ СКИНУТО':'СКИНУТИ БАЛАСТ · E');
-setText('W05',D.shortcutOpen?'СЛУЖБОВИЙ СПУСК · E':'СЛУЖБОВИЙ СПУСК ЗАКРИТО');
+setText('W05',D.uvSpider==='uvReady'||D.uvSpider==='uvRead'?'UV · «КИ» · E':D.shortcutOpen?'СЛУЖБОВИЙ СПУСК · E':'СЛУЖБОВИЙ СПУСК ЗАКРИТО');
 setText('WLamp','О2: '+fragmentsText()+' | UV: '+D.uvSpider);
 })();
