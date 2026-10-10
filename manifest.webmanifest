@@ -1,0 +1,12 @@
+{
+  "name": "Spalakh Prototype 084h",
+  "short_name": "Spalakh Prototype 084h",
+  "id": "io.afterlight.spalakh",
+  "description": "Глибина: 7-шаровий паралакс 0.8.3a плюс арт шипів, електрики, важелів, кидкових предметів, ліхтарних опор та підвісних вантажів. Усі механіки збережені.",
+  "orientation": "landscape",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
