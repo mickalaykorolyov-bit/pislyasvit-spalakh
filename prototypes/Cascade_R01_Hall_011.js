@@ -28,7 +28,7 @@ S.worldLight=pools;
 if(!S.dead&&!S.transition&&!D.gameWon){
  movePlayer(floors,{deathY:770});
  if(E){
-  if(dist(S.x,S.y-36,DIVER.x,DIVER.y)<90&&allFragments()&&!D.diverRead){
+  if(dist(S.x,S.y-36,DIVER.x,DIVER.y)<62&&allFragments()&&!D.diverRead){
    D.diverRead=true;S.fx=1;
    message('СПАЛАХ ПРОЧИТАВ ПОПЕРЕДЖЕННЯ АКВАЛАНГІСТА: «27% КИСНЮ». СИГНАЛ ВІДПРАВЛЕНО!',7);
   }else if(dist(S.x,S.y-38,90,594)<91)goTo(2,'FROM_HALL',{x:164,y:2460});
