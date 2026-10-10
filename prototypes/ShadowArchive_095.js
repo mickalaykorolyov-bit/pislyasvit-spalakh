@@ -388,3 +388,50 @@ if(g.ok){
   overlay.drawRoundedRect(14,14,1250,685,14);
  }
 }
+
+// Spalakh is the original sprite with 52 existing animation frames.
+const player=get('Player');
+if(player){
+ const movement=Math.abs(s.vx);
+ const anim=s.dead?'Fall':!s.ground?(s.vy<0?'Jump':'Fall'):
+ s.landTimer>0?'Land':i.crouch?'Crouch':movement>159?'Run':movement>22?'Slow':'Idle';
+ if(player.getAnimationName&&player.getAnimationName()!==anim&&player.setAnimationName)player.setAnimationName(anim);
+ if(player.setAnimationSpeedScale)player.setAnimationSpeedScale(anim==='Run'?clamp(movement/240,.78,1.3):1);
+ const scale=i.crouch?.49:.55;
+ if(player.setScale)player.setScale(scale);
+ player.setPosition(s.x-192*scale,s.y-242*scale);
+ if(player.flipX)player.flipX(s.face<0);
+ if(player.setOpacity)player.setOpacity(s.dead?0:(hidden()?54:clamp(160+s.bright*89,160,255)));
+}
+gdjs.evtTools.camera.setCameraX(runtimeScene,640,'',0);
+gdjs.evtTools.camera.setCameraY(runtimeScene,360,'',0);
+hud('HUDTitle','ПІСЛЯСВІТ   /   АРХІВ ТІНЕЙ');
+hud('HUDStatus','ШИФР '+s.code+'/4     КЛЮЧ '+(s.key?'✓':'○')+
+ '     ПРОЛАМ '+(s.wallBroken?'✓':'○')+
+ '     '+(hidden()?'НЕПОМІТНИЙ У СВІТЛІ':'ПОМІТНИЙ У ТЕМРЯВІ')+
+ '     ЗАГИБЕЛЕЙ '+s.deaths);
+let task='ОГЛЯНЬ КІМНАТУ. ЗНАЙДИ ВИМИКАЧ, ЗАШИФРОВАНІ ЛАМПИ ТА ВІЗОК ЗІ СВІТЛОМ.';
+if(!s.clueSeen)task='01 / У ЦЕНТРІ ВНИЗУ Є ВИМИКАЧ. НАТИСНИ E, ЩОБ ПОГАСИТИ АРХІВ І ПОБАЧИТИ ШИФР.';
+else if(!s.key&&s.blackout&&Math.abs(s.x-KEY.x)<150&&s.y<490)
+ task='ЗОЛОТИЙ КЛЮЧ З’ЯВЛЯЄТЬСЯ ЛИШЕ В ТЕМРЯВІ. ПІДІЙДИ Й НАТИСНИ E.';
+else if(!s.key&&!s.blackout)task='ПОВЕРНИСЯ ДО ВИМИКАЧА І ПОГАСИ АРХІВ. У ТЕМРЯВІ Є ЩЕ ОДИН СЕКРЕТ.';
+else if(s.code<4)task='02 / НАТИСКАЙ E БІЛЯ ЛАМП У ПОСЛІДОВНОСТІ ГЛІФІВ III → I → IV → II.';
+else if(!s.wallBroken)task='03 / ПІДІЙДИ ДО ОСВІТЛЮВАЛЬНОГО ВІЗКА, НАТИСНИ G І ШТОВХАЙ ЙОГО НА ПРАВУ ВАГОВУ ПЛИТУ.';
+else if(s.x>1041&&s.y>535)task='04 / ПРИСІДАЙ S І ПРОЛІЗЬ У ПРОЛАМАНУ СТІНУ, ПОТІМ ДОЙДИ ДО ВИХОДУ.';
+else task='У ТЕБЕ Є КЛЮЧ І ШИФР. СТІНА ЗРУЙНОВАНА. ПІДІЙДИ ДО ПРАВОГО ВИХОДУ.';
+if(s.cartGrab)task='ТИ ШТОВХАЄШ СВІТЛО. ВЕДИ ВІЗОК ПРАВОРУЧ ДО ПЛИТИ. G — ВІДПУСТИТИ.';
+if(s.x>705&&s.y>568&&!hidden())task='ПАВУКИ ПОМІТИЛИ СПАЛАХА! СХОВАЙСЯ В ОСВІТЛЕНУ ЗОНУ АБО ВЕДИ ВІЗОК-СВІТЛО.';
+if(s.pistonState==='warn')task='НЕПРАВИЛЬНА КОМБІНАЦІЯ! ВЕЛИКИЙ ПРЕС ЗАРАЗ ВПАДЕ! ВІДІЙДИ ВІД ЦЕНТРУ.';
+if(s.won)task='АРХІВ ТІНЕЙ ПРОЙДЕНО: СПАЛАХ ВИКОРИСТАВ САМУ ТЕМРЯВУ ЯК ПІДКАЗКУ.';
+hud('HUDTask',task);
+hud('HUDHint','A/D — РУХ   SPACE — СТРИБОК   E — ВЗАЄМОДІЯ   G — ВЕЗТИ / ВІДПУСТИТИ ЛАМПУ   S — ПРИСІСТИ   R — СПОЧАТКУ');
+hud('HUDMessage',s.msgTime>0?s.msg:'');
+for(let n=0;n<4;n++){
+ const on=SEQUENCE.slice(0,s.code).includes(n);
+ hud('W0'+(n+1),(on?'✓ ':'')+['I','II','III','IV'][n]);
+}
+hud('W05',s.blackout?'ПОРЯДОК:  III  →  I  →  IV  →  II':'');
+hud('WLamp',s.wallBroken?'СТІНА ЗРУЙНОВАНА · S — ПРОЛІЗТИ':'ВІЗОК ТИСНЕ НА ПЛИТУ → ГІДРАВЛІКА');
+hud('HUDWin',s.won?'АРХІВ ТІНЕЙ ПРОЙДЕНО!':'');
+const win=get('HUDWin');if(win&&win.setOpacity)win.setOpacity(s.won?255:0);
+})();
