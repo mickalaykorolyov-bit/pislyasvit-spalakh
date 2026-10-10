@@ -5,7 +5,7 @@ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const dist=(x,y,a,b)=>Math.hypot(x-a,y-b);
 const press=k=>gdjs.evtTools.input.isKeyPressed(runtimeScene,k);
 const I={left:press('a')||press('Left'),right:press('d')||press('Right'),
- jump:press('Space')||press('w')||press('Up'),
+ jump:press('Space')||press('w')||press('Up'),throw:press('f')||press('F'),
  use:press('e')||press('E'),grab:press('g')||press('G'),
  crouch:press('s')||press('Down'),reset:press('r')||press('R'),
  shift:press('Shift')||press('LShift'),journal:press('Tab')};
@@ -57,7 +57,7 @@ function movePlayer(platforms,modifier={}){
  if(S.dead||S.transition)return;
  const dir=Number(I.right)-Number(I.left);
  if(dir)S.face=dir;
- let baseSpeed=I.crouch?68:205;
+ let baseSpeed=I.crouch?68:I.shift?310:205;
  if(modifier.slow&&modifier.slow(S.x,S.y))baseSpeed=I.crouch?44:92;
  if(S.grabShelf)baseSpeed=107;
  if(S.carrySpider)baseSpeed=150;
@@ -116,7 +116,7 @@ function goTo(room,arrival,spawn){
  D.interactBlocked=true;
  D.spawnOverride=spawn||null;
  gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,
-  ['','R01_CascadeHall','R02_CascadeShaft','R03_CascadeArchive'][room],false);
+  ['','R01_CascadeHall','R02_CascadeShaft','R03_CascadeArchive','R04_ZeroGravity','R05_BlackoutRun'][room],false);
 }
 function deathTick(){
  if(!S.dead)return;
