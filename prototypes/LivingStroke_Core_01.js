@@ -72,7 +72,7 @@ if(RESET){if(K.run){GAME.__livingInk01=newWorld();doorway(1,120,635);}else respa
 function lit(x,y,areas){return areas.some(p=>d2(x,y,p.x,p.y)<p.r);}
 function strokeLights(){
  const arr=[];
- for(const s of S.strokes)if(s.state==='solid'&&!S.carryStroke||S.carryStroke===s){
+ for(const s of S.strokes)if(s.state==='solid'){
   const rad=s.len*.5,cs=Math.cos(s.angle),sn=Math.sin(s.angle);
   for(let m=-rad;m<=rad;m+=58)arr.push({x:s.cx+m*cs,y:s.cy+m*sn-29,r:110,c:0xff83b9});
  }
