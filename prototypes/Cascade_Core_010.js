@@ -14,6 +14,7 @@ const GAME=runtimeScene.getGame();
 function newDungeon(){return {
  lightMode:'A',ballastPhase:'hanging',ballastY:950,ballastV:0,
  ballastDropped:false,archiveRoofBroken:false,shortcutOpen:false,
+ ballastTimer:0,interactBlocked:false,
  archiveShelfX:476,archiveBlackout:false,clueDiscovered:false,
  keyCollected:false,keyInserted:false,finalStep:0,finalCompleted:false,
  checkpoint:{room:1,x:425,y:635},arrival:'START',spawnOverride:null,
@@ -35,7 +36,8 @@ S.elapsed+=DT;S.msgClock=Math.max(0,S.msgClock-DT);
 S.shield=Math.max(0,S.shield-DT);S.fx=Math.max(0,S.fx-DT*2);
 S.wrongFx=Math.max(0,S.wrongFx-DT*1.9);
 S.finishFx=Math.max(0,S.finishFx-DT*1.1);
-const E=I.use&&!S.useHeld,G=I.grab&&!S.grabHeld;
+const E=I.use&&!S.useHeld&&!D.interactBlocked,G=I.grab&&!S.grabHeld;
+if(!I.use)D.interactBlocked=false;
 const R=I.reset&&!S.resetHeld;
 S.useHeld=I.use;S.grabHeld=I.grab;S.resetHeld=I.reset;
 function message(txt,seconds=3.5){S.msg=txt;S.msgClock=seconds;}
@@ -102,6 +104,7 @@ function goTo(room,arrival,spawn){
  if(S.transition)return;
  S.transition=true;
  D.arrival=arrival;
+ D.interactBlocked=true;
  D.spawnOverride=spawn||null;
  gdjs.evtTools.runtimeScene.replaceScene(runtimeScene,
   ['','R01_CascadeHall','R02_CascadeShaft','R03_CascadeArchive'][room],false);
