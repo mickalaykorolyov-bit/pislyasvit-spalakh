@@ -32,7 +32,7 @@ if(!runtimeScene.__livingInkLocal)runtimeScene.__livingInkLocal={
 const S=runtimeScene.__livingInkLocal;S.elapsed+=dt;S.iframes=Math.max(0,S.iframes-dt);
 S.msgTime=Math.max(0,S.msgTime-dt);S.shake=Math.max(0,S.shake-dt*2.4);
 const E=K.e&&!S.eWas&&!D.enterLock,G=K.g&&!S.gWas,F=K.f&&!S.fWas,Q=K.q&&!S.qWas;
-const XSTART=K.x&&!S.xWas,XEND=!K.x&&S.xWas,R=K.reset&&!S.rWas;
+const XSTART=K.x&&!S.xWas,XEND=!K.x&&S.xWas,RESET=K.reset&&!S.rWas;
 S.eWas=K.e;S.gWas=K.g;S.fWas=K.f;S.qWas=K.q;S.xWas=K.x;S.rWas=K.reset;
 if(!K.e)D.enterLock=false;
 function announce(str,seconds=3.8){S.msg=str;S.msgTime=seconds;}
@@ -68,7 +68,7 @@ function respawn(){
  S.flies=0;S.fleaTimer=0;S.alert=0;
 }
 if(S.dead){S.deadTime-=dt;if(S.deadTime<=0)respawn();}
-if(R){if(K.run){GAME.__livingInk01=newWorld();doorway(1,120,635);}else respawn();}
+if(RESET){if(K.run){GAME.__livingInk01=newWorld();doorway(1,120,635);}else respawn();}
 function lit(x,y,areas){return areas.some(p=>d2(x,y,p.x,p.y)<p.r);}
 function strokeLights(){
  const arr=[];
