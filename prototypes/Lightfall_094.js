@@ -198,3 +198,153 @@ if(!s.dead&&!s.won&&dt){
  }
 }
 s.dashHeld=i.dash;s.useHeld=i.use;s.throwHeld=i.throw;
+
+// Screen-wide procedural blockout: all three lamp shafts and both traversal routes.
+let gfx=runtimeScene.__lightfallGraphics094;
+if(!gfx){
+ gfx=runtimeScene.__lightfallGraphics094={ok:false};
+ try{
+  const r=runtimeScene.getLayer('').getRenderer();
+  if(typeof PIXI==='undefined'||!PIXI.Graphics||!r||!r.addRendererObject)throw Error('PIXI renderer absent');
+  for(const [n,z] of [['bg',-36],['world',6],['fx',15],['top',23]]){
+   gfx[n]=new PIXI.Graphics();r.addRendererObject(gfx[n],z);
+  }
+  gfx.ok=true;
+ }catch(e){gfx.error=String(e);}
+}
+function box(g,x,y,w,h,c,a=1){
+ g.lineStyle(0);g.beginFill(c,a);g.drawRoundedRect(x,y,w,h,Math.min(12,h/3));g.endFill();
+}
+function disk(g,x,y,r,c,a=1){
+ g.lineStyle(0);g.beginFill(c,a);g.drawCircle(x,y,r);g.endFill();
+}
+function line(g,x,y,u,v,c=0x6c8796,a=.7,width=2){
+ g.lineStyle(width,c,a);g.moveTo(x,y);g.lineTo(u,v);
+}
+function glow(g,x,y,r,c,a){
+ for(let z=5;z>=1;z--)disk(g,x,y,r*(.4+z*.15),c,a*(6-z)/24);
+}
+if(gfx.ok){
+ const b=gfx.bg,w=gfx.world,f=gfx.fx,t=gfx.top;
+ b.clear();w.clear();f.clear();t.clear();
+ box(b,0,0,1280,720,0x07101b);
+ b.lineStyle(1,0x35566b,.16);
+ for(let xx=16;xx<1280;xx+=57){b.moveTo(xx,0);b.lineTo(xx,720);}
+ for(let yy=25;yy<720;yy+=54){b.moveTo(0,yy);b.lineTo(1280,yy);}
+ for(const [xx,yy,ww,hh] of [[43,99,65,470],[426,29,57,323],[714,49,48,255],[1190,45,55,390]]){
+  box(b,xx,yy,ww,hh,0x103047,.36);
+  line(b,xx+9,yy+5,xx+9,yy+hh-9,0x7dabbc,.18,1);
+ }
+ // An icy sliding floor: mechanical blue stripes and visible sloped speed lines.
+ box(b,119,616,424,18,0x255d76,.32);
+ for(let xx=125;xx<535;xx+=28){
+  line(b,xx,621,xx+21,621,0x7ad8ec,.43,2);
+  line(b,xx+10,611,xx+24,604,0xa4dce7,.16,1);
+ }
+ // Thin suspended platforms are EXACT collision geometry, not art guesses.
+ for(const p of platforms){
+  box(w,p.x,p.y,p.w,p.h,p.y>620?0x203b4c:0x2b475b,.94);
+  box(w,p.x+2,p.y,p.w-4,4,0x92bed0,.72);
+  for(let xx=p.x+13;xx<p.x+p.w-10;xx+=33)line(w,xx,p.y+8,xx-8,p.y+16,0x81a7bc,.22,1);
+ }
+ // Trampolines look springy even when idle. Launches have real vertical velocity.
+ for(let n=0;n<2;n++){
+  const sp=springs[n],middle=sp.x+sp.w/2;
+  glow(w,middle,626,57,0xa481fd,.15);
+  box(w,sp.x-7,625,sp.w+14,12,0x453e77,.98);
+  box(w,sp.x,619,sp.w,8,0xb79ef6,.98);
+  for(let k=0;k<4;k++){
+   const xx=sp.x+8+k*(sp.w-15)/3;
+   line(w,xx,631,xx+6,637,0xc3b0ff,.85,2);
+  }
+  for(const dx of [-16,0,16])disk(w,middle+dx,613,2.5,0xeee3ff,.83);
+ }
+ // Low tunnel: non-sliding Spalakh cannot pass the entrance at floor level.
+ box(w,gate.x,gate.y,gate.w,48,0x2c4058,.92);
+ box(w,gate.x+4,gate.y+45,gate.w-8,4,0xf1b778,.66);
+ for(let xx=gate.x+13;xx<gate.x+gate.w-10;xx+=29)line(w,xx,gate.y+8,xx,gate.y+38,0xdab082,.28,3);
+ // Physical sliding latch on the far edge, fills green upon sliding through.
+ const latch=s.lamps[1].state!=='ready';
+ box(w,755,612,26,21,latch?0x296b57:0x854b59,.96);
+ disk(w,768,618,5,latch?0x7affb6:0xfcc48b);
+ // Top hook for a mid-air X dash, and ranged throwing latch.
+ for(const q of [{p:hook,n:0},{p:target,n:2}]){
+  const triggered=s.lamps[q.n].state!=='ready',c=triggered?0x87ffbf:0xffac84;
+  glow(w,q.p.x,q.p.y,42,c,.13);
+  w.lineStyle(4,c,.92);w.drawCircle(q.p.x,q.p.y,24);
+  disk(w,q.p.x,q.p.y,10,c,.89);
+  line(w,q.p.x,q.p.y-26,q.p.x,q.p.y-52,0x8d9aac,.75,3);
+ }
+ // Small, endlessly refillable stone stash for the third lamp.
+ box(w,ammo.x-22,ammo.y-23,44,37,0x2a4c60,.97);
+ box(w,ammo.x-9,ammo.y-13,20,20,0xffce8f,.96);
+ if(s.stone)disk(f,s.x+s.face*21,s.y-47,7,0xffd6a0);
+ if(s.shot){
+  glow(f,s.shot.x,s.shot.y,25,0xffca8c,.18);
+  disk(f,s.shot.x,s.shot.y,8,0xffe0a8);
+ }
+ // Lamps WARN, CRASH, then create a real light refuge. Never invisible hazards.
+ for(let n=0;n<3;n++){
+  const l=s.lamps[n],falling=l.state==='falling',warn=l.state==='warning',landed=active(n);
+  const col=landed?0x8cffe2:warn?0xff647e:falling?0xff7b7d:0xbccad6;
+  for(let yy=167;yy<556;yy+=28)box(b,l.x-2,yy,4,12,0x8e9cae,.17);
+  line(w,l.x,53,l.x,l.y-27,0x8194aa,.65,3);
+  if(warn){
+   const pulse=.25+.20*Math.abs(Math.sin(s.time*14));
+   glow(b,l.x,587,67,0xff3b65,pulse);
+   box(w,l.x-49,606,98,8,0xff6573,.22+pulse);
+  }
+  if(falling)glow(w,l.x,l.y,49,0xff647a,.20);
+  // Hanging industrial lamp shade.
+  w.lineStyle(3,col,.95);w.drawRoundedRect(l.x-30,l.y-23,60,38,11);
+  box(w,l.x-27,l.y-21,54,25,landed?0x405e69:0x526374,.96);
+  box(w,l.x-36,l.y,72,14,landed?0x7aa89f:0xa0a5a8,.93);
+  disk(w,l.x,l.y+11,14,landed?0x9fffe9:0xd2d1c2,.95);
+  if(landed){glow(b,l.x,584,91,0xa0f9ee,.23);glow(w,l.x,l.y+13,48,0x93ffeb,.13);}
+  // The three lamps also appear as circuit bulbs in the spider corridor.
+  const cx=bulbX[n],on=bulb(n);
+  line(w,cx,532,cx,555,on?0x91e6c8:0x7d6374,.8,2);
+  disk(w,cx,561,11,on?0xa1ffec:0x8e6477,.95);
+  if(on)glow(b,cx,583,132,0x9af9ec,.19);
+ }
+ // Safe demo spot is lit even before solving; enemy corridor extends to the right.
+ box(b,792,535,488,99,0x121c2d,.68);
+ glow(b,823,584,84,0x9aeeed,.18);
+ disk(w,823,546,9,0xbbfff0);
+ box(w,816,532,14,5,0xb9f9ec);
+ // Four legged sentries (including one giant) go passive in the safe pools.
+ for(let n=0;n<3;n++){
+  const sx=spiders[n]+Math.sin(s.time*(.72+n*.13))*9,sy=608;
+  const hidden=shelter(sx,sy-35),scale=n===2?1.47:1;
+  const leg=hidden?0x6d8292:0xa24f68;
+  for(const side of [-1,1])for(let k=0;k<4;k++){
+   const py=sy-23*scale+k*7*scale;
+   line(w,sx+side*16*scale,py,sx+side*(37+k*6)*scale,py-17*scale+k*6*scale,leg,.94,n===2?4:3);
+  }
+  disk(w,sx,sy-31*scale,23*scale,0x18212e);
+  disk(w,sx-8*scale,sy-39*scale,4,hidden?0x627e86:0xff5278);
+  disk(w,sx+8*scale,sy-39*scale,4,hidden?0x627e86:0xff5278);
+  if(!hidden)glow(w,sx,sy-38*scale,35*scale,0xff4e72,.10);
+ }
+ const open=complete();
+ box(w,1232,547,42,88,open?0x1d604f:0x442837,.96);
+ w.lineStyle(3,open?0x94ffd2:0xf16c84,1);w.drawRoundedRect(1232,547,42,88,8);
+ for(let n=0;n<4;n++)box(w,1240,556+n*19,26,5,open?0x88ffc9:0xe76b81,.85);
+ // Comet attaches to character, its afterimage remains in dark water.
+ for(const p of s.trail){
+  const a=clamp((1-p.age/.82)*p.p,0,1);
+  glow(f,p.x,p.y,24,0xff4976,.13*a);
+  disk(f,p.x,p.y,3+p.p*6,0xff607c,.65*a);
+ }
+ const isSafe=shelter(s.x,s.y-40);
+ if(!s.dead){
+  glow(f,s.x,s.y-46,37+s.light*32,0xff4976,isSafe?.03:.06+s.light*.12);
+  glow(f,s.x,s.y-18,29,0xff7998,isSafe?.02:.09);
+ }
+ if(s.dead)glow(t,s.x,s.y-48,41+67*(1-s.deathTime/.92),0xff557e,.26);
+ if(s.alert>.03){
+  t.lineStyle(4,0xfa5274,s.alert*.80);
+  t.drawRoundedRect(6,6,1268,708,13);
+  box(t,967,103,270*s.alert,7,0xf35a75,.75);
+ }
+}
