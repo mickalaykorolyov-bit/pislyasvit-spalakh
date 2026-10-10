@@ -262,6 +262,59 @@ if(FG.ok){
   glow(b,area.x+60,area.y,52,0x9a7dac,.09);
  }
  for(let n=0;n<spiderPlaces.length;n++)if((n!==1||!D.shaftShoved)&&(n!==2||!D.shaftProjectileUsed)&&(n!==3||D.uvSpider==='alive'))drawSpider(w,spiderPlaces[n],n,pools);
+
+ // Vertical lift holds the struck spider, exposes it under UV and drops it 2200px down.
+ ln(w,1106,192,1106,1041,0x5e9da3,.44,3);
+ const liftY=D.uvSpider==='lift'?D.spiderLiftY:1036;
+ rect(w,1063,liftY,85,15,0x3a8c91,.9);
+ rect(w,1071,liftY,68,5,0xa4f8e6,.86);
+ glow(w,UV.x,UV.y,68,0xb69bff,.19);
+ rect(w,UV.x-42,UV.y-45,84,28,0x6b5b9a,.98);
+ disk(w,UV.x,UV.y-19,15,0xd4bbff);
+ if(D.uvSpider!=='alive'&&D.uvSpider!=='finished'){
+  const x=D.spiderX,y=D.spiderY;
+  glow(b,x,y,95,0x8ffff0,.17);
+  disk(w,x,y-26,23,0x28505a);
+  for(const side of [-1,1])for(let z=0;z<4;z++)
+   ln(w,x+side*13,y-26+z*7,x+side*(30+z*4),y-40+z*10,0x8ee3cf,.79,2.8);
+  disk(w,x-8,y-31,4,0xb8fff6);disk(w,x+8,y-31,4,0xb8fff6);
+ }
+ if(D.uvSpider==='uvReady'||D.uvSpider==='uvRead'){
+  glow(w,1106,209,73,0xd9b8ff,.18);
+ }
+ // Two extra rooms are accessed at the bottom of the vertical chamber.
+ for(const door of [{x:zeroDoor.x,c:0xc4a1ff},{x:chaseDoor.x,c:0xfda2a6}]){
+  rect(w,door.x-30,2375,61,83,0x284756,.95);
+  w.lineStyle(3,door.c,.92);w.drawRoundedRect(door.x-30,2375,61,83,7);
+  disk(w,door.x,2405,10,door.c);
+ }
+ // A glowing spider after lamp impact, a physical falling industrial lamp and red warning area.
+ if(D.shaftFallingLamp==='warning'){
+  glow(b,940,1036,84,0xfa4f77,.20+.12*Math.abs(Math.sin(D.time*19)));
+  for(let y=750;y<1020;y+=49)rect(w,929,y,23,13,0xfd6c86,.60);
+ }
+ if(D.shaftFallingLamp==='falling'||D.shaftFallingLamp==='landed'){
+  rect(w,902,D.shaftLampY-27,76,29,0x556f7c,.96);
+  disk(w,940,D.shaftLampY+6,16,0xc8fff1);
+ }
+ rect(w,spiderLampLever.x-28,spiderLampLever.y-19,56,39,0x415567,.96);
+ disk(w,spiderLampLever.x,spiderLampLever.y,13,D.shaftFallingLamp==='ready'?0xffbe85:0x98f8d8);
+ // Ice = reduced friction. Crossing too fast risks losing 2 or 3 platforms.
+ for(const icy of [{x:923,y:1912,w:201},{x:741,y:1146,w:200}]){
+  for(let xx=icy.x+12;xx<icy.x+icy.w-6;xx+=27)ln(w,xx,icy.y+2,xx+17,icy.y+2,0xaeecff,.77,2);
+ }
+ // A light sensor only responds to Spalakh's movement glow (not a thrown object).
+ w.lineStyle(3,D.shaftLightSensor?0x9effdd:0xff9bac,1);w.drawCircle(839,1997,24);
+ disk(w,839,1997,10,D.shaftLightSensor?0x9bffdf:0x9c6174);
+ // Ceiling debris is visible through the whole fall.
+ if(D.shaftRock==='warning')glow(b,433,1570,78,0xff6186,.30);
+ if(D.shaftRock==='falling'||D.shaftRock==='settled')rect(w,400,D.shaftRockY-23,66,45,0x8a7480,.94);
+ // Optional physical solutions for two other spiders.
+ rect(w,ammo.x-22,ammo.y-22,44,28,0x73646a,.93);
+ disk(w,ammo.x,ammo.y-9,9,0xffd4ab);
+ if(S.rockCarry)disk(w,S.x+S.face*19,S.y-48,7,0xffdcac);
+ if(S.shot){disk(w,S.shot.x,S.shot.y,8,0xffd8a4);glow(w,S.shot.x,S.shot.y,22,0xf7ad8a,.13);}
+
 }
 drawActor(pools,S.camY);
 let objective='ПІДІЙМАЙСЯ ВГОРУ ПО ПЛАТФОРМАХ. БАЛАСТ МОЖНА ЗВІЛЬНИТИ НА СЕРЕДНІЙ ВИСОТІ.';
@@ -281,5 +334,5 @@ setText('W01','01 ↔ ЗАЛА');setText('W02','03 ↔ АРХІВ');
 setText('W03','РЕГУЛЯТОР '+D.lightMode);
 setText('W04',D.ballastDropped?'БАЛАСТ СКИНУТО':'СКИНУТИ БАЛАСТ · E');
 setText('W05',D.shortcutOpen?'СЛУЖБОВИЙ СПУСК · E':'СЛУЖБОВИЙ СПУСК ЗАКРИТО');
-setText('WLamp',D.keyCollected?'НИЖНІЙ РЕЖИМ C · E':'ТІЛЬКИ З КЛЮЧЕМ');
+setText('WLamp','О2: '+fragmentsText()+' | UV: '+D.uvSpider);
 })();
