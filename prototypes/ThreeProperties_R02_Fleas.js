@@ -33,7 +33,10 @@ for(const st of S.strokes){
 }
 move(P,{bottom:834,slow:(x,y)=>x>680&&x<805&&y>598});
 const pools=allLight(lamps);
-if(!D.slugInfected)chaser(S.slug,pools,{speed:95,notice:215,name:'ПАВУКОВИЙ СЛИМАК',radius:49});
+if(!D.slugInfected){
+ chaser(S.slug,pools,{speed:65,notice:215,name:'ПАВУКОВИЙ СЛИМАК',radius:49});
+ S.slug.x=minmax(S.slug.x,913,1076); // The creature guards its den, not the exit door.
+}
 else{
  // An infested slug is visibly crawling and physically blocks only a small stretch.
  S.slug.x+=Math.sin(S.elapsed*.9)*dt*9;
