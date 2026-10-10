@@ -23,7 +23,7 @@ if(!S.dead&&!D.won){
  if(S.cartGrab){
   S.cartX=clamp(S.cartX+S.x-before,357,1033);
   S.x=S.cartX+S.cartSide*68;S.y=635;S.vy=0;S.ground=true;
-  if(S.cartX>=990&&!D.hiveNest){
+  if(S.cartX>=960&&!D.hiveNest){
    D.hiveNest=true;S.fleas=0;S.shake=.9;
    say('ВІЗОК РОЗДАВИВ БЛОШИНЕ ГНІЗДО! ЗАЛИШИЛАСЯ МЕТАЛЕВА КАПСУЛА ПРАВОРУЧ.',5.2);
   }
