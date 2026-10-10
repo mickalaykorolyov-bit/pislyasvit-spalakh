@@ -46,6 +46,50 @@ if(D.lightMode==='A'){
 S.worldLight=pools;
 // The ballast exists persistently even when shaft is not the current scene.
 // Simulation occurs while here; after landing, the archive's roof is permanently gone.
+// An overhead lamp can be released onto the upper patrol spider.
+if(D.shaftFallingLamp==='warning'){
+ D.shaftLampClock-=DT;
+ if(D.shaftLampClock<=0)D.shaftFallingLamp='falling';
+}else if(D.shaftFallingLamp==='falling'){
+ D.shaftLampY=Math.min(1002,D.shaftLampY+790*DT);
+ if(!S.dead&&S.shield<=0&&Math.abs(S.x-940)<45&&Math.abs(S.y-D.shaftLampY)<100)hurt('ВАЖКА ЛАМПА');
+ if(D.shaftLampY>=1002){
+  D.shaftFallingLamp='landed';D.uvSpider='stunned';D.spiderX=940;D.spiderY=1036;
+  S.fx=.9;message('ПАВУК НЕ РУХАЄТЬСЯ, АЛЕ СВІТИТЬСЯ! НЕСИ ТІЛО ДО ЛІФТА ПРАВОРУЧ.',6);
+ }
+}
+if(S.carrySpider){D.spiderX=S.x+S.face*26;D.spiderY=S.y-30;}
+if(D.uvSpider==='lift'){
+ D.spiderLiftY=Math.max(239,D.spiderLiftY-235*DT);
+ D.spiderX=1106;D.spiderY=D.spiderLiftY;
+ if(D.spiderLiftY<=239){
+  D.uvHold+=DT;
+  if(D.uvHold>=1.3){
+   D.uvSpider='uvReady';
+   message('УЛЬТРАФІОЛЕТ ПРОЯВИВ «КИ» НА ПАВУКОВІ! НАВЕРХУ НАТИСНИ E.',5.5);
+  }
+ }
+}
+if(D.uvSpider==='dropping'){
+ D.spiderY=Math.min(2416,D.spiderY+875*DT);
+ if(D.spiderY>=2416){
+  D.uvSpider='dumped';D.spiderX=1106;
+  message('ПІСЛЯ ПАДІННЯ З ПАВУКА ВИЙШЛА ЩЕ ОДНА ЛІТЕРА «С». ЗАБЕРИ ЇЇ ВНИЗУ E.',6);
+ }
+}
+// Foreground ceiling chunks telegraph then fall on the middle climbing ledge.
+if(D.shaftRock==='ready'&&S.y<1670&&S.y>1545&&S.x>320&&S.x<490){
+ D.shaftRock='warning';D.shaftRockClock=.86;
+ message('УВАЖНО: ЗІ СТЕЛІ ПАДАТИМЕ ВАЖКИЙ УЛАМОК!',3);
+}
+if(D.shaftRock==='warning'){
+ D.shaftRockClock-=DT;
+ if(D.shaftRockClock<=0)D.shaftRock='falling';
+}else if(D.shaftRock==='falling'){
+ D.shaftRockY=Math.min(1568,D.shaftRockY+930*DT);
+ if(!S.dead&&Math.abs(S.x-433)<51&&Math.abs(S.y-D.shaftRockY)<73)hurt('УЛАМОК СТЕЛІ');
+ if(D.shaftRockY>=1568)D.shaftRock='settled';
+}
 if(D.ballastPhase==='warning'){
  D.ballastTimer-=DT;
  if(D.ballastTimer<=0){D.ballastPhase='falling';message('БАЛАСТ ЗІРВАВСЯ! НЕ СТОЙ ПІД НИМ!',3.2);}
