@@ -4174,7 +4174,7 @@
             " if(rise>50){animGroup='Jump';fps=4;frames=2;}",
             " else if(rise< -65){animGroup='Fall';fps=4;frames=2;}",
             " else if(speed>48){animGroup='Run';fps=12;frames=4;}",
-            " const chosen=animGroup+Math.floor(s.t*fps)%frames;",
+            " const chosen=animGroup+(Math.floor(s.t*fps)%frames);",
             " const spriteNames=[\"SpalakhIdle0\",\"SpalakhIdle1\",\"SpalakhIdle2\",\"SpalakhIdle3\",\"SpalakhRun0\",\"SpalakhRun1\",\"SpalakhRun2\",\"SpalakhRun3\",\"SpalakhJump0\",\"SpalakhJump1\",\"SpalakhFall0\",\"SpalakhFall1\"];",
             " for(const n of spriteNames){",
             "  const q=obj(n);if(!q)continue;",
