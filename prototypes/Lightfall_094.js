@@ -93,3 +93,108 @@ if(dt){
   }
  }
 }
+
+if(!s.dead&&!s.won&&dt){
+ const dir=Number(i.right)-Number(i.left);
+ if(dir!==0&&s.dashTimer<=0)s.face=dir;
+ // X is a bright, directional impulse, also used on the trampoline hook.
+ if(i.dash&&!s.dashHeld&&s.dashCooldown<=0){
+  s.dashTimer=.17;s.dashCooldown=.82;s.vx=s.face*632;s.flash=.48;
+ }
+ s.dashHeld=i.dash;
+ const onIce=s.x>135&&s.x<535&&s.y>601;
+ s.sliding=i.slide&&s.ground&&(Math.abs(s.vx)>60||dir!==0);
+ if(s.dashTimer>0)s.vx=s.face*632;
+ else if(s.sliding){
+  const slideSpeed=dir*(onIce?456:383);
+  s.vx+=clamp(slideSpeed-s.vx,-(dir?1400:550)*dt,(dir?1400:550)*dt);
+ }else{
+  const wanted=dir*(i.slide?67:i.boost?320:196);
+  const force=dir!==0?(s.ground?1580:970):(s.ground?(onIce?330:2350):970);
+  s.vx+=clamp(wanted-s.vx,-force*dt,force*dt);
+ }
+ if(s.ground)s.coyote=.12;else s.coyote=Math.max(0,s.coyote-dt);
+ if(i.jump&&!s.jumpHeld)s.jumpBuffer=.135;
+ else s.jumpBuffer=Math.max(0,s.jumpBuffer-dt);
+ if(s.jumpBuffer>0&&(s.ground||s.coyote>0)){
+  s.vy=-505;s.ground=false;s.coyote=0;s.jumpBuffer=0;s.jumpHold=0;s.flash=.19;
+ }
+ if(s.jumpHeld&&!i.jump&&s.vy< -140)s.vy*=.59;
+ s.jumpHeld=i.jump;
+ if(!s.ground){
+  if(s.vy<0&&i.jump&&s.jumpHold<.20){s.vy+=810*dt;s.jumpHold+=dt;}
+  else s.vy+=(s.vy<0?1150:1370)*dt;
+  s.vy=clamp(s.vy,-890,870);
+ }
+ const lastY=s.y,oldX=s.x;
+ s.x=clamp(s.x+s.vx*dt,19,1263);
+ s.y+=s.vy*dt;
+ let contact=false;
+ for(const p of platforms){
+  if(s.vy>=0&&lastY<=p.y+8&&s.y>=p.y&&s.x+13>p.x&&s.x-13<p.x+p.w){
+   s.y=p.y;s.vy=0;contact=true;break;
+  }
+ }
+ if(!s.ground&&contact)s.landTimer=.13;
+ s.ground=contact;s.landTimer=Math.max(0,s.landTimer-dt);
+ // The low shutter has a real collision volume. Slide, or go around it above.
+ const throughGate=s.x>gate.x&&s.x<gate.x+gate.w&&s.y>605;
+ if(throughGate&&!s.sliding){
+  if(oldX<=gate.x){s.x=gate.x-13;s.vx=0;}
+  else if(oldX>=gate.x+gate.w){s.x=gate.x+gate.w+13;s.vx=0;}
+ }
+ if(s.y>760)extinguish('ПРОВАЛЛЯ');
+ // Springs fire on contact, and allow useful mid-air dashes.
+ for(let n=0;n<springs.length;n++){
+  const q=springs[n];
+  if(s.bounceCd<=0&&Math.abs(s.x-(q.x+q.w/2))<q.w/2+8&&s.y>=625&&s.ground){
+   s.vy=-865;s.ground=false;s.coyote=0;s.bounceCd=.53;s.lastSpring=n;
+   s.flash=.45;say(n===0?'БАТУТ! РИВОК X У ПОВІТРІ ЗАПУСКАЄ ПЕРШУ ЛАМПУ.':
+    'БАТУТ! ЗАСТРИБНИ НА ВЕРХНЮ ПЛАТФОРМУ З КАМЕНЕМ.',3.4);
+  }
+ }
+ // Hook can only be struck by airborne dash.
+ if(s.lamps[0].state==='ready'&&!s.ground&&s.dashTimer>0&&
+   distance(s.x,s.y-48,hook.x,hook.y)<97)
+  trigger(0,'СТЕЛЬОВИЙ ГАК ЗБИТО РИВКОМ X');
+ // Sliding below the shutter reaches the orange mechanical latch.
+ if(s.sliding&&s.y>600&&s.x>592&&s.x<790&&s.vx>125)
+  s.slideMeters=clamp(s.slideMeters+(Math.max(s.vx,130)*dt),0,220);
+ if(s.x<540&&s.slideMeters>0)s.slideMeters=Math.max(0,s.slideMeters-dt*130);
+ if(s.lamps[1].state==='ready'&&s.sliding&&s.x>753&&s.y>603&&s.slideMeters>92)
+  trigger(1,'КОВЗАННЯ ВІДКРИЛО НИЖНІЙ ЗАСУВ');
+ // E: refillable throwing stone on the upper balcony.
+ if(i.use&&!s.useHeld&&!s.stone&&!s.shot&&distance(s.x,s.y-25,ammo.x,ammo.y)<82){
+  s.stone=true;say('КАМІНЬ У РУКАХ. ПОЦІЛЬ У ЧЕРВОНЕ СТЕЛЬОВЕ КРІПЛЕННЯ КЛАВІШЕЮ F.',4.3);
+ }
+ if(i.throw&&!s.throwHeld&&s.stone){
+  s.stone=false;s.shot={x:s.x+s.face*24,y:s.y-53,vx:s.face*487,vy:-425,ttl:2.7};
+ }
+ if(s.shot){
+  const p=s.shot;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=775*dt;p.ttl-=dt;
+  if(s.lamps[2].state==='ready'&&distance(p.x,p.y,target.x,target.y)<46){
+   trigger(2,'КАМІНЬ РОЗБИВ КРІПЛЕННЯ ТРЕТЬОЇ ЛАМПИ');s.shot=null;
+  }else if(p.ttl<=0||p.y>650||p.x<0||p.x>1280)s.shot=null;
+ }
+ s.useHeld=i.use;s.throwHeld=i.throw;
+ // Bright body and afterimage both belong to the actor; stronger on fast movement.
+ const desired=clamp(.12+Math.pow(Math.min(1,Math.abs(s.vx)/350),1.25)*.80+
+  (s.dashTimer>0?.13:0)+(s.flash>.23?.10:0),.12,1);
+ s.light+=(desired-s.light)*(1-Math.exp(-(desired>s.light?8:3)*dt));
+ s.trailAcc+=dt;
+ if(s.trailAcc>.028&&Math.abs(s.vx)>54){
+  s.trail.push({x:s.x-s.face*18,y:s.y-42,p:s.light,age:0});s.trailAcc=0;
+ }
+ for(const tail of s.trail)tail.age+=dt;
+ s.trail=s.trail.filter(t=>t.age<.82).slice(-35);
+ // Enemy corridor: darkness exposes Spalakh. Fallen lamps give cover.
+ const dark=s.x>860&&s.y>571&&!shelter(s.x,s.y-39);
+ s.alert=clamp(s.alert+(dark?dt*1.18:-dt*1.75),0,1.3);
+ if(s.alert>=1)extinguish('ПАВУК ВИЯВИВ СПАЛАХА У ТЕМРЯВІ');
+ if(s.x>1227&&s.y>549){
+  if(complete()&&shelter(s.x,s.y-39)){
+   s.won=true;s.flash=.9;say('СВІТЛОПАД ПРОЙДЕНО! ПАВУКИ ТЕБЕ НЕ ПОБАЧИЛИ.',99);
+  }else{s.x=1214;s.vx=0;say('ЗАПАЛИ ВСІ ТРИ ЛАМПИ ПЕРЕД ВИХОДОМ.',1.5);}
+ }
+}
+s.dashHeld=i.dash;s.useHeld=i.use;s.throwHeld=i.throw;
