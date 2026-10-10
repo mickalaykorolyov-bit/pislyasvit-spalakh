@@ -256,7 +256,7 @@ if(fx.ok){
   rect(w,p.x-32,p.y-23,64,45,0x244655,.96);
   w.lineStyle(3,c,.96);w.drawRoundedRect(p.x-32,p.y-23,64,45,8);
   disk(w,p.x,p.y-4,14,0x1a313e);
-  w.lineStyle(4,c,.9);w.drawArc?null:null;
+  w.lineStyle(4,c,.9);
   line(w,p.x,p.y-4,p.x+11*Math.cos(mode*2*Math.PI/3),p.y-4+11*Math.sin(mode*2*Math.PI/3),c,.95,3);
   for(let a=0;a<3;a++)disk(w,p.x-19+a*19,p.y+14,3,a===mode?0xa8ffcf:0x526c74);
  }
@@ -314,3 +314,47 @@ if(fx.ok){
   rect(over,979,111,262*clamp(s.alert,0,1),7,0xfa5579,.85);
  }
 }
+
+// The original Spalakh sprite and its eight animation cycles are preserved.
+const p=obj('Player');
+if(p){
+ const motion=Math.abs(s.vx);
+ const anim=s.dead?'Fall':!s.ground?(s.vy<0?'Jump':'Fall'):
+  s.groundTimer>.01?'Land':input.crouch?'Crouch':motion>151?'Run':motion>18?'Slow':'Idle';
+ if(p.getAnimationName&&p.getAnimationName()!==anim&&p.setAnimationName)p.setAnimationName(anim);
+ if(p.setAnimationSpeedScale)p.setAnimationSpeedScale(anim==='Run'?clamp(motion/219,.85,1.35):1);
+ const scale=.55;if(p.setScale)p.setScale(scale);
+ p.setPosition(s.x-192*scale,s.y-242*scale);
+ if(p.flipX)p.flipX(s.face<0);
+ if(p.setOpacity)p.setOpacity(s.dead?0:(hidden()?54:clamp(157+s.bright*94,157,255)));
+}
+gdjs.evtTools.camera.setCameraX(runtimeScene,640,'',0);
+gdjs.evtTools.camera.setCameraY(runtimeScene,360,'',0);
+hud('HUDTitle','ПІСЛЯСВІТ   /   ОБСЕРВАТОРІЯ ХИБНОГО СВІТЛА');
+hud('HUDStatus','ОПТИКА '+s.modes.map((mode,n)=>(n+1)+':'+(mode+1)).join('    ')+
+ '      МІСТ '+(bridge()?'✓':'○')+
+ '      ЗАТВОР '+(irisOpen()?'✓':'○')+
+ '      '+(hidden()?'НЕВИДИМИЙ У СВІТЛІ':'ПОМІТНИЙ У ТЕМРЯВІ')+
+ '      ЗАГИБЕЛЕЙ '+s.deaths);
+let task='ПОШУКАЙ ОПТИЧНИЙ ПУЛЬТ, ЯКИЙ КЕРУЄ ПРОМЕНЕМ. E ПОВЕРТАЄ ДЗЕРКАЛО.';
+if(!bridge())task='01 / ПОДИВИСЬ НА ПРОВАЛЛЯ. ЗРОБИ СВІТЛОВУ ПІДЛОГУ ЛІВИМ РЕФРАКТОРОМ [E].';
+else if(!s.crossed)task='02 / СВІТЛОВИЙ МІСТ РЕАЛЬНИЙ. ПЕРЕТНИ ПРОВАЛЛЯ ТА ПІДНІМИСЯ ДО СЕРЕДНЬОГО ПУЛЬТА.';
+else if(s.modes[1]===0)task='03 / ДРУГИЙ РЕФРАКТОР МОЖЕ ЗАПУСТИТИ РУХОМЕ СВІТЛО. ПОВЕРНИ ЙОГО [E].';
+else if(s.modes[2]===0)task='04 / СУПРОВОДЖУЙ РУХОМИЙ ПРОМІНЬ ДО ВЕРХНЬОГО ПРАВОГО ПУЛЬТА.';
+else if(s.modes[2]!==2)task='05 / СПРОБУЙ ПЕРЕНАПРАВИТИ ТРЕТІЙ ПРОМІНЬ НА ФІНАЛЬНИЙ ПРОХІД.';
+else if(!irisOpen())task='06 / ПЕРЕГОРОДКА НЕ ПІДДАЄТЬСЯ. МОЖЛИВО, ПОТРІБНО ПЕРЕНАЛАШТУВАТИ ДРУГИЙ ПРОМІНЬ.';
+else task='СВІТЛОВИЙ КОРИДОР БЕЗПЕЧНИЙ. ПАВУКИ НЕ БАЧАТЬ СПАЛАХА — ДОЙДИ ДО ВИХОДУ.';
+if(s.x>780&&s.y>570&&!hidden())task='УВАГА! У ТЕМРЯВІ ПАВУКИ БАЧАТЬ СПАЛАХА. ТРИМАЙСЯ ПІД ПРОМЕНЕМ.';
+if(s.won)task='ОБСЕРВАТОРІЮ ПРОЙДЕНО — ТИ ПРОКЛАВ ДОРОГУ ІЗ СВІТЛА.';
+hud('HUDTask',task);
+hud('HUDHint','A/D — РУХ     SPACE — СТРИБОК     E — ПОВЕРНУТИ ОПТИКУ     S — ПРИСІСТИ     R — СПОЧАТКУ');
+hud('HUDMessage',s.messageClock>0?s.message:'');
+hud('W01','A   '+['ТУМАН','МІСТ','ГЛИБИНА'][s.modes[0]]);
+hud('W02','B   '+['КУПОЛ','МАЯТНИК','ЗАТВОР'][s.modes[1]]);
+hud('W03','C   '+['КУПОЛ','ХВИЛЯ','ВИХІД'][s.modes[2]]);
+hud('W04',bridge()?'МІСТ ІЗ ПРОМЕНЯ': 'ТУТ НЕМАЄ ПІДЛОГИ');
+hud('W05',irisOpen()?'ОПТИЧНИЙ ЗАТВОР ВІДКРИТО':'ОПТИЧНИЙ ЗАТВОР ЗАКРИТО');
+hud('WLamp',hidden()?'ПАВУКИ НЕ ПОМІЧАЮТЬ СПАЛАХА':'ПАВУКИ БАЧАТЬ СВІТЛО СПАЛАХА');
+hud('HUDWin',s.won?'ОБСЕРВАТОРІЮ ПРОЙДЕНО!':'');
+const win=obj('HUDWin');if(win&&win.setOpacity)win.setOpacity(s.won?255:0);
+})();
