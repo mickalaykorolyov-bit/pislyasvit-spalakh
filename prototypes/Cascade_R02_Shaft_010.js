@@ -39,6 +39,10 @@ if(D.lightMode==='A'){
 S.worldLight=pools;
 // The ballast exists persistently even when shaft is not the current scene.
 // Simulation occurs while here; after landing, the archive's roof is permanently gone.
+if(D.ballastPhase==='warning'){
+ D.ballastTimer-=DT;
+ if(D.ballastTimer<=0){D.ballastPhase='falling';message('БАЛАСТ ЗІРВАВСЯ! НЕ СТОЙ ПІД НИМ!',3.2);}
+}
 if(D.ballastPhase==='falling'){
  D.ballastV=Math.min(1160,D.ballastV+1550*DT);
  D.ballastY+=D.ballastV*DT;
@@ -72,8 +76,8 @@ if(!S.dead&&!S.transition&&!D.gameWon){
    }
   }else if(dist(S.x,S.y-39,ballastLever.x,ballastLever.y)<93){
    if(D.ballastPhase==='hanging'){
-    D.ballastPhase='falling';D.ballastV=0;S.fx=.5;
-    message('КРІПЛЕННЯ ВІДКРИТО. БАЛАСТ ПАДАЄ ЧЕРЕЗ УСЮ ШАХТУ!',5);
+    D.ballastPhase='warning';D.ballastTimer=.85;D.ballastV=0;S.fx=.5;
+    message('ТРОС ВІД’ЄДНАНО! ЧЕРВОНИЙ ВІДЛІК — 0.85 С. ВІДІЙДИ ВІД ШАХТИ ПАДІННЯ!',5);
    }else message('КРІПЛЕННЯ ПОРОЖНЄ. БАЛАСТ УЖЕ ЗВІЛЬНЕНО.',2.8);
   }else if(dist(S.x,S.y-38,topDial.x,topDial.y)<99){
    if(D.ballastPhase!=='settled')message('СПОЧАТКУ ДОЧЕКАЙСЯ УДАРУ БАЛАСТУ. РЕГУЛЯТОР ЗАБЛОКОВАНИЙ.',4);
@@ -126,7 +130,11 @@ if(FG.ok){
  if(D.ballastPhase!=='settled'){
   const by=D.ballastY;
   if(D.ballastPhase==='hanging')ln(w,1050,812,1050,by-29,0xc9a0a2,.87,4);
-  glow(w,1050,by,75,D.ballastPhase==='falling'?0xef7289:0xedb38e,.13);
+  glow(w,1050,by,75,D.ballastPhase==='falling'||D.ballastPhase==='warning'?0xef7289:0xedb38e,.13);
+  if(D.ballastPhase==='warning'){
+   glow(b,1050,1167,140,0xfd5975,.13+.10*Math.abs(Math.sin(D.time*19)));
+   for(let y=997;y<2408;y+=85)rect(w,1021,y,57,11,0xfd6780,.25+.15*Math.abs(Math.sin(D.time*19)));
+  }
   rect(w,1011,by-30,79,63,D.ballastPhase==='falling'?0x8e6574:0x5c6f79,.98);
   for(let n=0;n<3;n++)rect(w,1023,by-18+n*17,55,8,0xbea2a1,.42);
  }else{
