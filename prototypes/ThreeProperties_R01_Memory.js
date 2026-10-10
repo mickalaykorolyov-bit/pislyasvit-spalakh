@@ -9,7 +9,8 @@ const SOCK=[{x:778,y:578},{x:865,y:578},{x:952,y:578}],SENSOR={x:1067,y:575},EXI
 const litBase=[{x:133,y:568,r:182},{x:359,y:578,r:138},{x:737,y:573,r:159},{x:1068,y:568,r:145}];
 if(D.room1Raised)litBase.push({x:1169,y:577,r:181});
 move(P,{bottom:815});
-inkUpdate(!E||(!S.carryPiece&&!SOCK.some(p=>d2(S.x,S.y-39,p.x,p.y)<74)));
+const depositing=E&&!!S.carryPiece&&SOCK.some((p,i)=>!S.socket[i]&&d2(S.x,S.y-39,p.x,p.y)<83);
+inkUpdate(!depositing);
 const bridge=S.strokes.find(t=>t.state==='solid'&&t!==S.carryStroke&&t.len>214&&
  Math.abs(Math.cos(t.angle))>.84&&t.cx>530&&t.cx<651&&t.cy>615&&t.cy<658);
 if(!D.room1Bridge&&bridge&&S.x>705&&S.y>578){
