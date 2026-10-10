@@ -43,6 +43,9 @@ if(D.lightMode==='A'){
 }else{
  pools.push({x:632,y:2410,r:197},{x:290,y:2413,r:167},{x:970,y:228,r:120});
 }
+if(D.shaftLightSensor)pools.push({x:900,y:1940,r:185});
+if(D.shaftFallingLamp==='landed'||D.uvSpider!=='alive')
+ pools.push({x:D.spiderX,y:D.spiderY-12,r:138});
 S.worldLight=pools;
 // The ballast exists persistently even when shaft is not the current scene.
 // Simulation occurs while here; after landing, the archive's roof is permanently gone.
@@ -113,8 +116,49 @@ if(!S.dead&&!S.transition&&!D.gameWon){
   (y>1560&&y<1745&&x>560&&x<720)||
   (y>2000&&y<2155&&x>670&&x<788)
  )});
+ // A high-speed sensor catches the PLAYER'S OWN LIGHT and powers a refuge.
+ if(!D.shaftLightSensor&&Math.abs(S.x-839)<63&&Math.abs(S.y-2021)<53&&Math.abs(S.vx)>160&&S.brightness>.64){
+  D.shaftLightSensor=true;S.fx=.56;message('СЕНСОР ПОБАЧИВ СЯЙВО СПАЛАХА — ПРОХІД ОСВІТЛЕНО.',4);
+ }
+ if(I.throw&&!S.fHeld&&S.rockCarry){
+  S.shot={x:S.x+S.face*25,y:S.y-43,vx:S.face*395,vy:-145,t:1.2};S.rockCarry=false;
+ }
+ S.fHeld=I.throw;
+ if(S.shot){
+  const a=S.shot;a.x+=a.vx*DT;a.y+=a.vy*DT;a.vy+=690*DT;a.t-=DT;
+  if(dist(a.x,a.y,shotSpider.x,shotSpider.y-35)<62&&!D.shaftProjectileUsed){
+   D.shaftProjectileUsed=true;S.shot=null;S.fx=.7;
+   message('УЛАМОК ЗІШТОВХНУВ ПАВУКА З ПЛАТФОРМИ! ПРОХІД ЗВІЛЬНЕНО.',4.4);
+  }else if(a.t<=0||a.y>2500)S.shot=null;
+ }
  if(E){
-  if(dist(S.x,S.y-34,84,2415)<91){
+  if(S.carrySpider&&dist(S.x,S.y-38,spiderLift.x,spiderLift.y-38)<130){
+   S.carrySpider=false;D.uvSpider='lift';D.spiderLiftY=1036;D.uvHold=0;
+   message('ПАВУК НА ПІДЙОМНИКУ! СТЕЖ, ЯК ЙОГО ПІДНІМУТЬ ДО УЛЬТРАФІОЛЕТУ.',5.5);
+  }else if(D.uvSpider==='stunned'&&dist(S.x,S.y-36,D.spiderX,D.spiderY-38)<100){
+   D.uvSpider='carried';S.carrySpider=true;S.fx=.55;
+   message('ТИ ПІДНЯВ СВІТНОГО ПАВУКА. ВІДНЕСИ ЙОГО ДО ЛІФТА ПРАВОРУЧ.',5);
+  }else if(D.uvSpider==='uvReady'&&dist(S.x,S.y-40,UV.x,UV.y)<110){
+   D.uvSpider='uvRead';D.oxygenParts.uv=true;S.fx=.85;
+   message('ПЕРША ЛІТЕРА З ТІЛА ПАВУКА — «КИ»! НАТИСНИ E ЗНОВУ, ЩОБ СКИНУТИ ТІЛО.',5.5);
+  }else if(D.uvSpider==='uvRead'&&dist(S.x,S.y-40,UV.x,UV.y)<110){
+   D.uvSpider='dropping';D.spiderX=1106;D.spiderY=239;S.fx=.8;
+   message('ТІЛО ПАДАЄ НА ДНО ШАХТИ. ТАМ З’ЯВИТЬСЯ НОВА ЛІТЕРА!',4.7);
+  }else if(D.uvSpider==='dumped'&&dist(S.x,S.y-35,1106,2380)<125){
+   D.oxygenParts.spiderDrop=true;D.uvSpider='finished';S.fx=.9;
+   message('ДРУГА ЛІТЕРА З ПАВУКА — «С»! ЗАРАЗ МАЄМО «КИС».',5);
+  }else if(!D.shaftShoved&&dist(S.x,S.y-39,shoveSpider.x,shoveSpider.y-36)<93){
+   D.shaftShoved=true;S.fx=.65;message('ТИ ЗІШТОВХНУВ ПАВУКА З ВИСТУПУ!',3.5);
+  }else if(!D.shaftProjectileUsed&&!S.rockCarry&&dist(S.x,S.y-37,ammo.x,ammo.y)<91){
+   S.rockCarry=true;message('ПІДНЯТО ЗАЛІЗНИЙ УЛАМОК. КИНЬ F У ПАВУКА ПРАВОРУЧ.',4);
+  }else if(D.shaftFallingLamp==='ready'&&dist(S.x,S.y-37,spiderLampLever.x,spiderLampLever.y)<93){
+   D.shaftFallingLamp='warning';D.shaftLampClock=.85;S.fx=.6;
+   message('ЛАМПА ВПАДЕ НА ПАВУКА ЧЕРЕЗ 0.85 С! СХОВАЙСЯ!',4.5);
+  }else if(dist(S.x,S.y-34,zeroDoor.x,zeroDoor.y)<92){
+   goTo(4,'FROM_SHAFT',{x:111,y:635});
+  }else if(dist(S.x,S.y-34,chaseDoor.x,chaseDoor.y)<87){
+   goTo(5,'FROM_SHAFT',{x:110,y:635});
+  }else if(dist(S.x,S.y-34,84,2415)<91){
    goTo(1,'FROM_SHAFT',{x:161,y:635});
   }else if(dist(S.x,S.y-33,1179,2415)<92){
    if(D.ballastDropped&&(D.lightMode==='B'||D.keyCollected))
