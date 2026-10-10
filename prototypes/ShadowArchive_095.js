@@ -243,6 +243,8 @@ if(g.ok){
   box(b,x,y,ww,hh,0x0c2a3c,.50);
   line(b,x+12,y+6,x+12,y+hh-6,0x9abfd2,.15,1);
  }
+ // Put corridor surface behind every lamp's light so cover is ALWAYS visually evident.
+ box(b,691,535,589,94,0x0d1a29,.70);
  // An archive fresco that lights up only in darkness.
  box(b,438,135,334,119,s.blackout?0x1f2342:0x102031,s.blackout?.91:.30);
  b.lineStyle(2,s.blackout?0x9887e9:0x345970,s.blackout?.87:.35);
@@ -337,8 +339,7 @@ if(g.ok){
    line(w,692,95,692,628,0xff6f88,.65,2);
   }
  }
- // Powered corridor: currently dark, safe only after completing all four glyphs.
- box(b,691,535,589,94,0x0d1a29,.59);
+ // Powered corridor: physical beams are drawn on top of the dark base and the cart's glow.
  for(let n=0;n<5;n++){
   const x=corridorBulbs[n],on=s.code===4;
   line(w,x,529,x,554,on?0x9effdc:0x776173,.73,2);
@@ -430,7 +431,7 @@ for(let n=0;n<4;n++){
  const on=SEQUENCE.slice(0,s.code).includes(n);
  hud('W0'+(n+1),(on?'✓ ':'')+['I','II','III','IV'][n]);
 }
-hud('W05',s.blackout?'ПОРЯДОК:  III  →  I  →  IV  →  II':'');
+hud('W05',s.blackout?'III  →  I  →  IV  →  II':'');
 hud('WLamp',s.wallBroken?'СТІНА ЗРУЙНОВАНА · S — ПРОЛІЗТИ':'ВІЗОК ТИСНЕ НА ПЛИТУ → ГІДРАВЛІКА');
 hud('HUDWin',s.won?'АРХІВ ТІНЕЙ ПРОЙДЕНО!':'');
 const win=get('HUDWin');if(win&&win.setOpacity)win.setOpacity(s.won?255:0);
