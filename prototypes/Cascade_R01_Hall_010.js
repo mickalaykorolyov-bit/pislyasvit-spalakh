@@ -64,6 +64,7 @@ deathTick();
 if(FG.ok){
  drawBase();
  const back=FG.back,w=FG.world;
+ w.clear();
  for(const p of floors)platform(w,p);
  drawLights(pools);
  // Industrial archive vault with inaccessible end gate.
