@@ -1,0 +1,58 @@
+name: Publish Afterlight 0.8.4k
+on:
+  push:
+    branches: [main]
+    paths:
+      - Spalakh_Prototype_084k.json
+      - .github/workflows/publish-game.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  export-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Prepare local asset references for exporter
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          p = json.loads(pathlib.Path('Spalakh_Prototype_084k.json').read_text())
+          for resource in p['resources']['resources']:
+              name = resource.get('name','')
+              if name.startswith('assets/'):
+                  if not pathlib.Path(name).is_file():
+                      raise FileNotFoundError(name)
+                  resource['file'] = str(pathlib.Path(name).resolve())
+          pathlib.Path('_publish_input.json').write_text(json.dumps(p,ensure_ascii=False))
+          print('Exporting',p['name'],'with',len(p['resources']['resources']),'resources')
+          PY
+      - name: Install GDevelop HTML5 CLI exporter
+        run: npm install --no-audit --no-fund -g gdexporter@3.2.7
+      - name: Export GDevelop project to playable HTML5
+        run: gdexport --in _publish_input.json --out _published_game --verbose
+      - name: Validate export contents
+        run: |
+          test -s _published_game/index.html
+          grep -q 'gdjs\|data.js\|game' _published_game/index.html
+          find _published_game -maxdepth 2 -type f | head -60
+      - name: Publish generated HTML5 files to GitHub Pages main branch
+        run: |
+          cp -a _published_game/. .
+          rm -rf _published_game _publish_input.json
+          printf '0.8.4k\n' > GAME_VERSION.txt
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Already published"
+          else
+            git commit -m "Publish playable 0.8.4k HTML5 export [skip ci]"
+            git push origin HEAD:main
+          fi
