@@ -37,7 +37,7 @@ for(const L of S.lamps){
   if(L.at>=L.y){L.phase='cool';L.wait=1.8;}
  }else if(L.phase==='cool'){L.wait-=dt;if(L.wait<=0){L.phase='ready';L.wait=2;}}
 }
-if(Q&&D.towerGravity){S.grav*=-1;S.ground=false;S.vy=0;
+if(Q&&D.towerGravity&&!S.carryStroke){S.grav*=-1;S.ground=false;S.vy=0;
  announce(S.grav===1?'ГРАВІТАЦІЯ ТЯГНЕ ВГОРУ. СТЕЛЯ СТАЄ ПІДЛОГОЮ.':'СПАЛАХ ЗНОВУ ПАДАЄ ВНИЗ.',3);
 }
 move(f,{bottom:2660,top:90,ice:(x,y)=>x>960&&y>1945&&y<2002});
@@ -59,8 +59,6 @@ if(E&&!S.dead){
  }
 }
 inkUpdate(!used);
-if(!D.towerTop&&D.towerGravity&&S.grav===1&&
- (S.shot?d2(S.shot.x,S.shot.y,SENSOR.x,SENSOR.y)<90:false||false)){} // only X trail powers it
 if(!D.towerTop&&D.towerGravity&&K.x&&d2(S.x,S.y-42,SENSOR.x,SENSOR.y)<107){
  D.towerTop=true;S.shake=.8;announce('СТЕЛЬОВИЙ СЕНСОР ПІЙМАВ СПАЛАХІВ ШЛЕЙФ! ДВЕРІ ВІДЧИНЕНІ.',5);
 }
