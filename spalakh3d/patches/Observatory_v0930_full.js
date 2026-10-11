@@ -588,7 +588,7 @@ for(let i=0;i<visibleSpiders.length;i++){
    const three=o&&o.get3DRendererObject&&o.get3DRendererObject();
    if(!three||typeof three.traverse!=='function')continue;
    if(pd.applied[cfg.name]===three.uuid)continue;
-   let mapped=0,notReady=false;
+   let mapped=0,notReady=false,loaded=false;
    try{
     three.traverse(node=>{
      if(!node.isMesh||!node.material)return;
@@ -624,7 +624,7 @@ for(let i=0;i<visibleSpiders.length;i++){
    }catch(e){
     if(!pd.warned){pd.warned=true;console.warn('[parallax] material fallback:',e&&e.message);}
    }
-   if(mapped>0&&!notReady)pd.applied[cfg.name]=three.uuid;
+   if(loaded&&!notReady)pd.applied[cfg.name]=three.uuid;
    else pd.attempts[cfg.name]=(pd.attempts[cfg.name]||0)+1;
   }
  }
