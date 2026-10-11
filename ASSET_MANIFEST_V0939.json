@@ -1,0 +1,959 @@
+{
+  "package": "Spalakh_Claude_Macro_Foreground_DOF_Lens_v0940",
+  "purpose": "Unmodified native GDevelop v0.9.39 project, synchronized JS and all 105 exact original binary assets for implementing requested v0.9.40 visual upgrade",
+  "source_branch": "spalakh-25d-clean-sprite-physical-light-v0939",
+  "source_project": "spalakh3d/Spalakh_NeonObservatory_ONLY_v0939_RealLight_RoundAura_SlowSpiders.json",
+  "total_resources": 105,
+  "assets": [
+    {
+      "resource_name": "spalakh3d/assets/fish.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/fish.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/fish.glb",
+      "blob_sha": "e582f93ee1415ce440f4d6cb1dc6a5f3495bda6a",
+      "size_bytes": 24632
+    },
+    {
+      "resource_name": "spalakh3d/assets/flat_white.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/flat_white.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/flat_white.png",
+      "blob_sha": "d1c75f60590bc92fc6579c8f70a1664065658cb8",
+      "size_bytes": 79
+    },
+    {
+      "resource_name": "spalakh3d/assets/spalakh_flame_v04.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/spalakh_flame_v04.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/spalakh_flame_v04.glb",
+      "blob_sha": "989821a78c005300620cbb8b7d8fcd209bc271b6",
+      "size_bytes": 136632
+    },
+    {
+      "resource_name": "spalakh3d/assets/spalakh_soft_glow_v052.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/spalakh_soft_glow_v052.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/spalakh_soft_glow_v052.png",
+      "blob_sha": "f066af569a554615b6f87904dc7303cbb9eee172",
+      "size_bytes": 1272
+    },
+    {
+      "resource_name": "spalakh3d/assets/underwater_gradient_v06.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/underwater_gradient_v06.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/underwater_gradient_v06.png",
+      "blob_sha": "991e8d845f63f83b26cda22cc59198c1c3419013",
+      "size_bytes": 32964
+    },
+    {
+      "resource_name": "spalakh3d/assets/SoftBlockDark_v07.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/SoftBlockDark_v07.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/SoftBlockDark_v07.glb",
+      "blob_sha": "f49a278af05372ce2ba227c7ff87446f3834c296",
+      "size_bytes": 10860
+    },
+    {
+      "resource_name": "spalakh3d/assets/SoftBlockMid_v07.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/SoftBlockMid_v07.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/SoftBlockMid_v07.glb",
+      "blob_sha": "c664f3ef03a1a3f0a756bb4d77d7e28ceaf44690",
+      "size_bytes": 10872
+    },
+    {
+      "resource_name": "spalakh3d/assets/SoftBlockRim_v07.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/SoftBlockRim_v07.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/SoftBlockRim_v07.glb",
+      "blob_sha": "52014398804ff10e310db24b1058fc56fe2167ba",
+      "size_bytes": 10868
+    },
+    {
+      "resource_name": "spalakh3d/assets/CoralOrganicCyan_v07.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/CoralOrganicCyan_v07.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/CoralOrganicCyan_v07.glb",
+      "blob_sha": "ea2c527d5c6a825ec5958d0ca2bf5db7cbc107e6",
+      "size_bytes": 25120
+    },
+    {
+      "resource_name": "spalakh3d/assets/CoralOrganicPink_v07.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/CoralOrganicPink_v07.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/CoralOrganicPink_v07.glb",
+      "blob_sha": "9262d11916ed2122fdd907a0221b53e4a88d1930",
+      "size_bytes": 25140
+    },
+    {
+      "resource_name": "spalakh3d/assets/CoralOrganicBlue_v07.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/CoralOrganicBlue_v07.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/CoralOrganicBlue_v07.glb",
+      "blob_sha": "94523466902a45bc803880f0649b512d84658964",
+      "size_bytes": 25136
+    },
+    {
+      "resource_name": "spalakh3d/assets/CoralOrganicLavender_v07.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/CoralOrganicLavender_v07.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/CoralOrganicLavender_v07.glb",
+      "blob_sha": "04bdec35d7e585a1e2519682ef7173b22028ec00",
+      "size_bytes": 25160
+    },
+    {
+      "resource_name": "spalakh3d/assets/obs_teal_radial_v08.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/obs_teal_radial_v08.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/obs_teal_radial_v08.png",
+      "blob_sha": "c928c7078d097cdab010f4c530934185ef31b252",
+      "size_bytes": 34719
+    },
+    {
+      "resource_name": "spalakh3d/assets/ObservatorySpotlight_v09.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/ObservatorySpotlight_v09.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/ObservatorySpotlight_v09.glb",
+      "blob_sha": "392d9742aced1dac6f217ab0cf817ef3f10661b7",
+      "size_bytes": 79040
+    },
+    {
+      "resource_name": "spalakh3d/assets/ObservatoryConsole_v09.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/ObservatoryConsole_v09.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/ObservatoryConsole_v09.glb",
+      "blob_sha": "f6998976dee663ac95f2f75daa56d87314b1d091",
+      "size_bytes": 10912
+    },
+    {
+      "resource_name": "spalakh3d/assets/ObservatorySpider_v09.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/ObservatorySpider_v09.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/ObservatorySpider_v09.glb",
+      "blob_sha": "42f93598dde4c6b0bd442c5629e9e7f41bcbdd67",
+      "size_bytes": 30492
+    },
+    {
+      "resource_name": "spalakh3d/assets/ObservatoryDome_v09.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/ObservatoryDome_v09.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/ObservatoryDome_v09.glb",
+      "blob_sha": "ecdbe410dfc74344dc3dee7db190fd470380958a",
+      "size_bytes": 36320
+    },
+    {
+      "resource_name": "spalakh3d/assets/ObservatoryExit_v09.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/ObservatoryExit_v09.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/ObservatoryExit_v09.glb",
+      "blob_sha": "3720ac4c9a78a3b72c0c5a4e19b47eddeca24e27",
+      "size_bytes": 11300
+    },
+    {
+      "resource_name": "spalakh3d/assets/observatory_blue_beam_v09.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/observatory_blue_beam_v09.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/observatory_blue_beam_v09.png",
+      "blob_sha": "319a66e8882dbb43337eb7ad5314125b7aca592c",
+      "size_bytes": 98631
+    },
+    {
+      "resource_name": "spalakh3d/assets/observatory_pink_gate_v09.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/observatory_pink_gate_v09.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/observatory_pink_gate_v09.png",
+      "blob_sha": "89deaba109b274d177d419e7e8edb1d14022376f",
+      "size_bytes": 147915
+    },
+    {
+      "resource_name": "spalakh3d/assets/observatory_depth_gradient_v09.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/observatory_depth_gradient_v09.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/observatory_depth_gradient_v09.png",
+      "blob_sha": "1bae5b8fcf21f91fc26cc9fb4c045f3d9708bbcf",
+      "size_bytes": 295379
+    },
+    {
+      "resource_name": "spalakh3d/assets/observatory_spotlight_front_v093.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/observatory_spotlight_front_v093.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/observatory_spotlight_front_v093.png",
+      "blob_sha": "e57f3953f1e862f223502b6ea321056752b46de7",
+      "size_bytes": 160278
+    },
+    {
+      "resource_name": "spalakh3d/assets/observatory_beam_clear_v093.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d",
+      "path": "spalakh3d/assets/observatory_beam_clear_v093.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d/spalakh3d/assets/observatory_beam_clear_v093.png",
+      "blob_sha": "d8ce37cef83d2e37c468bd191ccf203d49202dbe",
+      "size_bytes": 89897
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSpiderNeon_v094.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-neon-assets-v094",
+      "path": "spalakh3d/assets/SpalakhSpiderNeon_v094.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-neon-assets-v094/spalakh3d/assets/SpalakhSpiderNeon_v094.glb",
+      "blob_sha": "299c87e7bfab76762f61663e64435ac4296ce4ec",
+      "size_bytes": 286328
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhCoralPinkNeon_v094.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-neon-assets-v094",
+      "path": "spalakh3d/assets/SpalakhCoralPinkNeon_v094.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-neon-assets-v094/spalakh3d/assets/SpalakhCoralPinkNeon_v094.glb",
+      "blob_sha": "02dbc1a1e29c0cc7d11f119e761923a115b9e53a",
+      "size_bytes": 132628
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhCoralCyanNeon_v094.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-neon-assets-v094",
+      "path": "spalakh3d/assets/SpalakhCoralCyanNeon_v094.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-neon-assets-v094/spalakh3d/assets/SpalakhCoralCyanNeon_v094.glb",
+      "blob_sha": "bcffd7d84e3089625ce5ba2bd5cf311333990309",
+      "size_bytes": 132580
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhAnemoneNeon_v094.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-neon-assets-v094",
+      "path": "spalakh3d/assets/SpalakhAnemoneNeon_v094.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-neon-assets-v094/spalakh3d/assets/SpalakhAnemoneNeon_v094.glb",
+      "blob_sha": "d030f5e5954084ac22969d71c7460a031de27f5a",
+      "size_bytes": 114564
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSpotlightNeon_v094.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-neon-assets-v094",
+      "path": "spalakh3d/assets/SpalakhSpotlightNeon_v094.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-neon-assets-v094/spalakh3d/assets/SpalakhSpotlightNeon_v094.glb",
+      "blob_sha": "fd4745fc366652ac25eeb6a6c4b808418ec11356",
+      "size_bytes": 380356
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSpotlightVintageNeon_v094.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-neon-assets-v094",
+      "path": "spalakh3d/assets/SpalakhSpotlightVintageNeon_v094.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-neon-assets-v094/spalakh3d/assets/SpalakhSpotlightVintageNeon_v094.glb",
+      "blob_sha": "7d08a0fe16f9bc5c8e65f67cf74ec5879bfde277",
+      "size_bytes": 555032
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhConsoleNeon_v094.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-neon-assets-v094",
+      "path": "spalakh3d/assets/SpalakhConsoleNeon_v094.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-neon-assets-v094/spalakh3d/assets/SpalakhConsoleNeon_v094.glb",
+      "blob_sha": "d5958587c012cf3131ab29ae0a7f481b86b665e7",
+      "size_bytes": 111708
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhBlockNeon_v094.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-neon-assets-v094",
+      "path": "spalakh3d/assets/SpalakhBlockNeon_v094.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-neon-assets-v094/spalakh3d/assets/SpalakhBlockNeon_v094.glb",
+      "blob_sha": "2e7f9b6dcdf42f16bb5f3d3c6f8ed7a2ca342572",
+      "size_bytes": 58900
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSunkenObservatory_v095.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-underwater-depth-v095",
+      "path": "spalakh3d/assets/SpalakhSunkenObservatory_v095.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-underwater-depth-v095/spalakh3d/assets/SpalakhSunkenObservatory_v095.glb",
+      "blob_sha": "de3f53c3dfc926eabd773027c92d7f0ac85844cd",
+      "size_bytes": 124428
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhRuinArch_v095.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-underwater-depth-v095",
+      "path": "spalakh3d/assets/SpalakhRuinArch_v095.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-underwater-depth-v095/spalakh3d/assets/SpalakhRuinArch_v095.glb",
+      "blob_sha": "c47e436fff20a7f99dd75a354df11d4a802b4d79",
+      "size_bytes": 23640
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhRuinColumn_v095.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-underwater-depth-v095",
+      "path": "spalakh3d/assets/SpalakhRuinColumn_v095.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-underwater-depth-v095/spalakh3d/assets/SpalakhRuinColumn_v095.glb",
+      "blob_sha": "f213622350c842e3eecb6d565d758f33d2dea82e",
+      "size_bytes": 15232
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhFish_v095.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-underwater-depth-v095",
+      "path": "spalakh3d/assets/SpalakhFish_v095.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-underwater-depth-v095/spalakh3d/assets/SpalakhFish_v095.glb",
+      "blob_sha": "7644a8a22d7d754ba563be580be5aff98bc34b67",
+      "size_bytes": 34356
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSmoothSpider_v099.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-materials-v0917",
+      "path": "spalakh3d/assets/SpalakhSmoothSpider_v099.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-materials-v0917/spalakh3d/assets/SpalakhSmoothSpider_v099.glb",
+      "blob_sha": "e06ced7852d943e55cfcc28856699562fbbd664c",
+      "size_bytes": 1553432
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSmoothCoralPink_v099.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-materials-v0917",
+      "path": "spalakh3d/assets/SpalakhSmoothCoralPink_v099.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-materials-v0917/spalakh3d/assets/SpalakhSmoothCoralPink_v099.glb",
+      "blob_sha": "20bc61560edcda76607ebc2b23f66082a4ff529e",
+      "size_bytes": 842476
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSmoothCoralCyan_v099.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-materials-v0917",
+      "path": "spalakh3d/assets/SpalakhSmoothCoralCyan_v099.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-materials-v0917/spalakh3d/assets/SpalakhSmoothCoralCyan_v099.glb",
+      "blob_sha": "e8cc124f857ab0063237dabdb91ccbf8394bbf86",
+      "size_bytes": 842480
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSmoothAnemoneCyan_v099.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-materials-v0917",
+      "path": "spalakh3d/assets/SpalakhSmoothAnemoneCyan_v099.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-materials-v0917/spalakh3d/assets/SpalakhSmoothAnemoneCyan_v099.glb",
+      "blob_sha": "dc29767f14822ab0ecd3a163fea1421037dd74c2",
+      "size_bytes": 941384
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhMatteSpotlightHang_v099.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-materials-v0917",
+      "path": "spalakh3d/assets/SpalakhMatteSpotlightHang_v099.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-materials-v0917/spalakh3d/assets/SpalakhMatteSpotlightHang_v099.glb",
+      "blob_sha": "642740f1c1669a8685765875bcbaaea9ed7252f0",
+      "size_bytes": 649420
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhMatteSpotlightStand_v099.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-materials-v0917",
+      "path": "spalakh3d/assets/SpalakhMatteSpotlightStand_v099.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-materials-v0917/spalakh3d/assets/SpalakhMatteSpotlightStand_v099.glb",
+      "blob_sha": "5837241f9e608558e6210910ffe8dc61ccf69090",
+      "size_bytes": 679700
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhMatteSwitch_v099.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-materials-v0917",
+      "path": "spalakh3d/assets/SpalakhMatteSwitch_v099.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-materials-v0917/spalakh3d/assets/SpalakhMatteSwitch_v099.glb",
+      "blob_sha": "de5b1332770e2fb541886e786070566b95bd6aec",
+      "size_bytes": 425852
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhSoftPlatform_v099.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-materials-v0917",
+      "path": "spalakh3d/assets/SpalakhSoftPlatform_v099.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-materials-v0917/spalakh3d/assets/SpalakhSoftPlatform_v099.glb",
+      "blob_sha": "ab3cd25b003de12fa46d14d52e7b2dddaf4e990f",
+      "size_bytes": 270328
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhMoonlitWater_v010.png",
+      "kind": "image",
+      "source_branch": "spalakh-moonlit-neon-v0910",
+      "path": "spalakh3d/assets/SpalakhMoonlitWater_v010.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-moonlit-neon-v0910/spalakh3d/assets/SpalakhMoonlitWater_v010.png",
+      "blob_sha": "38122ee11dae3eb768fee9194ea54438072e2fa4",
+      "size_bytes": 210264
+    },
+    {
+      "resource_name": "spalakh3d/assets/Spalakh_Animated.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-animated-3d-v0913",
+      "path": "spalakh3d/assets/Spalakh_Animated.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-animated-3d-v0913/spalakh3d/assets/Spalakh_Animated.glb",
+      "blob_sha": "9bfbe471d916eb67a1dcb84e8484e9a7180a5ebb",
+      "size_bytes": 51664
+    },
+    {
+      "resource_name": "spalakh3d/assets/Spalakh_Upright_v0914.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-animated-3d-v0914",
+      "path": "spalakh3d/assets/Spalakh_Upright_v0914.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-animated-3d-v0914/spalakh3d/assets/Spalakh_Upright_v0914.glb",
+      "blob_sha": "9bfbe471d916eb67a1dcb84e8484e9a7180a5ebb",
+      "size_bytes": 51664
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_00.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_00.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_00.png",
+      "blob_sha": "f85da11fdd5350e64500c8dbeb07f86f612afde9",
+      "size_bytes": 40262
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_01.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_01.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_01.png",
+      "blob_sha": "2c05b4d07e5854e02ba2382b8a60506434131b3f",
+      "size_bytes": 38343
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_02.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_02.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_02.png",
+      "blob_sha": "c1301b526aac41c0fecfb8d8e323f5ec252d7cf1",
+      "size_bytes": 36377
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_03.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_03.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_03.png",
+      "blob_sha": "836ca1eec6cb90cdbfdb943dbb6a35416adf736b",
+      "size_bytes": 37801
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_04.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_04.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_04.png",
+      "blob_sha": "2844ed5366c6ec47b51d50b4db893ffee4756201",
+      "size_bytes": 45328
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_05.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_05.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_05.png",
+      "blob_sha": "367572eb072e7ecc5c9ad9fd54e60c8262035cc2",
+      "size_bytes": 48642
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/run_00.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_run_00.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_run_00.png",
+      "blob_sha": "ffb2a2a13ea1386f1e19653aef13e8283fa09c11",
+      "size_bytes": 47749
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/run_01.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_run_01.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_run_01.png",
+      "blob_sha": "6c0d6e861add53078d23505862a41992736df4d7",
+      "size_bytes": 49227
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/run_02.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_run_02.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_run_02.png",
+      "blob_sha": "7d0a43fe4ecae80229334e190f9d3ce30be93fee",
+      "size_bytes": 47580
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/run_03.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_run_03.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_run_03.png",
+      "blob_sha": "6e5cc9aa07ec361161ec7cedfef0dc7a911b912a",
+      "size_bytes": 40953
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/run_04.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_run_04.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_run_04.png",
+      "blob_sha": "0501f4ca5cc07c2b1d004d24e34abfa8886e17bd",
+      "size_bytes": 47997
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/run_05.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_run_05.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_run_05.png",
+      "blob_sha": "36f32884775b77e390feac9b533c7ee5ae72d76c",
+      "size_bytes": 50296
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/run_06.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_run_06.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_run_06.png",
+      "blob_sha": "50ba2488f688a078458fc5ac07966930054f229b",
+      "size_bytes": 45688
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/jump_00.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_jump_00.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_jump_00.png",
+      "blob_sha": "209b92385be58b048a504055e6a39ef981a55801",
+      "size_bytes": 31755
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/jump_01.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_jump_01.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_jump_01.png",
+      "blob_sha": "edcac83428332211c6f2eedbf6ef8e39a58fc43a",
+      "size_bytes": 32932
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/jump_02.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_jump_02.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_jump_02.png",
+      "blob_sha": "6aaa8ac258f6258bf4b6bf7ff9cf7224b7757c4e",
+      "size_bytes": 40455
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/fall_00.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/refresh_20261010/spalakh_fall_00.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/refresh_20261010/spalakh_fall_00.png",
+      "blob_sha": "8b7eaa6faea557b6632d2760e42a9d52ea0a7994",
+      "size_bytes": 33882
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/fall_01.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/refresh_20261010/spalakh_fall_01.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/refresh_20261010/spalakh_fall_01.png",
+      "blob_sha": "4150b243ae0a58a3e154c41c10457d608a52a65c",
+      "size_bytes": 38068
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/fall_02.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/refresh_20261010/spalakh_fall_02.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/refresh_20261010/spalakh_fall_02.png",
+      "blob_sha": "4ddb15f57aec1f26de252aa97e0f9ef4bf80aff2",
+      "size_bytes": 26727
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/land_00.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/refresh_20261010/spalakh_land_00.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/refresh_20261010/spalakh_land_00.png",
+      "blob_sha": "3c18d7f8f9a815ce437f6fc6107761779b79fcd0",
+      "size_bytes": 35227
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/land_01.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/refresh_20261010/spalakh_land_01.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/refresh_20261010/spalakh_land_01.png",
+      "blob_sha": "92b413b8872efe060420a54a90d7e456697b7169",
+      "size_bytes": 32938
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/land_02.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/refresh_20261010/spalakh_land_02.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/refresh_20261010/spalakh_land_02.png",
+      "blob_sha": "b96f015ef2c86f741bea6d288b3781e34630d94e",
+      "size_bytes": 31227
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/land_03.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/refresh_20261010/spalakh_land_03.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/refresh_20261010/spalakh_land_03.png",
+      "blob_sha": "63cce72c13e037353abded7fc25486a4c673501e",
+      "size_bytes": 33487
+    },
+    {
+      "resource_name": "spalakh3d/assets/SpalakhNeonRedEye_v0920.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-grounded-v0920",
+      "path": "spalakh3d/assets/SpalakhNeonRedEye_v0920.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-grounded-v0920/spalakh3d/assets/SpalakhNeonRedEye_v0920.glb",
+      "blob_sha": "f7dff43eec7151290f7000a3352faf531fade03e",
+      "size_bytes": 7540
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_06.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_06.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_06.png",
+      "blob_sha": "aba9ebf65b3fff6f736a000a40d1dcd8083dd2b9",
+      "size_bytes": 29617
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_07.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_07.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_07.png",
+      "blob_sha": "0a1877b87d709dfc3910c85c80f3410553d4ee59",
+      "size_bytes": 37514
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_08.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_08.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_08.png",
+      "blob_sha": "b9b5411db1d0ec146b0e25af846317b132473367",
+      "size_bytes": 37168
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_09.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_09.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_09.png",
+      "blob_sha": "f519981bd2c029694d7efae0824d35a15edf97d0",
+      "size_bytes": 40905
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_10.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_10.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_10.png",
+      "blob_sha": "99695292debc49c90e7095e1da7e7df7c35d87c3",
+      "size_bytes": 37378
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_11.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_11.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_11.png",
+      "blob_sha": "9f0e2c4d8337116e30339747bd8f016775947cb1",
+      "size_bytes": 40262
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_12.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_12.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_12.png",
+      "blob_sha": "cc2befc5c829ce117a9ba0c44ac79c1f64479fad",
+      "size_bytes": 40262
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_13.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_13.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_13.png",
+      "blob_sha": "d01da7e8a10044f54229ac35eda9d625c752b6d1",
+      "size_bytes": 40262
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_14.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_14.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_14.png",
+      "blob_sha": "3dcf57aa0bd563a556523d52225f37e908f10afc",
+      "size_bytes": 40262
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/idle_15.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_idle_15.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_idle_15.png",
+      "blob_sha": "59632e27ffbed76c56675b03eefb9d0f4750bf86",
+      "size_bytes": 40262
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/slow_00.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_slow_00.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_slow_00.png",
+      "blob_sha": "6a10daf35c8db2608b2270e9a4087fef7483d8fe",
+      "size_bytes": 42169
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/slow_01.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_slow_01.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_slow_01.png",
+      "blob_sha": "65a5e7f4acefffc17a26ac191fa3a47cd5b4d043",
+      "size_bytes": 39683
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/slow_02.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_slow_02.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_slow_02.png",
+      "blob_sha": "b86e10bc1ea2abcb67e531510cfe4963664a6a60",
+      "size_bytes": 34957
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/slow_03.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_slow_03.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_slow_03.png",
+      "blob_sha": "472be8285ed3bc9e90d1da0ef12287078dca81f5",
+      "size_bytes": 37641
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/slow_04.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_slow_04.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_slow_04.png",
+      "blob_sha": "5f7c359342cf5495e425f932545e8b9d1179c362",
+      "size_bytes": 37459
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/slow_05.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_slow_05.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_slow_05.png",
+      "blob_sha": "c8d2324fc4ba98f54977fe424862a4df3c76c037",
+      "size_bytes": 36299
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/slow_06.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_slow_06.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_slow_06.png",
+      "blob_sha": "e0560b2c59ec29ed3c190f01f9b25231857f6d1e",
+      "size_bytes": 35525
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/slow_07.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_slow_07.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_slow_07.png",
+      "blob_sha": "841c5a00de146b28d29a88b8182471041ab4fc5f",
+      "size_bytes": 39427
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/crouch_00.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_crouch_00.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_crouch_00.png",
+      "blob_sha": "6e93b4ee1b82a5a65c13256479d62d2a2a3847af",
+      "size_bytes": 34768
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/crouch_01.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_crouch_01.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_crouch_01.png",
+      "blob_sha": "71dbb711dbc06534fddb8f2631117581e078e938",
+      "size_bytes": 34391
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/crouch_02.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_crouch_02.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_crouch_02.png",
+      "blob_sha": "7026f094b12a4f84b4c69abba2f3d926e70f0f6f",
+      "size_bytes": 35415
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/crouch_03.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_crouch_03.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_crouch_03.png",
+      "blob_sha": "960427a8895aede95906574b33ddc547aff9a20a",
+      "size_bytes": 34423
+    },
+    {
+      "resource_name": "spalakh3d/sprite2d/crouch_04.png",
+      "kind": "image",
+      "source_branch": "main",
+      "path": "assets/v084e/player/spalakh_crouch_04.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/main/assets/v084e/player/spalakh_crouch_04.png",
+      "blob_sha": "df2f43faae98f5b9d0086ed6621b56a0bb4fe7d6",
+      "size_bytes": 34707
+    },
+    {
+      "resource_name": "spalakh3d/assets/parallax_ship_crisp_v0927.webp",
+      "kind": "image",
+      "source_branch": "spalakh-25d-visible-parallax-corals-v0927",
+      "path": "spalakh3d/assets/parallax_ship_crisp_v0927.webp",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-visible-parallax-corals-v0927/spalakh3d/assets/parallax_ship_crisp_v0927.webp",
+      "blob_sha": "5980268a4b6f51ee36e6bf9b00a52bf3ba8f001b",
+      "size_bytes": 165136
+    },
+    {
+      "resource_name": "spalakh3d/assets/parallax_ruins_clean_v0925.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d-visible-parallax-corals-v0927",
+      "path": "spalakh3d/assets/parallax_ruins_clean_v0925.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-visible-parallax-corals-v0927/spalakh3d/assets/parallax_ruins_clean_v0925.png",
+      "blob_sha": "758d6e86d9d8c9e28a5f26e5352f340cd019fbab",
+      "size_bytes": 1160776
+    },
+    {
+      "resource_name": "spalakh3d/assets/Block_Anemone_v0926.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-visible-parallax-corals-v0927",
+      "path": "spalakh3d/assets/Block_Anemone_v0926.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-visible-parallax-corals-v0927/spalakh3d/assets/Block_Anemone_v0926.glb",
+      "blob_sha": "0e086f8044fe819f712d6202fdfeb9edf7b2c444",
+      "size_bytes": 655428
+    },
+    {
+      "resource_name": "spalakh3d/assets/Block_Coral_Pink_v0926.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-visible-parallax-corals-v0927",
+      "path": "spalakh3d/assets/Block_Coral_Pink_v0926.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-visible-parallax-corals-v0927/spalakh3d/assets/Block_Coral_Pink_v0926.glb",
+      "blob_sha": "8257c08993f3b68ab3ae960ad00b83ed3a2d5c30",
+      "size_bytes": 309100
+    },
+    {
+      "resource_name": "spalakh3d/assets/Block_Coral_Violet_v0926.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-visible-parallax-corals-v0927",
+      "path": "spalakh3d/assets/Block_Coral_Violet_v0926.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-visible-parallax-corals-v0927/spalakh3d/assets/Block_Coral_Violet_v0926.glb",
+      "blob_sha": "00cf5a8f37d3e386ab0b31c83f8f0f39531ad629",
+      "size_bytes": 309104
+    },
+    {
+      "resource_name": "spalakh3d/assets/Coral_Pink_Block_v0926.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-visible-parallax-corals-v0927",
+      "path": "spalakh3d/assets/Coral_Pink_Block_v0926.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-visible-parallax-corals-v0927/spalakh3d/assets/Coral_Pink_Block_v0926.glb",
+      "blob_sha": "38f061e65c268879249e467a1a58f3ac621cfd22",
+      "size_bytes": 224180
+    },
+    {
+      "resource_name": "spalakh3d/assets/parallax_far_underwater_v0927.jpg",
+      "kind": "image",
+      "source_branch": "spalakh-25d-visible-parallax-corals-v0927",
+      "path": "spalakh3d/assets/parallax_far_underwater_v0927.jpg",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-visible-parallax-corals-v0927/spalakh3d/assets/parallax_far_underwater_v0927.jpg",
+      "blob_sha": "43be59e8a1425710d25dfded29d6e42e32b7c751",
+      "size_bytes": 168487
+    },
+    {
+      "resource_name": "spalakh3d/assets/parallax_01_far_underwater_v0928.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d-flame-v0929",
+      "path": "spalakh3d/assets/parallax_01_far_underwater_v0928.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-flame-v0929/spalakh3d/assets/parallax_01_far_underwater_v0928.png",
+      "blob_sha": "9fa57a4427be06528b93f80eed43f205eb56d226",
+      "size_bytes": 579059
+    },
+    {
+      "resource_name": "spalakh3d/assets/parallax_02_ruins_mid_v0928.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d-flame-v0929",
+      "path": "spalakh3d/assets/parallax_02_ruins_mid_v0928.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-flame-v0929/spalakh3d/assets/parallax_02_ruins_mid_v0928.png",
+      "blob_sha": "6c30677a7ae08e061b79484765c6820a72fb0ac6",
+      "size_bytes": 201151
+    },
+    {
+      "resource_name": "spalakh3d/assets/parallax_03_ship_mid_v0928.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d-flame-v0929",
+      "path": "spalakh3d/assets/parallax_03_ship_mid_v0928.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-flame-v0929/spalakh3d/assets/parallax_03_ship_mid_v0928.png",
+      "blob_sha": "b434603db8fc71530a0fc75d206871e0e49699f5",
+      "size_bytes": 168563
+    },
+    {
+      "resource_name": "spalakh3d/assets/parallax_04_foreground_frame_v0928.png",
+      "kind": "image",
+      "source_branch": "spalakh-25d-flame-v0929",
+      "path": "spalakh3d/assets/parallax_04_foreground_frame_v0928.png",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-flame-v0929/spalakh3d/assets/parallax_04_foreground_frame_v0928.png",
+      "blob_sha": "ed3a2c8ea70e9428a72c6a42b2c25a7de2e3483d",
+      "size_bytes": 162006
+    },
+    {
+      "resource_name": "spalakh3d/assets/Spalakh_BlackSpider_Articulated_v0937.glb",
+      "kind": "model3D",
+      "source_branch": "spalakh-25d-black-spider-v0937",
+      "path": "spalakh3d/assets/Spalakh_BlackSpider_Articulated_v0937.glb",
+      "original_url": "https://raw.githubusercontent.com/mickalaykorolyov-bit/pislyasvit-spalakh/spalakh-25d-black-spider-v0937/spalakh3d/assets/Spalakh_BlackSpider_Articulated_v0937.glb",
+      "blob_sha": "6f6d33aa8322ff5b19c14b3c70ab49519e3382ab",
+      "size_bytes": 18892
+    }
+  ],
+  "files_included": [
+    "spalakh3d/Spalakh_NeonObservatory_ONLY_v0939_RealLight_RoundAura_SlowSpiders.json",
+    "spalakh3d/patches/Observatory_v0939_full.js",
+    "spalakh3d/REAL_LIGHT_ROUND_AURA_SLOW_SPIDERS_V0939_UA.md"
+  ]
+}
