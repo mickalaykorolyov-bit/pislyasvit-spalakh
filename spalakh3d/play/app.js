@@ -44,7 +44,7 @@ function getTexture(name){
  return textures.get(name);
 }
 function modelPromise(file){
- if(!cache.has(file))cache.set(file,new Promise((resolve,reject)=>loader.load(REPO+file,resolve,undefined,reject)));
+ if(!cache.has(file))cache.set(file,new Promise((resolve,reject)=>loader.load(REPO+file+'?fix=183bac7',resolve,undefined,reject)));
  return cache.get(file);
 }
 function shapeBox(w,h,d,color,op=1){
@@ -193,7 +193,7 @@ function initObjects(project){
   if(!objects.has(item.name))objects.set(item.name,[]);objects.get(item.name).push(obj);
  }
  runtimeScene={getObjects:name=>objects.get(name)||[],__observatory096:null};
- const key=(k)=>{const s=k.toLowerCase();return pressed.has(k)||pressed.has(s)||(s==='left'&&pressed.has('a'))||(s==='right'&&pressed.has('d'))};
+ const key=(k)=>{const s=k.toLowerCase();return pressed.has(k)||pressed.has(s)||(s==='left'&&(pressed.has('a')||pressed.has('ArrowLeft')))||(s==='right'&&(pressed.has('d')||pressed.has('ArrowRight')))};
  let elapsed=1/60,cam={x:355,y:790,z:250,pitch:88};
  gdjs={evtTools:{
    input:{isKeyPressed:(_scene,k)=>key(k)},
@@ -247,7 +247,7 @@ window.addEventListener('resize',()=>{
 });
 async function boot(){
  try{
-  const res=await fetch(JSON_URL,{cache:'no-store'});
+  const res=await fetch(JSON_URL+'?fix=183bac7',{cache:'no-store'});
   if(!res.ok)throw Error('GitHub project '+res.status);
   const project=await res.json();
   initObjects(project);
