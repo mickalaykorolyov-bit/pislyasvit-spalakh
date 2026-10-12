@@ -35,7 +35,7 @@ function fresh(){
 if(!runtimeScene.__observatory096)runtimeScene.__observatory096=fresh();
 const s=runtimeScene.__observatory096;
 const diag55=runtimeScene.__spalakhPublishDiag55||(runtimeScene.__spalakhPublishDiag55={safe:true,lens:true,last7:false,last8:false,scene:null,proxies:{},warned:false});
-const k7=keys('F7'),k8=keys('F8');
+const k7=keys('F7')||keys('7'),k8=keys('F8')||keys('8');
 if(k7&&!diag55.last7)diag55.lens=!diag55.lens;
 if(k8&&!diag55.last8)diag55.safe=!diag55.safe;
 diag55.last7=k7;diag55.last8=k8;
@@ -1490,7 +1490,7 @@ const status=(name,value)=>{const o=first(name);if(o&&o.setString)o.setString(va
 const shelteredHere=hidden();
 status('ObsStatus','РЕФРАКТОРИ '+s.modes.map((mode,i)=>'ABC'[i]+':'+(mode+1)).join('  ')+
  '   •   МІСТ '+(bridge()?'✓':'○')+'   •   ЗАТВОР '+(irisOpen()?'✓':'○')+
- '   •   '+(shelteredHere?'У СВІТЛІ':'У ТЕМРЯВІ')+'   •   ЗАГИБЕЛЕЙ '+s.deaths+'   •   v0.9.55  F7 ЛІНЗА:'+(diag55.lens?'ON':'OFF')+'  F8 ФОН:'+(diag55.safe?'SAFE':'GLB'));
+ '   •   '+(shelteredHere?'У СВІТЛІ':'У ТЕМРЯВІ')+'   •   ЗАГИБЕЛЕЙ '+s.deaths+'   •   v0.9.55  7/F7 ЛІНЗА:'+(diag55.lens?'ON':'OFF')+'  8/F8 ФОН:'+(diag55.safe?'SAFE':'GLB'));
 let task=!bridge()?'01 / ПУЛЬТ A: ПОВЕРНИ ПРОМІНЬ ТА СТВОРИ СВІТЛОВИЙ МІСТ [E].'
  :!s.crossed?'02 / ПЕРЕЙДИ ПРОВАЛЛЯ ТА ЗНАЙДИ ПУЛЬТ B.'
  :s.modes[1]===0?'03 / ПУЛЬТ B: АКТИВУЙ РУХОМЕ СВІТЛО [E].'
